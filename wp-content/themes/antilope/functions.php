@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/functionsSVGsupport.php');
+require_once(__DIR__ . '/functionsCustomAvatarSupport.php');
 require_once(__DIR__ . '/functionsBoot.php');
 require_once(__DIR__ . '/functionsUtilities.php');
 require_once(__DIR__ . '/functionsForm.php');

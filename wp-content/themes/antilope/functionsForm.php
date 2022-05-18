@@ -2,7 +2,23 @@
 
 // Form system totally not entirely taken from class
 
-function pfl_handle_submit_contact_form()
+register_post_type('message', [
+	'labels' => [
+		'name' => 'Messages',
+		'singular_name' => 'Message',
+	],
+	'description' => 'Les messages envoyés via le formulaire de contact se retrouvent ici.',
+	'public' => false,
+	'show_ui' => true,
+	'menu_position' => 15,
+	'menu_icon' => 'dashicons-buddicons-pm',
+	'capabilities' => [
+		'create_posts' => false,
+	],
+	'map_meta_cap' => true,
+]);
+
+function atl_handle_submit_contact_form()
 {
 
 	// check nonces for CSRF
@@ -25,9 +41,17 @@ function pfl_handle_submit_contact_form()
 		return wp_redirect($_POST['_wp_http_referer']);
 	}
 
+	   // Store message in database
+		$id = wp_insert_post([
+			'post_type' => 'message',
+			'post_title' => 'Message de ' . $data['firstname'] . ' ' . $data['lastname'],
+			'post_content' => $data['message'],
+			'post_status' => 'publish',
+		]);
+
 	// build and send mail
-	$emailObject = 'Message de ' . $data['firstname'] . ' ' . $data['lastname'];
-	$emailContent = 'Nouveau message envoyé depuis le formulaire du portolio<br />' . $data['message'];
+	$emailObject = 'Nouveau message sur Projet Antilope';
+	$emailContent = 'Nouveau message envoyé de la part de ' . $data['firstname'] . ' ' . $data['lastname'] . ' depuis le formulaire<br><br>' . get_edit_post_link($id);
 
 	wp_mail(get_bloginfo('admin_email'), $emailObject, $emailContent);
 

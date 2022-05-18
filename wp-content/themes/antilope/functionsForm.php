@@ -6,16 +6,16 @@ function pfl_handle_submit_contact_form()
 {
 
 	// check nonces for CSRF
-	if(! pfl_verify_contact_form_nonce()) {
+	if(! atl_verify_contact_form_nonce()) {
 		// TODO : redirect to unauthorized page
 		return;
 	}
 
 	// sanitize data passed
-	$data = pfl_sanitize_contact_form_data();
+	$data = atl_sanitize_contact_form_data();
 
 	// validate form fields and return its errors to the client
-	if($errors = pfl_validate_contact_form_data($data)) {
+	if($errors = atl_validate_contact_form_data($data)) {
 		$_SESSION['feedback_contact_form'] = [
 			'success' => false,
 			'data' => $data,
@@ -40,14 +40,14 @@ function pfl_handle_submit_contact_form()
 }
 
 //functions for form handling
-function pfl_verify_contact_form_nonce()
+function atl_verify_contact_form_nonce()
 {
 	$nonce = $_POST['_wpnonce'];
 
 	return wp_verify_nonce($nonce, 'nonce_check_contact_form');
 }
 
-function pfl_sanitize_contact_form_data()
+function atl_sanitize_contact_form_data()
 {
 	return [
 		'firstname' => sanitize_text_field($_POST['firstname'] ?? null),
@@ -59,7 +59,7 @@ function pfl_sanitize_contact_form_data()
 	];
 }
 
-function pfl_validate_contact_form_data($data)
+function atl_validate_contact_form_data($data)
 {
 	$errors = [];
 
@@ -88,7 +88,7 @@ function pfl_validate_contact_form_data($data)
 }
 
 // functions for returning messages to erroneous form
-function pfl_get_contact_field_value($field)
+function atl_get_contact_field_value($field)
 {
 	if(! isset($_SESSION['feedback_contact_form'])) {
 		return '';
@@ -97,7 +97,7 @@ function pfl_get_contact_field_value($field)
 	return $_SESSION['feedback_contact_form']['data'][$field] ?? '';
 }
 
-function pfl_get_contact_field_error($field)
+function atl_get_contact_field_error($field)
 {
 	if(! isset($_SESSION['feedback_contact_form'])) {
 		return '';

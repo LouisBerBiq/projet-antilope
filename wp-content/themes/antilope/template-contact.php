@@ -11,28 +11,28 @@
 					<?php endif; ?>
 					<div class="form__field">
 							<label for="firstname" class="form__label"><?= __('Votre prénom', 'dw'); ?></label>
-							<input type="text" name="firstname" id="firstname" class="form__input" value="<?= pfl_get_contact_field_value('firstname'); ?>" />
-							<?= pfl_get_contact_field_error('firstname'); ?>
+							<input type="text" name="firstname" id="firstname" class="form__input" value="<?= atl_get_contact_field_value('firstname'); ?>" />
+							<?= atl_get_contact_field_error('firstname'); ?>
 					</div>
 					<div class="form__field">
 							<label for="lastname" class="form__label"><?= __('Votre nom', 'dw'); ?></label>
-							<input type="text" name="lastname" id="lastname" class="form__input" value="<?= pfl_get_contact_field_value('lastname'); ?>" />
-							<?= pfl_get_contact_field_error('lastname'); ?>
+							<input type="text" name="lastname" id="lastname" class="form__input" value="<?= atl_get_contact_field_value('lastname'); ?>" />
+							<?= atl_get_contact_field_error('lastname'); ?>
 					</div>
 					<div class="form__field">
 							<label for="email" class="form__label"><?= __('Votre adresse e-mail', 'dw'); ?></label>
-							<input type="email" name="email" id="email" class="form__input" value="<?= pfl_get_contact_field_value('email'); ?>" />
-							<?= pfl_get_contact_field_error('email'); ?>
+							<input type="email" name="email" id="email" class="form__input" value="<?= atl_get_contact_field_value('email'); ?>" />
+							<?= atl_get_contact_field_error('email'); ?>
 					</div>
 					<div class="form__field">
 							<label for="phone" class="form__label"><?= __('Votre numéro de téléphone', 'dw'); ?></label>
-							<input type="tel" name="phone" id="phone" class="form__input" value="<?= pfl_get_contact_field_value('phone'); ?>" />
-							<?= pfl_get_contact_field_error('phone'); ?>
+							<input type="tel" name="phone" id="phone" class="form__input" value="<?= atl_get_contact_field_value('phone'); ?>" />
+							<?= atl_get_contact_field_error('phone'); ?>
 					</div>
 					<div class="form__field">
 							<label for="message" class="form__label"><?= __('Votre message', 'dw'); ?></label>
-							<textarea name="message" id="message" cols="30" rows="10" class="form__input"><?= pfl_get_contact_field_value('message'); ?></textarea>
-							<?= pfl_get_contact_field_error('message'); ?>
+							<textarea name="message" id="message" cols="30" rows="10" class="form__input"><?= atl_get_contact_field_value('message'); ?></textarea>
+							<?= atl_get_contact_field_error('message'); ?>
 					</div>
 					<div class="form__field">
 							<label for="rules" class="form__checkbox">
@@ -43,7 +43,7 @@
 									__('J’ai lu et j’accepte les :conditions.', 'dw')
 								); ?></span>
 							</label>
-							<?= pfl_get_contact_field_error('rules'); ?>
+							<?= atl_get_contact_field_error('rules'); ?>
 					</div>
 					<div class="form__actions">
 							<input type="hidden" name="action" value="submit_contact_form" />

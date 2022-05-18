@@ -26,7 +26,7 @@ register_nav_menu('footer', 'Bottom nav');
 // TODO: auto populate nav
 
 // Get products list
-function pfl_get_projects($count = 10)
+function atl_get_products($count = 10)
 {
    // new query
 	$trips = new WP_Query([
@@ -39,4 +39,4 @@ function pfl_get_projects($count = 10)
 	return $trips;
 }
 
-add_action('admin_post_submit_contact_form', 'pfl_handle_submit_contact_form');
+add_action('admin_post_submit_contact_form', 'atl_handle_submit_contact_form');

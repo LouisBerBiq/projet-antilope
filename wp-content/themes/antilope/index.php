@@ -3,7 +3,7 @@
 <main class="layout">
 	<section class="layout__intro">
 		<h2 class="layout__title">
-			<?= __('Portfolio', 'pfl'); ?>
+			<?= __('Portfolio', 'atl'); ?>
 		</h2>
 		<section class="layout__products products">
 			<h2 class="products__title"><?= __('My latest works', 'atl'); ?></h2>

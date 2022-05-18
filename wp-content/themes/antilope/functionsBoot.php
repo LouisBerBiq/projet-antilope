@@ -1,10 +1,10 @@
 <?php
 
-add_action('init', 'pfl_boot', 1);
+add_action('init', 'atl_boot', 1);
 
-function pfl_boot()
+function atl_boot()
 {
-	load_theme_textdomain('pfl', __DIR__ . '/locales');
+	load_theme_textdomain('atl', __DIR__ . '/locales');
 
 	if(! session_id()) {
 		session_start();

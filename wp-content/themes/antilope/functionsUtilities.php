@@ -17,7 +17,7 @@ function remove_menu_entries ()
 add_action('admin_menu', 'remove_menu_entries');
 
 // Utilitaire pour charger un fichier compilé par mix, avec cache bursting.
-function pfl_mix($path)
+function atl_mix($path)
 {
 	$path = '/' . ltrim($path, '/');
 
@@ -44,7 +44,7 @@ function pfl_mix($path)
 }
 
 // Fonction permettant d'inclure des composants et d'y injecter des variables locales (scope de l'appel de fonction)
-function pfl_include(string $partial, array $variables = [])
+function atl_include(string $partial, array $variables = [])
 {
 	extract($variables);
 

@@ -15,7 +15,7 @@
 					<p class="products__empty"><?= __('I have no work on display yet.', 'atl'); ?></p>
 				<?php endif; ?>
 			</div>
-		</section>	
+		</section>
 	</section>
 </main>
 

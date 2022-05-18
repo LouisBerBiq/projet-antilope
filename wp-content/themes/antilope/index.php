@@ -5,14 +5,14 @@
 		<h2 class="layout__title">
 			<?= __('Portfolio', 'pfl'); ?>
 		</h2>
-		<section class="layout__projects projects">
-			<h2 class="projects__title"><?= __('My latest works', 'pfl'); ?></h2>
-			<div class="projects__container">
+		<section class="layout__products products">
+			<h2 class="products__title"><?= __('My latest works', 'atl'); ?></h2>
+			<div class="products__container">
 				<?php 
-				if(($projects = pfl_get_projects(6))->have_posts()): while($projects->have_posts()): $projects->the_post();
-					include(__DIR__ . '/partials/project-card.php');
+				if(($products = atl_get_products(6))->have_posts()): while($products->have_posts()): $products->the_post();
+					include(__DIR__ . '/partials/product-card.php');
 				endwhile; else: ?>
-					<p class="projects__empty"><?= __('I have no work on display yet.', 'pfl'); ?></p>
+					<p class="products__empty"><?= __('I have no work on display yet.', 'atl'); ?></p>
 				<?php endif; ?>
 			</div>
 		</section>	

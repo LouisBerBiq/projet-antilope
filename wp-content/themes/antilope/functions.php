@@ -6,16 +6,16 @@ require_once(__DIR__ . '/functionsBoot.php');
 require_once(__DIR__ . '/functionsUtilities.php');
 require_once(__DIR__ . '/functionsForm.php');
 
-// register a custom post type for projects
-register_post_type( 'project', [
+// register a custom post type for products
+register_post_type( 'products', [
 	'labels' => [
-		'name' => 'Projects',
-		'singular_name' => 'Project'
+		'name' => 'Produits',
+		'singular_name' => 'Produit'
 	],
-	'description' => 'Manage your projects list',
+	'description' => 'Gérer vos produits',
 	'public' => true,
 	'menu_position' => 5,
-	'menu_icon' => 'dashicons-embed-generic',
+	'menu_icon' => 'dashicons-screenoptions',
 	'supports' => ['title','editor','thumbnail','custom-fields'],
 ]);
 
@@ -25,12 +25,12 @@ register_nav_menu('footer', 'Bottom nav');
 
 // TODO: auto populate nav
 
-// Get Projects list
+// Get products list
 function pfl_get_projects($count = 10)
 {
    // new query
 	$trips = new WP_Query([
-		'post_type' => 'project',
+		'post_type' => 'product',
 		'orderby' => 'date',
 		'order' => 'DESC',
 		'posts_per_page' => $count,

@@ -31,7 +31,7 @@ function atl_get_products($count = 10)
    // new query
 	$trips = new WP_Query([
 		'post_type' => 'product',
-		'orderby' => 'date',
+		'orderby' => 'name',
 		'order' => 'DESC',
 		'posts_per_page' => $count,
 	]);

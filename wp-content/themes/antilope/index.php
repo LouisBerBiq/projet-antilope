@@ -7,6 +7,7 @@
 		</h2>
 		<section class="layout__products products">
 			<h2 class="products__title"><?= __('My latest works', 'atl'); ?></h2>
+			<a href="<?= get_post_type_archive_link('product'); ?>" class="products__all"><?= __('Voir tous nos modules', 'atl'); ?></a>
 			<div class="products__container">
 				<?php 
 				if(($products = atl_get_products(6))->have_posts()): while($products->have_posts()): $products->the_post();

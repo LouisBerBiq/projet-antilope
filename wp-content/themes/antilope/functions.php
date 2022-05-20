@@ -14,6 +14,7 @@ register_post_type( 'product', [
 	],
 	'description' => 'Gérer vos produits',
 	'public' => true,
+	'has_archive' => true,
 	'menu_position' => 5,
 	'menu_icon' => 'dashicons-screenoptions',
 	'supports' => ['title','editor','thumbnail','custom-fields'],

@@ -21,7 +21,25 @@
 				</dd>
 				<dt class="singleProduct__label"><?= __('specs','atl'); ?></dt>
 				<dd class="singleProduct__data">
-					<?= get_field('specifications') ?>
+					<?=get_field('specifications'); ; ?>
+					<h4><?= __('Polluants mesurés', 'atl') ?></h4>
+					<ul class="singleProduct__data list">
+						<?php foreach(explode(PHP_EOL, get_field('measured_pollutants')) as $captured): ?>
+							<li class="list item">
+								<?= $captured ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+					<h4><?= __('Capteur environnemental', 'atl') ?></h4>
+					<ul class="singleProduct__data list">
+						<?php foreach(explode(PHP_EOL, get_field('captured')) as $captured): ?>
+							<li class="list item">
+								<?= $captured ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+					<h4><?= __('Fréquence de mesure', 'atl') ?></h4>
+					<?= get_field('frequency') ?> secondes
 				</dd>
 			</dl>
 		</aside>

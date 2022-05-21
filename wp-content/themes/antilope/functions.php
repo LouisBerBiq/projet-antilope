@@ -31,6 +31,23 @@ register_post_type( 'question', [
 	'supports' => ['title','editor','thumbnail','custom-fields'],
 ]);
 
+// snatched and modified from https://www.wpbeginner.com/wp-tutorials/how-to-replace-enter-title-here-text-in-wordpress/
+// changes Post title placeholder text
+function atl_change_title_placeholder_text($title){
+	switch (get_current_screen()->post_type) {
+		case 'product':
+			$title = 'Nom du module';
+			break;
+		case 'question':
+			$title = 'La question';
+			break;
+	}
+
+	return $title;
+}
+
+add_filter('enter_title_here', 'atl_change_title_placeholder_text');
+
 // register nav menus with automatic population
 register_nav_menu('Header', 'Top nav');
 register_nav_menu('footer', 'Bottom nav');
@@ -46,6 +63,21 @@ function atl_get_products($count = 10)
 		'orderby' => 'name',
 		'order' => 'DESC',
 		'posts_per_page' => $count,
+	]);
+
+	return $trips;
+}
+
+// Get questions list with search
+function atl_get_questions($count = 10, $search = null)
+{
+   // new query
+	$trips = new WP_Query([
+		'post_type' => 'question',
+		'orderby' => 'date',
+		'order' => 'ASC',
+		'posts_per_page' => $count,
+		's' => strlen($search) ? $search : null
 	]);
 
 	return $trips;

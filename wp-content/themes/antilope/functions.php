@@ -20,6 +20,17 @@ register_post_type( 'product', [
 	'supports' => ['title','editor','thumbnail','custom-fields'],
 ]);
 
+// register a custom post type for FAQ questions
+register_post_type( 'question', [
+	'label' => 'FAQ',
+	'description' => 'Gérer la FAQ',
+	'public' => true,
+	'has_archive' => true,
+	'menu_position' => 15,
+	'menu_icon' => 'dashicons-feedback',
+	'supports' => ['title','editor','thumbnail','custom-fields'],
+]);
+
 // register nav menus with automatic population
 register_nav_menu('Header', 'Top nav');
 register_nav_menu('footer', 'Bottom nav');

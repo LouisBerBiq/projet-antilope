@@ -10,7 +10,7 @@ register_post_type('message', [
 	'description' => 'Les messages envoyés via le formulaire de contact se retrouvent ici.',
 	'public' => false,
 	'show_ui' => true,
-	'menu_position' => 15,
+	'menu_position' => 10,
 	'menu_icon' => 'dashicons-buddicons-pm',
 	'capabilities' => [
 		'create_posts' => false,

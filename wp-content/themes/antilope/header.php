@@ -8,8 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>
-			// TODO: since posts are removed, do something about the index
-			Portfolio - <?php if(have_posts()): while(have_posts()): the_post(); ?> <?= get_the_title(); ?> <?php endwhile; endif; ?>
+			Antilope - 
 		</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<!--[if lt IE 9]>

@@ -1,10 +1,10 @@
 <?php
 
-require_once(__DIR__ . '/functionsSVGsupport.php');
-require_once(__DIR__ . '/functionsCustomAvatarSupport.php');
-require_once(__DIR__ . '/functionsBoot.php');
-require_once(__DIR__ . '/functionsUtilities.php');
-require_once(__DIR__ . '/functionsForm.php');
+require_once(__DIR__ . '/functions-utils/SVGSupport.php');
+require_once(__DIR__ . '/functions-utils/CustomAvatarSupport.php');
+require_once(__DIR__ . '/functions-utils/Boot.php');
+require_once(__DIR__ . '/functions-utils/Utilities.php');
+require_once(__DIR__ . '/functions-utils/Form.php');
 
 // register a custom post type for products
 register_post_type( 'product', [

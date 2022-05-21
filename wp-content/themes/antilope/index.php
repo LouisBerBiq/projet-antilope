@@ -10,7 +10,7 @@
 			<a href="<?= get_post_type_archive_link('product'); ?>" class="products__all"><?= __('Voir tous nos modules', 'atl'); ?></a>
 			<div class="products__container">
 				<?php 
-				if(($products = atl_get_products(6))->have_posts()): while($products->have_posts()): $products->the_post();
+				if(($products = atl_get_products(1))->have_posts()): while($products->have_posts()): $products->the_post();
 					include(__DIR__ . '/partials/product-card.php');
 				endwhile; else: ?>
 					<p class="products__empty"><?= __('I have no work on display yet.', 'atl'); ?></p>

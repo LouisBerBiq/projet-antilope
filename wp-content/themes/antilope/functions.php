@@ -9,10 +9,10 @@ require_once(__DIR__ . '/functionsForm.php');
 // register a custom post type for products
 register_post_type( 'product', [
 	'labels' => [
-		'name' => 'Produits',
-		'singular_name' => 'Produit'
+		'name' => 'Modules',
+		'singular_name' => 'Module'
 	],
-	'description' => 'Gérer vos produits',
+	'description' => 'Gérer les modules',
 	'public' => true,
 	'has_archive' => true,
 	'menu_position' => 5,

@@ -131,6 +131,5 @@ function atl_get_contact_field_error($field)
 		return '';
 	}
 
-	// TODO: make this string translatable
-	return '<p class="form__error">Problème : ' . $_SESSION['feedback_contact_form']['errors'][$field] . '</p>';
+	return '<p class="form__error">' . __('Problèmes : ', 'atl') . $_SESSION['feedback_contact_form']['errors'][$field] . '</p>';
 }

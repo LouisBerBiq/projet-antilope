@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="<?= pll_current_language('slug'); ?>">
 	<head>
-		<meta name="description" content="">
-		<meta name="keywords" content="">
+		<meta name="description" content="<?= get_bloginfo('description') ?>">
+		<meta name="keywords" content="<?= __( 'mesure, pollution, qualité de l’air, système embarqué, capteurs', 'alt' ) ?>">
 		<meta name="author" content="">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">

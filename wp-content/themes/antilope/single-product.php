@@ -24,15 +24,15 @@
 					<?=get_field('specifications'); ; ?>
 					<h4><?= __('Polluants mesurés', 'atl') ?></h4>
 					<ul class="singleProduct__data list">
-						<?php foreach(explode(PHP_EOL, get_field('measured_pollutants')) as $captured): ?>
+						<?php foreach( get_field('measured_pollutants') as $pollutant ): ?>
 							<li class="list item">
-								<?= $captured ?>
+								<?= $pollutant ?>
 							</li>
 						<?php endforeach; ?>
 					</ul>
 					<h4><?= __('Capteur environnemental', 'atl') ?></h4>
 					<ul class="singleProduct__data list">
-						<?php foreach(explode(PHP_EOL, get_field('captured')) as $captured): ?>
+						<?php foreach( get_field('captured') as $captured ): ?>
 							<li class="list item">
 								<?= $captured ?>
 							</li>

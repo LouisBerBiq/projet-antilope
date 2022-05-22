@@ -1,10 +1,6 @@
 <?php
 
-require_once(__DIR__ . '/functions-utils/SVGSupport.php');
-require_once(__DIR__ . '/functions-utils/CustomAvatarSupport.php');
-require_once(__DIR__ . '/functions-utils/Boot.php');
-require_once(__DIR__ . '/functions-utils/Utilities.php');
-require_once(__DIR__ . '/functions-utils/Form.php');
+require_once(__DIR__ . '/menus/menu.php');
 
 // register a custom post type for products
 register_post_type( 'product', [
@@ -47,12 +43,6 @@ function atl_change_title_placeholder_text($title){
 }
 
 add_filter('enter_title_here', 'atl_change_title_placeholder_text');
-
-// register nav menus with automatic population
-register_nav_menu('Header', 'Top nav');
-register_nav_menu('footer', 'Bottom nav');
-
-// TODO: auto populate nav
 
 // Get products list
 function atl_get_products($count = 10)

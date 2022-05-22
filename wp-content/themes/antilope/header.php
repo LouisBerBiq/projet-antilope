@@ -20,7 +20,21 @@
 		<h1 class="header__title"><?= get_bloginfo('name') ?></h1>
 		<p class="header__tagline"><?php get_bloginfo('description') ?></p>
 		<nav class="header__nav nav">
-			<h2 clas="nav__title">Nav
-				<p class="nav__desc">TODO.</p>
-			</h2>
+			<h2 clas="nav__title"><?= __('Navigation principale','atl') ?></h2>
+			<ul class="nav__container">
+				<?php foreach(atl_get_menu_items('header') as $link): ?>
+				<li class="<?= $link->getBemClasses('nav__item'); ?>">
+					<a href="<?= $link->url; ?>" class="nav__link"><?= $link->label; ?></a>
+					<?php if($link->hasSubItems()): ?>
+					<ul class="nav__subitems">
+							<?php foreach($link->subitems as $sub): ?>
+							<li class="<?= $link->getBemClasses('nav__subitem'); ?>">
+								<a href="<?= $sub->url; ?>" class="nav__link"><?= $sub->label; ?></a>
+							</li>
+							<?php endforeach; ?>
+					</ul>
+					<?php endif; ?>
+				</li>
+				<?php endforeach; ?>
+			</ul>
 		</nav>

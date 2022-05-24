@@ -9,7 +9,11 @@
 			<!-- // TODO: choose wether to make a different form for each personality or show/hide fields  -->
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
 				<!-- // apparently it is discouraged by wordpress to use $_GET and instead use get_query_var() and add the variable to the global $wp object with add_query_var() but this variable is only use on this specific page so... (https://stackoverflow.com/questions/13652605/extracting-a-parameter-from-a-url-in-wordpress) -->
-				<?php var_dump($_GET['form']); exit(); ?>
+				<?php if(isset($_GET['form'])): ?>
+					<?= var_dump($_GET['form']); ?>
+				<?php else: ?>
+						<?= 'nothing' ?>
+				<?php endif; ?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 					<?php if(isset($_SESSION['feedback_contact_form']) && ! $_SESSION['feedback_contact_form']['success']) : ?>
 							<p class="form__errors"><?= __('Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'atl'); ?></p>
@@ -38,8 +42,8 @@
 							<label for="rules" class="form__checkbox">
 								<input type="checkbox" name="rules" id="rules" class="form__checker" value="1">
 								<span class="form__checklabel"><?= str_replace(
-									':conditions', // TODO: find better way to link to pages
-									'<a href="' . get_home_url() . '/privacy-policy' . '">' . __('conditions générales d’utilisation','atl') . '</a>',
+									':conditions', 
+									'<a href="' . get_privacy_policy_url() . '">' . __('conditions générales d’utilisation','atl') . '</a>',
 									__('J’ai lu et j’accepte les :conditions.', 'atl')
 								); ?></span>
 							</label>

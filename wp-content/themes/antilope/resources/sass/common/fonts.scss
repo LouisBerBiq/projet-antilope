@@ -1,0 +1,19 @@
+
+// parts picked from https://stackoverflow.com/a/18658936/17701651 and https://stackoverflow.com/a/45124084/17701651
+@mixin font-face($family, $path, $svg, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('#{$path}.eot'); /* IE9 Compat Modes */
+		src: url('#{$path}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		  url('#{$path}.woff2') format('woff2'), /* Super Modern Browsers */
+		  url('#{$path}.woff') format('woff'), /* Pretty Modern Browsers */
+		  url('#{$path}.ttf')  format('truetype'), /* Safari, Android, iOS */
+		  url('#{$path}.svg##{$svg}') format('svg'); /* Legacy iOS */
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+$title: Montserrat;
+$text-small: Lato;
+$text-special: "Gentium Basic";

@@ -1,4 +1,6 @@
-@import "reset";
-@import "colors";
-@import "spacings";
+@import "common/reset";
+@import "common/colors";
+@import "common/spacings";
+@import "common/fonts";
 
+@import "footer";

@@ -18,7 +18,7 @@
 					include(__DIR__ . '/partials/question-line.php');
 				}
 			endwhile; else: ?>
-				<p class="questions__empty"><?= __('Nous n\'avons pas de modules disponibles pour le moment', 'atl'); ?></p>
+				<p class="questions__empty"><?= __('La FAQ est vide…', 'atl'); ?></p>
 			<?php endif; ?>
 		</div>
 	</section>

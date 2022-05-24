@@ -20,14 +20,15 @@ add_action('admin_menu', 'remove_menu_entries');
 function atl_mix($path)
 {
 	$path = '/' . ltrim($path, '/');
-
+	
 	// Checker si le fichier demandé existe bien, sinon retourner NULL
-	if(! realpath(__DIR__ . '/public' . $path)) {
+	if(! realpath(THEME_PATH . '/public' . $path)) {
 		return;
 	}
+	
 
 	// Check si le fichier mix-manifest existe bien, sinon retourner le fichier sans cache-bursting
-	if(! ($manifest = realpath(__DIR__ . '/public/mix-manifest.json'))) {
+	if(! ($manifest = realpath(THEME_PATH . '/public/mix-manifest.json'))) {
 		return get_stylesheet_directory_uri() . '/public' . $path;
 	}
 
@@ -48,5 +49,5 @@ function atl_include(string $partial, array $variables = [])
 {
 	extract($variables);
 
-	include(__DIR__ . '/partials/' . $partial . '.php');
+	include(THEME_PATH . '/partials/' . $partial . '.php');
 }

@@ -7,6 +7,8 @@ require_once(__DIR__ . '/functions-utils/utilities.php');
 require_once(__DIR__ . '/functions-utils/form.php');
 require_once(__DIR__ . '/menus/menu.php');
 
+define("THEME_PATH", __DIR__);
+
 // register a custom post type for products
 register_post_type( 'product', [
 	'labels' => [

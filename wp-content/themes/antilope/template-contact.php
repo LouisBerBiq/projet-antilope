@@ -4,15 +4,20 @@
 	<main class="layout contact">
 		<h2 class="contact__title"><?= get_the_title(); ?></h2>
 		<div class="contact__form">
-			<!-- // TODO: JS: switch displayed form -->
+			<!-- // TODO: JS: switch displayed form (with <buttons>) -->
 			<!-- // TODO: make contact form change depending on where user comes from (?form=student) -->
 			<!-- // TODO: choose wether to make a different form for each personality or show/hide fields  -->
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
 				<!-- // apparently it is discouraged by wordpress to use $_GET and instead use get_query_var() and add the variable to the global $wp object with add_query_var() but this variable is only use on this specific page so... (https://stackoverflow.com/questions/13652605/extracting-a-parameter-from-a-url-in-wordpress) -->
-				<?php if(isset($_GET['form'])): ?>
-					<?= var_dump($_GET['form']); ?>
+				<?php if(isset($_GET['persona'])): ?>
+					<?= var_dump($_GET['persona']); ?>
 				<?php else: ?>
-						<?= 'nothing' ?>
+					<?= 'no persona' ?>
+				<?php endif; ?>
+				<?php if(isset($_GET['pretext'])): ?>
+					<?= var_dump($_GET['pretext']); ?>
+				<?php else: ?>
+					<?= 'no pretext' ?>
 				<?php endif; ?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 					<?php if(isset($_SESSION['feedback_contact_form']) && ! $_SESSION['feedback_contact_form']['success']) : ?>

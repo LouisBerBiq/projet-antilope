@@ -51,3 +51,19 @@ function atl_include(string $partial, array $variables = [])
 
 	include(THEME_PATH . '/partials/' . $partial . '.php');
 }
+
+// function to simply get the first page of the list of page using $template for when you are using a single page with a single template
+function atl_get_page_of_template(string $template)
+{
+    // Créer une WP_Query
+	$query = new WP_Query([
+		'post_type' => 'page', // Filtrer sur le post_type de type "page"
+		'post_status' => 'publish', // Uniquement les pages publiées
+		'meta_query' => [
+			['key' => '_wp_page_template', 'value' => $template . '.php'] // Filtrer sur le type de template utilisé
+		]
+	]);
+
+	// Retourner la première occurrence pour cette requête (ou NULL)
+	return $query->posts[0] ?? null;
+}

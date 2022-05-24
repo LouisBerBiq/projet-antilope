@@ -10,7 +10,8 @@
 		<title>
 			<?= wp_title('-', true, 'right') . get_bloginfo('name') ?>
 		</title>
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" href="<?= atl_mix('/css/style.css'); ?>"/>
+		<script type="text/javascript" src="<?= atl_mix('js/script.js'); ?>"></script>
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>

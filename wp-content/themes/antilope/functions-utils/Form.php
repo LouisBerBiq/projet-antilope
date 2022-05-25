@@ -60,7 +60,7 @@ function atl_handle_submit_contact_form()
 		'success' => true,
 	];
 
-	return wp_redirect($_POST['_wp_http_referer']);
+	return wp_redirect(get_home_url());
 }
 
 //functions for form handling

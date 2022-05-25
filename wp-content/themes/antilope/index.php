@@ -19,5 +19,12 @@
 		</section>
 	</section>
 </main>
+<div class="form__feedback">
+	<?php if($_SESSION['feedback_contact_form']['success']): ?>
+		<p class="form__feedback sucess">
+			<?= __('Merci <br> de votre message ! à bientôt !', 'atl'); ?>
+		</p>
+	<?php endif; ?>
+</div>
 
 <?php get_footer(); ?>

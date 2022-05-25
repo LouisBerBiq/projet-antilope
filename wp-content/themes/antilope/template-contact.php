@@ -63,8 +63,6 @@
 							<button type="submit" class="form__button"><?= __('Envoyer', 'atl'); ?></button>
 					</div>
 				</form>
-			<?php else : ?>
-				<p class="form__feedback"><?= __('Merci de nous avoir contacté, à bientôt !', 'atl'); ?></p>
 			<?php endif; ?>
 		</div>
 	</main>

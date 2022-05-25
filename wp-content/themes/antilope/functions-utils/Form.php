@@ -133,3 +133,5 @@ function atl_get_contact_field_error($field)
 
 	return '<p class="form__error">' . __('Problèmes : ', 'atl') . $_SESSION['feedback_contact_form']['errors'][$field] . '</p>';
 }
+
+add_action('admin_post_submit_contact_form', 'atl_handle_submit_contact_form');

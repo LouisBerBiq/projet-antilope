@@ -1,6 +1,6 @@
 <?php
 
-// Form system totally not entirely taken from class
+// Form system entirely taken from class
 
 register_post_type('message', [
 	'labels' => [

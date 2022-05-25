@@ -23,6 +23,15 @@
 					<?= 'no pretext' ?>
 				<?php endif; ?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
+					<div class="form__field">
+						<select name="personality" id="personality" class="form__select" multiple required>
+							<option value="municipality">Commune</option>
+							<option value="researcher">Chercheur</option>
+							<option value="student">Étudiant</option>
+							<option value="other">Autre</option>
+						</select>
+							<?= atl_get_contact_field_error('personality'); ?>
+					</div>
 					<?php if(isset($_SESSION['feedback_contact_form']) && ! $_SESSION['feedback_contact_form']['success']) : ?>
 						<p class="form__errors"><?= __('Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'atl'); ?></p>
 					<?php endif; ?>

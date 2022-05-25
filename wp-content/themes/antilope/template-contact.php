@@ -4,9 +4,12 @@
 	<main class="layout contact">
 		<h2 class="contact__title"><?= get_the_title(); ?></h2>
 		<div class="contact__form">
+			<!-- // in case I attempt to reinvent the wheel: https://stackoverflow.com/questions/43815499/how-to-show-form-input-fields-based-on-select-value-in-html-javascript  -->
 			<!-- // TODO: JS: switch displayed form (with <buttons>) -->
-			<!-- // TODO: make contact form change depending on where user comes from (?form=student) -->
 			<!-- // TODO: choose wether to make a different form for each personality or show/hide fields  -->
+
+			<!-- // KIND OF FORMS I NEED:  -->
+			<!-- // TODO: make contact form change default option in select depending on where user comes from (?form=student) -->
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
 				<!-- // apparently it is discouraged by wordpress to use $_GET and instead use get_query_var() and add the variable to the global $wp object with add_query_var() but this variable is only use on this specific page so... (https://stackoverflow.com/questions/13652605/extracting-a-parameter-from-a-url-in-wordpress) -->
 				<?php if(isset($_GET['persona'])): ?>
@@ -21,7 +24,7 @@
 				<?php endif; ?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 					<?php if(isset($_SESSION['feedback_contact_form']) && ! $_SESSION['feedback_contact_form']['success']) : ?>
-							<p class="form__errors"><?= __('Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'atl'); ?></p>
+						<p class="form__errors"><?= __('Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'atl'); ?></p>
 					<?php endif; ?>
 					<div class="form__field">
 							<label for="lastname" class="form__label"><?= __('Votre nom', 'atl'); ?></label>

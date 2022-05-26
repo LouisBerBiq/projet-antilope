@@ -2,12 +2,12 @@ class ATL_Controller
 {
 	constructor()
 	{
-		console.log('yep, I\'m building');
+		// before DOM
 	}
 	
 	run()
 	{
-		console.log('yep, I\'m running');
+		// after DOM
 	}
 }
 

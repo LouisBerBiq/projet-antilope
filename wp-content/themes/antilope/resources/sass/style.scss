@@ -1,7 +1,12 @@
 @import "common/reset";
 @import "common/colors";
-@import "common/spacings";
+@import "common/scales";
 @import "common/fonts";
 
 @import "footer";
 @import "form";
+@import "components/button";
+
+.button {
+	@include component-button();
+}

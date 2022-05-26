@@ -1,4 +1,12 @@
 
 .footer {
+	display: flex;
 	background-color: $bright;
+	color: $background;
+
+	&__nav {
+		&__container {
+			list-style: none;
+		}
+	}
 }

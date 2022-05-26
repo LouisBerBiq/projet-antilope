@@ -1,9 +1,7 @@
 <footer class="footer">
 	<section class="footer__text">
-		<h2 class="text__title">
-			Footer
-		</h2>
 		<nav class="footer__nav nav">
+			<button class="button">button</button>
 			<ul class="nav__container">
 				<?php foreach(atl_get_menu_items('footer') as $link): ?>
 				<li class="<?= $link->getBemClasses('nav__item'); ?>">

@@ -1,6 +1,6 @@
 
 // parts picked from https://stackoverflow.com/a/18658936/17701651 and https://stackoverflow.com/a/45124084/17701651
-@mixin font-face($family, $path, $svg, $weight: normal, $style: normal) {
+@mixin font-face($family, $path, $svgFontName, $size: 16px, $weight: normal, $style: normal) {
 	@font-face {
 		font-family: $family;
 		src: url('#{$path}.eot'); /* IE9 Compat Modes */
@@ -8,12 +8,38 @@
 		  url('#{$path}.woff2') format('woff2'), /* Super Modern Browsers */
 		  url('#{$path}.woff') format('woff'), /* Pretty Modern Browsers */
 		  url('#{$path}.ttf')  format('truetype'), /* Safari, Android, iOS */
-		  url('#{$path}.svg##{$svg}') format('svg'); /* Legacy iOS */
+		  url('#{$path}.svg##{$svgFontName}') format('svg'); /* Legacy iOS */
 		font-weight: $weight;
 		font-style: $style;
+		font-size: $size;
 	}
 }
+$text-title-font: Montserrat;
+$text-title-weight: semi-bold;
+$text-title-size: 82px;
+$text-title-size-smaller: $scale-main;
+$text-title-size-smallest: 20px;
+@mixin text-title($text-title-size) {
+	@include font-face($text-title-font, 'a', '', $text-title-size, $text-title-weight);
+}
+@include text-title($text-title-size);
+@include text-title($text-title-size-smaller);
+@include text-title($text-title-size-smallest);
 
-$title: Montserrat;
-$text-small: Lato;
-$text-special: "Gentium Basic";
+$text-small-font: Lato;
+$text-small-weight: light;
+$text-small-size: 16px;
+$text-small-size-bigger: $scale-main-alt;
+@mixin text-small($text-small-size) {
+	@include font-face($text-small-font, 'b', '', $text-small-size, $text-small-weight);
+}
+@include text-small($text-small-size);
+@include text-small($text-small-size-bigger);
+
+$text-special-font: "Gentium Basic";
+$text-special-weight: regular;
+$text-special-size: $scale-main-alt;
+@mixin text-special($text-special-size) {
+	@include font-face($text-special-font, 'c', '', $text-special-size, $text-special-weight);
+}
+@include text-special($text-special-size);

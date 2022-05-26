@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-05-26 16:53+0200\n"
+"PO-Revision-Date: 2022-05-26 16:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive-product.php:4 archive-question.php:4
+msgid "Tous nos modules"
+msgstr ""
+
+#: archive-product.php:11
+msgid "Nous n'avons pas de modules disponibles pour le moment"
+msgstr ""
+
+#: archive-question.php:7
+msgid "rechercher une question?"
+msgstr ""
+
+#: archive-question.php:9
+msgid "Rechercher"
+msgstr ""
+
+#: archive-question.php:21
+msgid "La FAQ est vide…"
+msgstr ""
+
+#: functions-utils/form.php:115
+msgid "Personalité inconnue ou inexistante"
+msgstr ""
+
+#: functions-utils/form.php:164
+msgid "Problèmes : "
+msgstr ""
+
+#: header.php:5
+msgid "mesure, pollution, qualité de l’air, système embarqué, capteurs"
+msgstr ""
+
+#: header.php:24
+msgid "Navigation principale"
+msgstr ""
+
+#: index.php:6
+msgid "Antilope"
+msgstr ""
+
+#: index.php:9
+msgid "My latest works"
+msgstr ""
+
+#: index.php:10
+msgid "Voir tous nos modules"
+msgstr ""
+
+#: index.php:16
+msgid "We have no modules on display"
+msgstr ""
+
+#: index.php:25
+msgid "Merci <br> de votre message ! à bientôt !"
+msgstr ""
+
+#: menus/menu.php:47
+msgid "Navigation du haut de page"
+msgstr ""
+
+#: menus/menu.php:48
+msgid "Navigation du bas de page"
+msgstr ""
+
+#: search.php:5
+msgid "Les question correspondant à votre recherche"
+msgstr ""
+
+#: search.php:12
+msgid "Votre recherche n'a abouti à rien &#1F641;."
+msgstr ""
+
+#: single-product.php:17
+msgid "Spécifications"
+msgstr ""
+
+#: single-product.php:19
+msgid "prix"
+msgstr ""
+
+#: single-product.php:24
+msgid "Aucun prix n'a été décidé pour le moment."
+msgstr ""
+
+#: single-product.php:27
+msgid "specs"
+msgstr ""
+
+#: single-product.php:30
+msgid "Polluants mesurés"
+msgstr ""
+
+#: single-product.php:38
+msgid "Capteur environnemental"
+msgstr ""
+
+#: single-product.php:46
+msgid "Fréquence de mesure"
+msgstr ""
+
+#: template-contact.php:36
+msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
+msgstr ""
+
+#: template-contact.php:39
+msgid "Votre nom"
+msgstr ""
+
+#: template-contact.php:44
+msgid "Votre prénom"
+msgstr ""
+
+#: template-contact.php:49
+msgid "Votre adresse e-mail"
+msgstr ""
+
+#: template-contact.php:54
+msgid "Votre message"
+msgstr ""
+
+#: template-contact.php:63
+msgid "conditions générales d’utilisation"
+msgstr ""
+
+#: template-contact.php:64
+msgid "J’ai lu et j’accepte les :conditions."
+msgstr ""
+
+#: template-contact.php:72
+msgid "Envoyer"
+msgstr ""

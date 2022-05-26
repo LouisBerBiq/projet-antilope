@@ -20,7 +20,7 @@
 	</section>
 </main>
 <div class="form__feedback">
-	<?php if($_SESSION['feedback_contact_form']['success']): ?>
+	<?php if(isset($_SESSION['feedback_contact_form']) && $_SESSION['feedback_contact_form']['success']): ?>
 		<p class="form__feedback sucess">
 			<?= __('Merci <br> de votre message ! à bientôt !', 'atl'); ?>
 		</p>

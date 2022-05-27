@@ -1,0 +1,20 @@
+@mixin component-button($font-size: $text-title-size, $color: $accent, $text-color: $background, $padding: 15px 40px, $radius: $scale-main) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	padding: $padding;
+
+	background-color: $color;
+	color: $text-color;
+
+	font-family: Montserrat;
+	font-size: $font-size;
+	text-decoration: none;
+
+	border-radius: $radius;
+	border-color: rgba($dark, .25);
+
+	@include small-dark-shadow;
+}

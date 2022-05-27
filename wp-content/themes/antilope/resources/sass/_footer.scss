@@ -1,0 +1,114 @@
+
+.footer {
+	position: relative; // needed for the copyright notice
+	
+	max-width: 100vw;
+	min-height: 10vh;
+
+	background-color: $brighter;
+	color: $background;
+
+	font-family: Lato;
+	font-size: $text-small-size;
+	
+	&__nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		.nav {
+			&__social-media .social-media {
+				&__item {
+					min-height: 100px!important;
+					background-color: #00ff00!important;
+				}
+				// &__item {
+				// 	min-width: 16px;
+				// 	min-height: 16px;
+				// 	img[alt="Facebook"] {
+				// 	}
+				// }
+			}
+
+			&__container {
+				padding: $margin-items/2;
+				max-width: 300px;
+
+				// TODO: finish this
+				// &::before {
+				// 	content: '';
+
+				// 	position: relative;
+				// 	right: $scale-main;
+
+				// 	border-left: 2px solid rgba($dark, .25);
+				// }
+			}
+			
+			&__container:last-child {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				
+				min-width: 100px; // for longer names	
+
+				.nav__item {
+					text-align: right;
+
+					a {
+						color: $background;
+						text-decoration: none;
+					}
+				}
+
+				.nav__languages {
+					list-style: none;
+
+					li {
+						display: inline-block;
+					}
+				}
+
+			}
+
+			&__separator {
+				font-family: Montserrat;
+				font-size: $text-title-size/2;
+			}
+
+			&__pages {
+				margin-bottom: $scale-main/2;
+
+				li {
+					margin-bottom: $scale-main-mini;
+				}
+			}
+
+			&__title {
+				font-family: Montserrat;
+				font-size: $text-title-size-smallest;
+				text-decoration: none;
+				
+				margin-bottom: $scale-main-mini;
+			}
+
+			&__paragraph {
+				margin-bottom: $scale-main-mini;
+			}
+
+			&__button {
+				@include component-button($text-title-size-smaller/2, $background, $brighter, 5px 15px);
+				max-width: 4.5em;
+				max-height: 1.5em;
+			}
+		}
+	}
+
+	&__copyright {
+		font-size: .6em;
+		position: absolute;
+		bottom: 5px;
+		right: $scale-main-mini;
+	}
+}

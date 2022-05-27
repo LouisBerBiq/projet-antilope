@@ -20,7 +20,7 @@ $text-title-size: 82px;
 $text-title-size-smaller: $scale-main;
 $text-title-size-smallest: 20px;
 @mixin text-title($text-title-size) {
-	@include font-face($text-title-font, 'a', '', $text-title-size, $text-title-weight);
+	@include font-face($text-title-font, '../fonts/montserrat-semibold/montserrat-semibold-webfont', '', $text-title-size, $text-title-weight);
 }
 @include text-title($text-title-size);
 @include text-title($text-title-size-smaller);
@@ -31,7 +31,7 @@ $text-small-weight: light;
 $text-small-size: 16px;
 $text-small-size-bigger: $scale-main-alt;
 @mixin text-small($text-small-size) {
-	@include font-face($text-small-font, 'b', '', $text-small-size, $text-small-weight);
+	@include font-face($text-small-font, '../fonts/Lato-light/Lato-light-webfont', '', $text-small-size, $text-small-weight);
 }
 @include text-small($text-small-size);
 @include text-small($text-small-size-bigger);
@@ -40,6 +40,6 @@ $text-special-font: "Gentium Basic";
 $text-special-weight: regular;
 $text-special-size: $scale-main-alt;
 @mixin text-special($text-special-size) {
-	@include font-face($text-special-font, 'c', '', $text-special-size, $text-special-weight);
+	@include font-face($text-special-font, '../fonts/Gentium Basic-regular/Gentium Basic-regular-webfont', '', $text-special-size, $text-special-weight);
 }
 @include text-special($text-special-size);

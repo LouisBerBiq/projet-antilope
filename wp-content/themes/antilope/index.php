@@ -14,7 +14,7 @@
 				if(($products = atl_get_products(1))->have_posts()): while($products->have_posts()): $products->the_post();
 					include(__DIR__ . '/partials/product-card.php');
 				endwhile; else: ?>
-					<p class="products__empty"><?= __('We have no modules on display', 'atl'); ?></p>
+					<p class="products__empty"><?= __('Nous n\'avons pas de modules à afficher pour le moment', 'atl'); ?></p>
 				<?php endif; ?>
 			</div>
 		</section>

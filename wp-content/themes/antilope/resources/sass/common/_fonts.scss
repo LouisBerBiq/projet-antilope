@@ -35,6 +35,7 @@ $text-small-size-bigger: $scale-main-alt;
 }
 @include text-small($text-small-size);
 @include text-small($text-small-size-bigger);
+// TODO: add italic
 
 $text-special-font: "Gentium Basic";
 $text-special-weight: regular;

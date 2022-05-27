@@ -12,5 +12,6 @@ wp-content/*
 wp-content/themes/*
 !wp-content/themes/antilope
 wp-content/themes/antilope/resources/fonts
-wp-content/themes/antilope/public
+wp-content/themes/antilope/public/*
 !wp-content/themes/antilope/public/fonts
+!wp-content/themes/antilope/public/images

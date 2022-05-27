@@ -17,6 +17,7 @@ mix .setPublicPath('./wp-content/themes/antilope/public')
     .options({
         processCssUrls: false
     })
+    .disableSuccessNotifications()
     .browserSync({
         proxy: 'antilope.test',
         notify: false

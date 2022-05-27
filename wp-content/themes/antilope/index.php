@@ -3,8 +3,9 @@
 <main class="layout">
 	<section class="layout__intro">
 		<h2 class="layout__title">
-			<?= __('Antilope', 'atl'); ?>
+			<?= str_replace( ':project', get_bloginfo('name'), __('Bienvenue sur le site du :project !', 'atl')); ?>
 		</h2>
+		<p class="layout__tagline"><?= get_bloginfo('description') ?></p>
 		<section class="layout__products products">
 			<h2 class="products__title"><?= __('My latest works', 'atl'); ?></h2>
 			<a href="<?= get_post_type_archive_link('product'); ?>" class="products__all"><?= __('Voir tous nos modules', 'atl'); ?></a>

@@ -10,6 +10,10 @@
 		<title>
 			<?= wp_title('-', true, 'right') . get_bloginfo('name') ?>
 		</title>
+		<link rel="icon" type="image/svg+xml" href="<?= atl_mix('/images/favicon.svg'); ?>"/>
+		<link rel="icon" type="image/png" href="<?= atl_mix('/images/favicon.ico'); ?>" media="(prefers-color-scheme:light)">
+		<link rel="icon" type="image/png" href="<?= atl_mix('/images/favicon_dark.ico'); ?>" media="(prefers-color-scheme:dark)">
+		<link rel="icon" type="image/png" href="<?= atl_mix('/images/favicon.ico'); ?>" media="(prefers-color-scheme:no-preference)">
 		<link rel="stylesheet" type="text/css" href="<?= atl_mix('/css/style.css'); ?>"/>
 		<script type="text/javascript" src="<?= atl_mix('js/script.js'); ?>"></script>
 		<!--[if lt IE 9]>

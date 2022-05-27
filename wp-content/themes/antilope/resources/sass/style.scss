@@ -2,11 +2,41 @@
 @import "common/colors";
 @import "common/scales";
 @import "common/fonts";
+@import "common/effects";
 
-@import "footer";
-@import "form";
 @import "components/button";
 
-.button {
-	@include component-button();
+* {
+	line-height: normal;
+}
+
+main {
+	margin-bottom: 100vh;
+}
+
+@import "footer";
+@import "header";
+@import "form";
+
+// mobile
+@media(min-width: 980px) {
+
+}
+
+
+//mobile with desktop hero graphic
+@media(min-width: 768px) {
+
+}
+
+
+//mobile with desktop full hero graphic
+@media(min-width: 800px) {
+
+}
+
+
+// desktop but bigger font
+@media(min-width: 1440px) {
+	
 }

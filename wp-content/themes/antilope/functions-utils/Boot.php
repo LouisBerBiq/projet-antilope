@@ -2,7 +2,7 @@
 
 function atl_boot()
 {
-	load_theme_textdomain('atl', __DIR__ . '/locales');
+	load_theme_textdomain('atl', THEME_PATH . '/locales');
 
 	if(! session_id()) {
 		session_start();

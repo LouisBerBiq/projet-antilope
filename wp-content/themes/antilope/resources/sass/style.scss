@@ -8,7 +8,9 @@
 @import "components/form";
 
 * {
+	margin: 0 10vw;
 	line-height: normal;
+	// overflow-x: hidden; // TODO: move this elsewhere (.intro but working)
 }
 
 main {

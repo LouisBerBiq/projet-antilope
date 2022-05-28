@@ -5,6 +5,7 @@
 @import "common/effects";
 
 @import "components/button";
+@import "components/form";
 
 * {
 	line-height: normal;
@@ -16,7 +17,6 @@ main {
 
 @import "footer";
 @import "header";
-@import "form";
 
 // mobile
 @media(min-width: 980px) {

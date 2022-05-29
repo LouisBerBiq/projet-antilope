@@ -26,6 +26,10 @@
 			<h1 class="header__title"><?= get_bloginfo('name') ?></h1>
 			<nav class="header__nav nav">
 				<h2 clas="nav__title"><?= __('Navigation principale','atl') ?></h2>
+
+				<a href="<?= get_home_url() ?>" class="nav__home">imgage here</a>
+				<input class="nav__hidden hamburger-button" id="hamburger-button" type="checkbox"/>
+				<label class="nav__icon" for="hamburger-button"><span class="navicon"></span></label>
 				<ul class="nav__container">
 					<?php foreach(atl_get_menu_items('header') as $link): ?>
 					<li class="<?= $link->getBemClasses('nav__item'); ?>">

@@ -1,7 +1,15 @@
 
+// hamburger menu taken from https://codeconvey.com/responsive-hamburger-menu-css-only/
+
 .header {
-	max-width: 100vw;
-	min-height: 5vh;
+
+	position: fixed;
+	top: 0;
+	right: -100vw;
+	transition: right .2s ease-out;
+
+	max-width: 10vw;
+	min-height: 100vh;
 
 	padding: 20px;
 
@@ -13,37 +21,140 @@
 
 	@include small-dark-shadow;
 
+	&__title {
+		display: none;
+	}
+		
 	.nav {
-		&__title {
+		&__hidden, &__title {
 			display: none; // fixme
 		}
 
-		&__container {
-			max-width: 50vw;
+		// hamburger menu functionality
+		.hamburger-button {
+			display: none;
+		}
+		.hamburger-button:checked  {
+			& ~ .nav__icon .navicon {
+				background: transparent;
+			}
+			& ~ .nav__icon .navicon:before {
+				transform: translateY(-$scale-main-mini*1.5) rotate(-45deg);
+			}
+			& ~ .nav__icon .navicon:after {
+				transform: translateY($scale-main-mini*1.5) rotate(45deg);
+			}
 
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-			align-items: flex-end; // fixme
-			gap: $scale-main;
+			& ~ .nav__container {
+				right: 150px;
+			}
+		}
+
+		// hamburger menu button
+		&__icon {
+			display: inline-block;
+			position: fixed;
+			right: 10vw;
+			top: $scale-main-mini;
+
+			padding: $scale-main $scale-main-mini*2;
+			cursor: pointer;
 			
+			// actual icon
+			.navicon {
+				display: block;
+				position: relative;
+
+				width: $scale-main-mini*4;
+				height: 3px;
+				border-radius: $scale-main-mini;
+
+				background: #000;
+
+				transition: background .2s ease-out;
+				
+				&::before, &::after {
+					content: '';
+					display: block;
+					position: absolute;
+
+					width: 100%;
+					height: 100%;
+					border-radius: $scale-main-mini;
+
+					background: #000;
+
+					transition: all .2s ease-out;
+				}
+				&::before {
+					top: $scale-main-mini*1.5;
+				}
+				&::after {
+					top: -$scale-main-mini*1.5;
+				}
+			}
+		}
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			gap: $scale-main;
+
 			list-style: none;
 		}
 
-		// &__item:first-child { //todo
-
-		// }
 		&__item {
 			display: inline-block; // fixme
 
 			color: $darker;
 		}
 		&__link {
+			display: block;
 			text-decoration: none;
+			transition: color .2s ease-out;
+			
+			&:hover {
+				color: $accent;
+				transition: color .1s ease-out;
+			}
 		}
 	}
+}
 
-	&__title {
-		display: none;
+// // tablet
+// @media(min-width: 768px) {
+// }
+
+// // small desktop
+// @media(min-width: 800px) {
+	
+// }
+	
+// desktop
+@media(min-width: 980px) {
+	.header {
+		max-width: 100vw;
+		min-height: 5vh;
+
+		.nav {
+			&__container {
+				// fix offset
+				// fix right align
+				position: static;
+				top: 0;
+				right: 0;
+				flex-flow: row wrap;
+				align-items: flex-end; // fixme
+
+				min-width: 100vw;
+			}
+
+			&__icon {
+				.navicon {
+					visibility: hidden;
+					// display: none; // for some reason this doesn't work, remove the visibility above when fixed
+				}
+			}
+		}
 	}
 }

@@ -1,13 +1,15 @@
 class ATL_Controller
 {
+	// before DOM
 	constructor()
 	{
-		// before DOM
+
 	}
 	
+	// after DOM
 	run()
 	{
-		// after DOM
+
 	}
 }
 

@@ -1,4 +1,11 @@
-@mixin component-button($font-size: $text-title-size, $color: $accent, $text-color: $background, $padding: 15px 40px, $radius: $scale-main) {
+
+@mixin button-transition {
+	transition-property: color, background-color;
+	transition-duration: .125s;
+	transition-timing-function: ease-out;
+}
+
+@mixin component-button($font-size: $text-title-size, $color: $accent, $text-color: $background, $padding: .5em 2em, $radius: $scale-main) {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -14,7 +21,14 @@
 	text-decoration: none;
 
 	border-radius: $radius;
-	border-color: rgba($dark, .25);
+	border: 1px solid rgba($dark, .25);
+
+	&:hover, &:focus {
+		color: $color;
+		background-color: $text-color;
+
+		@include button-transition;
+	}
 
 	@include small-dark-shadow;
 }

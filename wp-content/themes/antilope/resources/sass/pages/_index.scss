@@ -9,6 +9,7 @@
 		.intro {
 			&__video-wrapper {
 				display: none;
+				z-index: -10;
 
 				// fade-in
 				opacity: 0;
@@ -70,34 +71,12 @@
 				transition-duration: .125s;
 				transition-timing-function: ease-out;
 
-				&:hover, &:focus {
-					color: $accent;
-					background-color: $background;
-
-					transition-property: color, background-color;
-					transition-duration: .125s;
-					transition-timing-function: ease-out;
-				}
-
 				&:last-child {
 					@include component-button($text-title-size/5, $background, $accent, $scale-main-mini $scale-main-mini*2);
 					
 					// max-width: .5vw;
 					padding-left: $scale-main/4;
 					padding-right: $scale-main/4;
-
-					transition-property: color, background-color;
-					transition-duration: .125s;
-					transition-timing-function: ease-out;
-
-					&:hover, &:focus {
-						background-color: $accent;
-						color: $background;
-	
-						transition-property: color, background-color;
-						transition-duration: .125s;
-						transition-timing-function: ease-out;
-					}
 				}
 			}
 		}
@@ -121,7 +100,6 @@
 				&__video-wrapper {
 					display: inline-block;
 					position: absolute;
-					z-index: -10;
 					right: -10vw;
 					top: 18vh;
 

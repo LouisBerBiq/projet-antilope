@@ -8,12 +8,16 @@
 @import "components/button";
 @import "components/form";
 
+@import "components/single/footer";
+@import "components/single/header";
 @import "components/single/scrollbar";
 
 
 * {
 	line-height: normal;
-	// overflow-x: hidden; // TODO: move this elsewhere (.intro but working)
+}
+html {
+	overflow: overlay;
 }
 body {
 	@include scrollbar(.6vw, .6vw, $bright);
@@ -22,8 +26,6 @@ main {
 	padding: 0 $padding-general;
 }
 
-@import "footer";
-@import "header";
 
 @import "pages/index";
 @import "pages/contact";

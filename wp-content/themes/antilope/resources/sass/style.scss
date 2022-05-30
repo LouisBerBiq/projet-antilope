@@ -9,13 +9,12 @@
 @import "components/form";
 
 * {
-	margin: 0 $padding-general; // TODO: move this elsewhere
 	line-height: normal;
 	// overflow-x: hidden; // TODO: move this elsewhere (.intro but working)
 }
 
 main {
-	margin-bottom: 100vh;
+	padding: 0 $padding-general;
 }
 
 @import "footer";

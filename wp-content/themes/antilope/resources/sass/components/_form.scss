@@ -114,8 +114,22 @@
 			}
 		}
 
-		& textarea { // todo: better selector, dynamic number of rows & fonts + padding
+		& textarea { // todo: better selector, dynamic number of rows & fonts
 			resize: none;
+			height: 15em;
+
+			padding: 1em;
+
+			&::-webkit-scrollbar { //todo detach scrollbar a bit
+				width: 1em;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: $brighter;
+				border-radius: $scale-main;
+			}
+			&::-webkit-scrollbar-track {
+				background: transparent;
+			}
 		}
 	}
 

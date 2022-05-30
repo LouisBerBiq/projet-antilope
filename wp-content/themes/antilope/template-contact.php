@@ -55,7 +55,7 @@
 					</div>
 					<div class="form__field">
 						<label for="message" class="field__label"><?= __('Votre message', 'atl'); ?></label>
-						<textarea name="message" id="message" cols="30" rows="10" class="field__input"><?= atl_get_contact_field_value('message'); ?></textarea>
+						<textarea name="message" id="message" class="field__input"><?= atl_get_contact_field_value('message'); ?></textarea>
 						<?= atl_get_contact_field_error('message'); ?>
 					</div>
 					<div class="form__field">

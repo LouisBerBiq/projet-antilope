@@ -11,8 +11,7 @@
 
 	max-width: 10vw;
 	min-height: 100vh;
-
-	padding: 20px;
+	padding: $scale-main-mini*1.5 $scale-main-mini*2;
 
 	background-color: $background;
 	color: $darker;
@@ -131,6 +130,9 @@
 			display: inline-block; // fixme
 
 			color: $darker;
+			&:visited {
+				color: $darker;
+			}
 		}
 		&__link {
 			display: block;
@@ -164,15 +166,11 @@
 
 		.nav {
 			&__container {
-				// fix offset
-				// fix right align
-				position: static;
-				top: unset;
+				position: relative;
+				top: $scale-main-mini/2;
 				right: unset;
-				flex-flow: row wrap;
-				align-items: flex-end; // fixme
 
-				min-width: 100vw;
+				flex-flow: row-reverse wrap;
 			}
 
 			&__icon {

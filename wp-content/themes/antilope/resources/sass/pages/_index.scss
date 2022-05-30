@@ -1,0 +1,136 @@
+.layout {
+	margin-top: $scale-main * 7;
+
+	&__intro {
+
+		margin-bottom: $scale-main * 2;
+		max-width: 30vw;
+
+		.intro {
+			&__video-wrapper {
+				display: none;
+
+				// fade-in
+				opacity: 0;
+				animation: fade-in-right .5s ease-out forwards;
+
+				.video-wrapper {
+					&__video {
+						min-width: 50vw;
+						min-height: 50vh;
+						max-width: 80vw;
+						max-height: 80vh;
+					}
+				}
+			}
+
+			&__title {
+				position: relative;
+				margin-bottom: $scale-main-mini*2;
+				
+				font-family: Montserrat;
+				font-size: $text-title-size / 2;
+				line-height: 1.2;
+
+				// fade-in
+				opacity: 0;
+				animation: fade-in-left .125s ease-out forwards;
+			}
+			
+			&__tagline {
+				margin-bottom: $scale-main*1.5;
+				position: relative;
+				left: $scale-main;
+				
+				font-family: Lato;
+				font-size: $text-small-size-bigger/1.5;
+
+				// fade-in
+				opacity: 0;
+				animation: fade-in-left .125s ease-out .25s forwards;
+			}
+
+			&__button-wrapper {
+				overflow: visible;
+				display: flex;
+				flex-direction: row;
+				gap: $scale-main/2;
+				
+				// fade-in
+				opacity: 0;
+				animation: fade-in-left .125s ease-out .5s forwards;
+			}
+			&__button {
+				@include component-button($text-title-size/5);
+				width: fit-content;
+				padding-left: $scale-main/2;
+				padding-right: $scale-main/2;
+
+				transition-property: color, background-color;
+				transition-duration: .125s;
+				transition-timing-function: ease-out;
+
+				&:hover, &:focus {
+					color: $accent;
+					background-color: $background;
+
+					transition-property: color, background-color;
+					transition-duration: .125s;
+					transition-timing-function: ease-out;
+				}
+
+				&:last-child {
+					@include component-button($text-title-size/5, $background, $accent, $scale-main-mini $scale-main-mini*2);
+					
+					// max-width: .5vw;
+					padding-left: $scale-main/4;
+					padding-right: $scale-main/4;
+
+					transition-property: color, background-color;
+					transition-duration: .125s;
+					transition-timing-function: ease-out;
+
+					&:hover, &:focus {
+						background-color: $accent;
+						color: $background;
+	
+						transition-property: color, background-color;
+						transition-duration: .125s;
+						transition-timing-function: ease-out;
+					}
+				}
+			}
+		}
+	}
+
+	&__products {
+		.products {
+			&__title {
+				display: none;
+			}
+		}
+	}
+}
+
+
+// desktop
+@media(min-width: 980px) {
+	.layout {
+		&__intro {
+			.intro {
+				&__video-wrapper {
+					display: inline-block;
+					position: absolute;
+					z-index: -10;
+					right: -10vw;
+					top: 18vh;
+
+					// .video-wrapper {
+					// 	&__video {
+					// 	}
+					// }
+				}
+			}
+		}
+	}
+}

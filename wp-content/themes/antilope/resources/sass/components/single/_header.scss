@@ -21,6 +21,15 @@
 
 	@include small-dark-shadow;
 
+	&__skip-to-content {
+		position: absolute;
+		left: -100vw;
+
+		&:focus {
+			left: 10vw;
+		}
+	}
+
 	&__title {
 		display: none;
 	}
@@ -51,6 +60,10 @@
 			border-radius: 50%;
 		
 			@include small-dark-shadow;
+
+			&:focus { // because this is the default focused element
+				outline: none;
+			}
 		}
 
 		// hamburger menu functionality

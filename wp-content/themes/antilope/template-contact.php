@@ -1,7 +1,7 @@
 <?php /* Template Name: Contact page template */ ?>
 <?php get_header(); ?>
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
-	<main class="contact">
+	<main class="contact" id="main">
 		<h2 class="contact__title"><?= get_the_title(); ?></h2>
 		<p class="contact__tagline"><?= __('Envoyez-nous un mail&nbsp;!', 'atl') ?></p>
 		<div class="contact__form">

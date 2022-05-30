@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="layout">
+<main class="layout" id="main">
 	<section class="layout__intro intro">
 		<div class="intro__video-wrapper video-wrapper">
 			<video class="video-wrapper__video" poster="<?= atl_mix('/images/thumbnail1.webp') ?>" playsinline autoplay muted loop>

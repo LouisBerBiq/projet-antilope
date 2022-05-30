@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="layout">
+<main class="layout" id="main">
 	<section class="layout__products products">
 		<h2 class="products__title"><?= __('Tous nos modules', 'atl'); ?></h2>
 		// TODO: filters?

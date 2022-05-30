@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="layout">
+<main class="layout" id="main">
 	<section class="layout__questions questions">
 		<h2 class="questions__title"><?= __('Tous nos modules', 'atl'); ?></h2>
 		<form method="get" action="<?= get_home_url(); ?>" class="header__search search" role="search">

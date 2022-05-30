@@ -23,11 +23,14 @@
 	</head>
 	<body>
 		<header class="header">
+			<a class="header__skip-to-content" href="#main">
+				<?= __('Sauter au contenu','atl'); ?>
+			</a>
 			<h1 class="header__title"><?= get_bloginfo('name') ?></h1>
 			<nav class="header__nav nav">
 				<h2 clas="nav__title"><?= __('Navigation principale','atl') ?></h2>
 
-				<a href="<?= get_home_url() ?>" class="nav__home"><img src="<?= atl_mix('/images/favicon.svg'); ?>" alt=""></a>
+				<a href="<?= get_home_url() ?>" class="nav__home" autofocus><img src="<?= atl_mix('/images/favicon.svg'); ?>" alt=""></a>
 				<input class="nav__hidden hamburger-button" id="hamburger-button" type="checkbox"/>
 				<label class="nav__icon" for="hamburger-button"><span class="navicon"></span></label>
 				<ul class="nav__container">

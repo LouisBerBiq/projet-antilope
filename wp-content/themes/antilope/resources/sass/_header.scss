@@ -3,6 +3,7 @@
 
 .header {
 
+	z-index: 100;
 	position: fixed;
 	top: 0;
 	right: -100vw;
@@ -26,8 +27,31 @@
 	}
 		
 	.nav {
-		&__hidden, &__title {
-			display: none; // fixme
+		position: relative;
+
+		&__hidden, & h2 { // fixme, __title not working
+			display: none;
+		}
+
+		&__home {
+			
+			position: absolute;
+			bottom: -5vh;
+			left: -1.5vh;
+			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			background-color: $background;
+
+			width: 100px;
+			height: 100px;
+
+			padding: 20px;
+			border-radius: 50%;
+		
+			@include small-dark-shadow;
 		}
 
 		// hamburger menu functionality
@@ -54,7 +78,7 @@
 		&__icon {
 			display: inline-block;
 			position: fixed;
-			right: 10vw;
+			right: $scale-main-mini;
 			top: $scale-main-mini;
 
 			padding: $scale-main $scale-main-mini*2;
@@ -133,16 +157,18 @@
 // desktop
 @media(min-width: 980px) {
 	.header {
-		max-width: 100vw;
-		min-height: 5vh;
+		right: unset;
+
+		min-width: 100vw;
+		min-height: $header-height;
 
 		.nav {
 			&__container {
 				// fix offset
 				// fix right align
 				position: static;
-				top: 0;
-				right: 0;
+				top: unset;
+				right: unset;
 				flex-flow: row wrap;
 				align-items: flex-end; // fixme
 

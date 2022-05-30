@@ -7,6 +7,8 @@
 
 	background-color: $background2;
 
+	@include small-dark-shadow-inside;
+
 	// fade-in
 	opacity: 0;
 	animation: fade-in-bottom .125s ease-out .5s forwards;
@@ -47,12 +49,19 @@
 	&--two-column {
 		display: flex;
 		flex-flow: row nowrap;
-		gap: $scale-main-mini;
-		justify-content: space-evenly;
+		gap: $scale-main/2;
+		justify-content: space-between;
 
+		width: 100vw - $padding-general*2;
+
+		.form {
+			&__field {
+				flex: 1;
+			}
+		}
 		.field {
-			&__input { // todo: make flexible
-				width: unset;
+			&__input {
+				width: 100%!important; // todo: remove !important
 			}
 		}
 	}
@@ -66,10 +75,11 @@
 				font-family: lato;
 				font-size: $text-small-size-bigger/1.5;
 			}
+
 			&__input {
 
 				margin-bottom: $margin-items/1.5;
-				min-height: $top-margin-small/2.5;
+				min-height: $top-margin-small/2.25;
 				width: 100vw - $padding-general*2;
 				
 				outline: none; // the thingy in :focus
@@ -82,8 +92,45 @@
 				@include small-dark-shadow-inside;
 
 				&:focus {
-					border: 2.5px solid $accent;
+					border: 2.5px solid $brighter;
 				}
+			}
+
+			&__link {
+				color: $accent;
+				text-decoration: none;
+				&:focus, &:hover {
+					text-decoration: underline;
+				}
+			}
+
+			// TODO: custom checkbox
+			// &__checker {
+			// }
+
+			&__checklabel {
+				font-family: lato;
+				font-size: $text-small-size-bigger/1.5;
+			}
+		}
+
+		& textarea { // todo: better selector, dynamic number of rows & fonts + padding
+			resize: none;
+		}
+	}
+
+	&__action {
+
+		min-width: 100vw - $padding-general*2;
+		display: flex;
+		flex-direction: row-reverse;
+
+		.action {
+			&__button {
+				
+				@include component-button($text-title-size-smaller/1.5);
+				
+				@include button-transition;
 			}
 		}
 	}

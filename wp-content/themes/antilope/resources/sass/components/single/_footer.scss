@@ -103,9 +103,9 @@
 			}
 
 			&__button {
-				@include component-button($text-title-size-smaller/2, $background, $brighter, 5px 15px);
-				max-width: 4.5em;
-				max-height: 1.5em;
+				@include component-button($text-title-size-smaller/2, $background, $brighter, .5em .5em);
+				max-width: 6em;
+				max-height: 2em;
 			}
 		}
 	}

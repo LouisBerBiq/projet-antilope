@@ -20,7 +20,9 @@ main {
 @import "footer";
 @import "header";
 
-@import "index";
+@import "pages/index";
+@import "pages/contact";
+
 
 // mobile
 @media(min-width: 980px) {

@@ -1,0 +1,15 @@
+
+.lost {
+	margin-top: $scale-main * 7;
+
+	&__paragraph {
+		margin-bottom: $scale-main * 7;
+
+		font-family: Montserrat;
+		font-size: $text-title-size-smaller;
+
+		color: $accent;
+
+		text-align: center;
+	}
+}

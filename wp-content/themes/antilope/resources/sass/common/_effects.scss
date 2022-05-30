@@ -1,3 +1,11 @@
 @mixin small-dark-shadow {
-	box-shadow: 0 3px 5px rgba($dark, .25)
+	box-shadow: 0 3px 5px rgba($dark, .15);
+}
+
+@mixin small-dark-shadow-upside {
+	box-shadow: 0 -3px 5px rgba($dark, .15);
+}
+
+@mixin small-dark-shadow-inside {
+	box-shadow: 2px 2px 5px rgba($dark, .15) inset;
 }

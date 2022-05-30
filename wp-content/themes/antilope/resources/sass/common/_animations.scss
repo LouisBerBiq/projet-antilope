@@ -1,0 +1,57 @@
+// HOW TO USE
+
+@mixin fade-in-left($final-transform-value: translateX(1%), $initial-transform-value: translateX(-50%), $final-opacity-value: 100%, $initial-opacity-value: 0%) {
+	@keyframes fade-in-left {
+		from {
+			transform: $initial-transform-value;
+			opacity: $initial-opacity-value;
+		}
+		to {
+			transform: $final-transform-value;
+			opacity: $final-opacity-value;
+		}
+	}
+}
+@include fade-in-left;
+
+@mixin fade-in-right($final-transform-value: translateX(0%), $initial-transform-value: translateX(50%), $final-opacity-value: 100%, $initial-opacity-value: 0%) {
+	@keyframes fade-in-right {
+		from {
+			transform: $initial-transform-value;
+			opacity: $initial-opacity-value;
+		}
+		to {
+			transform: $final-transform-value;
+			opacity: $final-opacity-value;
+		}
+	}
+}
+@include fade-in-right;
+
+@mixin fade-in-top($final-transform-value: translateX(0%), $initial-transform-value: translateY(-50%), $final-opacity-value: 100%, $initial-opacity-value: 0%) {
+	@keyframes fade-in-top {
+		from {
+			transform: $initial-transform-value;
+			opacity: $initial-opacity-value;
+		}
+		to {
+			transform: $final-transform-value;
+			opacity: $final-opacity-value;
+		}
+	}
+}
+@include fade-in-top;
+
+@mixin fade-in-bottom($final-transform-value: translateX(0%), $initial-transform-value: translateY(50%), $final-opacity-value: 100%, $initial-opacity-value: 0%) {
+	@keyframes fade-in-bottom {
+		from {
+			transform: $initial-transform-value;
+			opacity: $initial-opacity-value;
+		}
+		to {
+			transform: $final-transform-value;
+			opacity: $final-opacity-value;
+		}
+	}
+}
+@include fade-in-bottom;

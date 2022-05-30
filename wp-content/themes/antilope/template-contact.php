@@ -59,17 +59,17 @@
 						<?= atl_get_contact_field_error('message'); ?>
 					</div>
 					<div class="form__field">
-						<label for="rules" class="form__checkbox">
-							<input type="checkbox" name="rules" id="rules" class="form__checker" value="1">
-							<span class="form__checklabel"><?= str_replace(
+						<label for="rules" class="field__checkbox">
+							<input type="checkbox" name="rules" id="rules" class="field__checker" value="1">
+							<span class="field__checklabel"><?= str_replace(
 								':conditions', 
-								'<a href="' . get_privacy_policy_url() . '">' . __('conditions générales d’utilisation','atl') . '</a>',
+								'<a href="' . get_privacy_policy_url() . '" class="field__link">' . __('conditions générales d’utilisation','atl') . '</a>',
 								__('J’ai lu et j’accepte les :conditions.', 'atl')
 							); ?></span>
 						</label>
 						<?= atl_get_contact_field_error('rules'); ?>
 					</div>
-					<div class="form__actions">
+					<div class="form__action">
 						<input type="hidden" name="action" value="submit_contact_form" />
 						<?php wp_nonce_field('nonce_check_contact_form'); ?>
 						<button type="submit" class="action__button"><?= __('Envoyer&nbsp;!', 'atl'); ?></button>

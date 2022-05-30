@@ -8,11 +8,16 @@
 @import "components/button";
 @import "components/form";
 
+@import "components/single/scrollbar";
+
+
 * {
 	line-height: normal;
 	// overflow-x: hidden; // TODO: move this elsewhere (.intro but working)
 }
-
+body {
+	@include scrollbar(.6vw, .6vw, $bright);
+}
 main {
 	padding: 0 $padding-general;
 }

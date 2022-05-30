@@ -1,0 +1,16 @@
+
+// mixin courtesy of https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/
+
+@mixin scrollbar($width: 1vw, $height: 1vh, $foreground-color: $accent, $background-color: $background) {
+	&::-webkit-scrollbar {
+		width:  $width;
+		height: $height;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+		border-radius: $scale-main;
+	}
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+}

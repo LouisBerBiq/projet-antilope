@@ -9,7 +9,7 @@
 			</video>
 		</div>
 		<h2 class="intro__title">
-			<?= str_replace( ':project', get_bloginfo('name'), __('Bienvenue <br>sur le site du <br> :project !', 'atl')); ?>
+			<?= str_replace( ':project', get_bloginfo('name'), __('Bienvenue <br>sur le site du <br> :project&nbsp;!', 'atl')); ?>
 		</h2>
 		<p class="intro__tagline"><?= __('Nous faisons des appareils pour aider l\'environement. <br>Et rendre la vie meilleure', 'atl') ?></p>
 		<div class="intro__button-wrapper">
@@ -32,7 +32,7 @@
 <div class="form__feedback">
 	<?php if(isset($_SESSION['feedback_contact_form']) && $_SESSION['feedback_contact_form']['success']): ?>
 		<p class="form__feedback sucess">
-			<?= __('Merci <br> de votre message ! à bientôt !', 'atl'); ?>
+			<?= __('Merci <br> de votre message&nbsp;!<br>à bientôt&nbsp;!', 'atl'); ?>
 		</p>
 	<?php endif; ?>
 </div>

@@ -3,7 +3,7 @@
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 	<main class="contact">
 		<h2 class="contact__title"><?= get_the_title(); ?></h2>
-		<p class="contact__tagline"><?= __('Envoyez-nous un mail !', 'atl') ?></p>
+		<p class="contact__tagline"><?= __('Envoyez-nous un mail&nbsp;!', 'atl') ?></p>
 		<div class="contact__form">
 			<!-- // in case I attempt to reinvent the wheel: https://stackoverflow.com/questions/43815499/how-to-show-form-input-fields-based-on-select-value-in-html-javascript  -->
 			<!-- // TODO: JS: switch displayed form (with <buttons>) -->
@@ -72,7 +72,7 @@
 					<div class="form__actions">
 						<input type="hidden" name="action" value="submit_contact_form" />
 						<?php wp_nonce_field('nonce_check_contact_form'); ?>
-						<button type="submit" class="form__button"><?= __('Envoyer', 'atl'); ?></button>
+						<button type="submit" class="action__button"><?= __('Envoyer&nbsp;!', 'atl'); ?></button>
 					</div>
 				</form>
 			<?php endif; ?>

@@ -183,7 +183,8 @@
 				top: $scale-main-mini/2;
 				right: unset;
 
-				flex-flow: row-reverse wrap;
+				flex-flow: row wrap;
+				justify-content: flex-end;
 			}
 
 			&__icon {

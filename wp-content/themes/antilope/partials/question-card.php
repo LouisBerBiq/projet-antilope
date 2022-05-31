@@ -1,5 +1,5 @@
 <a href="<?= get_the_permalink(); ?>" class="question__wrapper">
-	<article class="question">
+	<article class="question-big">
 		<div class="question__card card">
 			<?php if(get_field('image')): ?>
 				<figure class="card__fig">

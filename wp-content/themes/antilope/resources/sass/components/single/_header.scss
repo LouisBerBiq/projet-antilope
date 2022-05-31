@@ -55,11 +55,8 @@
 
 			background-color: $background;
 
-			width: 100px;
-			height: 100px;
-
-			padding: 20px;
-			border-radius: 50%;
+			padding: 1.5%;
+			border-radius: $round;
 		
 			@include small-dark-shadow;
 
@@ -186,7 +183,7 @@
 		.nav {
 			&__container {
 				position: relative;
-				top: $scale-main-mini/2;
+				top: $header-height/8; // TODO: fix zoom
 				right: unset;
 
 				flex-flow: row wrap;

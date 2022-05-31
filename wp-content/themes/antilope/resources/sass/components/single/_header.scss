@@ -37,7 +37,7 @@
 	.nav {
 		position: relative;
 
-		&__hidden, & h2 { // fixme, __title not working
+		&__hidden, & h2 { // fixme: __title not working
 			display: none;
 		}
 

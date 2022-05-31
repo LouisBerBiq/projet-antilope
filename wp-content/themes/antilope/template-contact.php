@@ -23,6 +23,17 @@
 				<?php else: ?>
 					<?= 'no pretext' ?>
 				<?php endif; ?> -->
+				<?php
+				$referer = $_SERVER['HTTP_REFERER'];
+				$siteUrl = get_site_url();
+				// TODO: part one var: home or product part two var: specific
+				$referer = str_replace($siteUrl, '', $referer);
+				$referer = trim($referer, '/');
+				// TODO: slashes
+				$one = preg_split('//', $referer);
+
+				var_dump($one); exit();
+				?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 					<div class="form__personality">
 						<select name="personality" id="personality" class="personality__select" multiple required>

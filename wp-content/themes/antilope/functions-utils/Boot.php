@@ -70,8 +70,16 @@ function custom_glance_items( $items = array() ) {
 	// }
 	return $items;
 }
-}
 
+// snatched from https://www.wpoptimus.com/626/7-ways-disable-update-wordpress-notifications/
+function remove_core_updates(){
+	global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+	
 add_action('init', 'atl_boot', 1);
 add_action('admin_init', 'atl_admin_boot');
 add_action('wp_dashboard_setup', 'atl_dashboard_setup');
+
+// add_filter('pre_site_transient_update_core','remove_core_updates');
+// add_filter('pre_site_transient_update_plugins','remove_core_updates');
+// add_filter('pre_site_transient_update_themes','remove_core_updates');

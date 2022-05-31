@@ -29,7 +29,7 @@ $text-title-size-smallest: 20px;
 $text-small-font: Lato;
 $text-small-weight: light;
 $text-small-size: 16px;
-$text-small-size-bigger: $scale-main-alt;
+$text-small-size-bigger: 1.7em;
 @mixin text-small($text-small-size) {
 	@include font-face($text-small-font, '../fonts/Lato-light/Lato-light-webfont', '', $text-small-size, $text-small-weight);
 }

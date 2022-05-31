@@ -22,6 +22,8 @@
 	@include small-dark-shadow;
 
 	&__skip-to-content {
+		display: none; // might not be necessary, must finish mobile layout first
+
 		position: absolute;
 		left: -100vw;
 
@@ -176,6 +178,10 @@
 
 		min-width: 100vw;
 		min-height: $header-height;
+
+		&__skip-to-content {
+			display: inline-block;
+		}
 
 		.nav {
 			&__container {

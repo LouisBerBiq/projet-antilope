@@ -12,11 +12,6 @@
 
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
 				<!-- // apparently it is discouraged by wordpress to use $_GET and instead use get_query_var() and add the variable to the global $wp object with add_query_var() but this variable is only use on this specific page so... (https://stackoverflow.com/questions/13652605/extracting-a-parameter-from-a-url-in-wordpress) -->
-				<!-- <?php if(isset($_GET['persona'])): ?>
-					<?= var_dump($_GET['persona']); ?>
-				<?php else: ?>
-					<?= 'no persona' ?>
-				<?php endif; ?> -->
 				<?php
 				if (isset($_SERVER['HTTP_REFERER'])) {
 					// TODO: check if referer comes from this site

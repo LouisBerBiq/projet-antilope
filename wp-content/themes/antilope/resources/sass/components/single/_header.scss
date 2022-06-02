@@ -191,9 +191,9 @@
 			}
 
 			&__icon {
+				display: none;
 				.navicon {
-					visibility: hidden;
-					// display: none; // for some reason this doesn't work, remove the visibility above when fixed
+					display: inherit;
 				}
 			}
 		}

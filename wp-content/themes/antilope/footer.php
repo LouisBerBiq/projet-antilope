@@ -1,7 +1,7 @@
 <footer class="footer">
 	<section class="footer__text">
 		<nav class="footer__nav nav">
-			<section class="nav__container">
+			<section class="nav__container nav__container--social-media">
 				<h2 class="nav__title">
 					<?= __('Suivez-nous sur les <br>réseaux sociaux', 'atl') ?>
 				</h2>
@@ -14,7 +14,7 @@
 			<section class="nav__container nav__separator">
 				<?= __('OU', 'atl') ?>
 			</section>
-			<section class="nav__container">
+			<section class="nav__container nav__container--contact">
 				<h2 class="nav__title">
 					<?= __('Envoyez-nous un message', 'atl') ?>
 				</h2>
@@ -22,7 +22,7 @@
 					<?= __('Contact', 'atl'); ?>
 				</a>
 			</section>
-			<section class="nav__container">
+			<section class="nav__container nav__container--about">
 				<h2 class="nav__title">
 					<?= __('À propos de nous','atl') ?>
 				</h2>
@@ -33,7 +33,7 @@
 				<?= __('Lire plus', 'atl'); ?>
 				</a>
 			</section>
-			<section class="nav__container">
+			<section class="nav__container nav__container--pages">
 				<ul class="nav__pages">
 					<?php foreach(atl_get_menu_items('footer') as $link): ?>
 					<li class="<?= $link->getBemClasses('nav__item'); ?>">

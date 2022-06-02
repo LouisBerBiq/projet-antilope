@@ -49,36 +49,43 @@ $footer-height: 10vh;
 
 				// 	border-left: 2px solid rgba($dark, .25);
 				// }
-			}
-			
-			&__container:last-child {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-end;
-				
+
+				&--about {
+					flex: 1;
+				}
+
+				&:last-child {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-end;
+					
+					min-width: 100px; // for longer names	
 				min-width: 100px; // for longer names	
-
-				.nav__item {
-					text-align: right;
-
-					a {
-						color: $background;
-						text-decoration: none;
-						&:hover {
-							text-decoration: underline;
+					min-width: 100px; // for longer names	
+	
+					.nav__item {
+						text-align: right;
+	
+						a {
+							color: $background;
+							text-decoration: none;
+							&:hover {
+								text-decoration: underline;
+							}
 						}
 					}
-				}
-
-				.nav__languages {
-					list-style: none;
-
-					li {
-						display: inline-block;
+	
+					.nav__languages {
+						list-style: none;
+	
+						li {
+							display: inline-block;
+						}
 					}
+	
 				}
-
 			}
+			
 
 			&__separator {
 				font-family: Montserrat;

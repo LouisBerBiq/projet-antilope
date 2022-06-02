@@ -142,8 +142,18 @@
 			display: inline-block; // fixme
 
 			color: $darker;
-			&:visited {
-				color: $darker;
+
+			&:last-child a {
+
+				@include component-button(16px, $brighter, $background);
+				
+				// because this is a visitable a
+				&:visited {
+					color: $background;
+					&:hover {
+						color: $brighter;
+					}
+				}
 			}
 		}
 		&__link {

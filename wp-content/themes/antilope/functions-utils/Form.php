@@ -90,32 +90,35 @@ function atl_validate_contact_form_data($data)
 
 	$errors = [];
 
-	switch ($data['personality']) {
-		case 'municipality':
-			$required = ['firstname', 'lastname', 'email', 'message'];
-			$email = ['email'];
-			break;
+	// switch ($data['personality']) {
+	// 	case 'municipality':
+	// 		$required = ['firstname', 'lastname', 'email', 'message'];
+	// 		$email = ['email'];
+	// 		break;
 
-		case 'researcher':
-			$required = ['firstname', 'lastname', 'email', 'message'];
-			$email = ['email'];
-			break;
+	// 	case 'researcher':
+	// 		$required = ['firstname', 'lastname', 'email', 'message'];
+	// 		$email = ['email'];
+	// 		break;
 
-		case 'student':
-			$required = ['firstname', 'lastname', 'email', 'message'];
-			$email = ['email'];
-			break;
+	// 	case 'student':
+	// 		$required = ['firstname', 'lastname', 'email', 'message'];
+	// 		$email = ['email'];
+	// 		break;
 
-		case 'other':
-			$required = ['firstname', 'lastname', 'email', 'message'];
-			$email = ['email'];
-			break;
+	// 	case 'other':
+	// 		$required = ['firstname', 'lastname', 'email', 'message'];
+	// 		$email = ['email'];
+	// 		break;
 
-		default:
-			$errors['personality'] = __('Personalité inconnue ou inexistante', 'atl');
-			return $errors;
-			break;
-	}
+	// 	default:
+	// 		$errors['personality'] = __('Personalité inconnue ou inexistante', 'atl');
+	// 		return $errors;
+	// 		break;
+	// }
+
+	$required = ['firstname', 'lastname', 'email', 'message'];
+	$email = ['email'];
 
 	$accepted = ['rules'];
 
@@ -125,12 +128,12 @@ function atl_validate_contact_form_data($data)
 			continue;
 		}
 
-		if(isset($email)) {
+		// if(isset($email)) {
 			if(in_array($key, $email) && ! filter_var($value, FILTER_VALIDATE_EMAIL)) {
 				$errors[$key] = 'email';
 				continue;
 			}
-		}
+		// }
 
 		if(in_array($key, $accepted) && $value !== '1') {
 			$errors[$key] = 'accepted';

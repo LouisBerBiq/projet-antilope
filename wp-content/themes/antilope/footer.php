@@ -6,9 +6,10 @@
 					<?= __('Suivez-nous sur les <br>réseaux sociaux', 'atl') ?>
 				</h2>
 				<ul class="nav__social-media social-media">
-					<li class="social-media__item"><a href="facebook.com/antilope"><img src="<?= atl_mix('/images/facebook.svg') ?>" alt="Facebook" width="16" height="16"></a></li>
-					<li class="social-media__item"><a href="instagram.com/antilope"><img src="" alt="Instagram"></a></li>
-					<li class="social-media__item"><a href="twitter.com/antilope"><img src="" alt="Twitter"></a></li>
+					<!-- // TODO: is it worth the trouble to hide this for adblockers? -->
+					<li class="social-media__item"><a href="facebook.com/antilope"><img src="<?= atl_mix('/images/facebook.svg') ?>" alt="Facebook"></a></li>
+					<li class="social-media__item"><a href="instagram.com/antilope"><img src="<?= atl_mix('/images/instagram.svg') ?>" alt="Instagram"></a></li>
+					<li class="social-media__item"><a href="twitter.com/antilope"><img src="<?= atl_mix('/images/twitter.svg') ?>" alt="Twitter"></a></li>
 				</ul>
 			</section>
 			<section class="nav__container nav__separator">

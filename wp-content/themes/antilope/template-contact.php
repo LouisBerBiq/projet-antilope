@@ -15,6 +15,7 @@
 				<?php
 				if (isset($_SERVER['HTTP_REFERER'])) {
 					// TODO: check if referer comes from this site
+					// TODO: use post title instead
 					$referer = $_SERVER['HTTP_REFERER'];
 					$siteUrl = get_site_url();
 					

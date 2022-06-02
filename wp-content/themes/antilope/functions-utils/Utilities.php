@@ -6,8 +6,8 @@ add_filter( 'use_block_editor_for_post', '__return_false' );
 // enable thumbnails in posts
 add_theme_support( 'post-thumbnails' );
 
-// taken from https://stackoverflow.com/questions/17393887/how-to-remove-posts-from-admin-sidebar-in-wordpress
 // remove uneeded menu entries
+// taken from https://stackoverflow.com/questions/17393887/how-to-remove-posts-from-admin-sidebar-in-wordpress
 function remove_menu_entries () 
 {
    remove_menu_page('edit.php');

@@ -4,8 +4,8 @@
 	<section class="layout__intro intro">
 		<div class="intro__video-wrapper video-wrapper">
 			<video class="video-wrapper__video" poster="<?= atl_mix('/images/thumbnail1.webp') ?>" playsinline autoplay muted loop>
-				<source type="video/webm" src="">
-				<source type="video/mp4" src="">
+				<!-- <source type="video/webm" src="<?= atl_mix('/videos/hero.webm') ?>"> -->
+				<!-- <source type="video/mp4" src="<?= atl_mix('/videos/hero.mp4') ?>"> -->
 			</video>
 		</div>
 		<h2 class="intro__title">

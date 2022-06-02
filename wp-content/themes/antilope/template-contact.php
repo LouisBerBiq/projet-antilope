@@ -78,10 +78,10 @@
 					<div class="form__field">
 						<label for="rules" class="field__checkbox">
 							<input type="checkbox" name="rules" id="rules" class="field__checker" value="1">
-							<span class="field__checklabel"><?= str_replace(
-								':conditions', 
+								<span class="field__checklabel"><?= str_replace(
+								':CONDITIONS', 
 								'<a href="' . get_privacy_policy_url() . '" class="field__link">' . __('conditions générales d’utilisation','atl') . '</a>',
-								__('J’ai lu et j’accepte les :conditions.', 'atl')
+								__('J’ai lu et j’accepte les :CONDITIONS.', 'atl')
 							); ?></span>
 						</label>
 						<?= atl_get_contact_field_error('rules'); ?>

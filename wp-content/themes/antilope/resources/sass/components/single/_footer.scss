@@ -1,11 +1,12 @@
 
+$footer-height: 10vh;
 
 // TODO: make footer smaller
 .footer {
 	position: relative; // needed for the copyright notice
 	
 	min-width: 100vw;
-	min-height: 10vh;
+	min-height: $footer-height;
 
 	background-color: $brighter;
 	color: $background;

@@ -28,7 +28,7 @@
 			</a>
 			<h1 class="header__title"><?= get_bloginfo('name') ?></h1>
 			<nav class="header__nav nav">
-				<h2 clas="nav__title"><?= __('Navigation principale','atl') ?></h2>
+				<h2 class="nav__title"><?= __('Navigation principale','atl') ?></h2>
 
 				<a href="<?= get_home_url() ?>" class="nav__home" autofocus><img src="<?= atl_mix('/images/favicon.svg'); ?>" alt=""></a>
 				<input class="nav__hidden hamburger-button" id="hamburger-button" type="checkbox"/>

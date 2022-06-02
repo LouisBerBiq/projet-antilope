@@ -164,4 +164,26 @@ function atl_get_contact_field_error($field)
 	return '<p class="form__error">' . __('Problèmes : ', 'atl') . $_SESSION['feedback_contact_form']['errors'][$field] . '</p>';
 }
 
+
+function atl_get_prefilled_message($preFilledText)
+{
+	// TODO: just put this somewhere else
+	$formPhrases = [
+		__('Bonjour,
+Je serais intéressé par un module :MODULE. Pouvons-nous en discuter&nbsp;?', 'atl'),
+		__('Bonjour,
+Je serais intéressé par un :MODULE. Pouvons-nous en parler un petit peux&nbsp;?', 'atl'),
+		__('Bonjour,
+vos :MODULEs m\'intéressent. Pouvons-nous avoir un moment&nbsp;?', 'atl'),
+	];
+
+	if(isset($preFilledText)) {
+		return str_replace(
+			':MODULE',
+			ucwords($preFilledText),
+			$formPhrases[array_rand($formPhrases, 1)]
+		);
+	}
+}
+
 add_action('admin_post_submit_contact_form', 'atl_handle_submit_contact_form');

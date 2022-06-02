@@ -17,22 +17,27 @@
 					<?= var_dump($_GET['persona']); ?>
 				<?php else: ?>
 					<?= 'no persona' ?>
-				<?php endif; ?>
-				<?php if(isset($_GET['pretext'])): ?>
-					<?= var_dump($_GET['pretext']); ?>
-				<?php else: ?>
-					<?= 'no pretext' ?>
 				<?php endif; ?> -->
 				<?php
-				$referer = $_SERVER['HTTP_REFERER'];
-				$siteUrl = get_site_url();
-				// TODO: part one var: home or product part two var: specific
-				$referer = str_replace($siteUrl, '', $referer);
-				$referer = trim($referer, '/');
-				// TODO: slashes
-				$one = preg_split('//', $referer);
+				if (isset($_SERVER['HTTP_REFERER'])) {
+					// TODO: check if referer comes from this site
+					$referer = $_SERVER['HTTP_REFERER'];
+					$siteUrl = get_site_url();
+					
+					// get the important part of the url
+					$referer = trim(str_replace($siteUrl, '', $referer), '/');
+					$arguments = explode('/', $referer);
 
-				var_dump($one); exit();
+					// just the handling
+					switch ($arguments[0]) {
+						case 'product':
+							$preFilledText = $arguments[1];
+							break;
+							
+							default:
+							break;
+					}
+				}
 				?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 					<div class="form__personality">
@@ -66,7 +71,9 @@
 					</div>
 					<div class="form__field">
 						<label for="message" class="field__label"><?= __('Votre message', 'atl'); ?></label>
-						<textarea name="message" id="message" class="field__input"><?= atl_get_contact_field_value('message'); ?></textarea>
+						<!-- // TODO: also it's not sanitized -->
+						<textarea name="message" id="message" class="field__input"><?= atl_get_contact_field_value('message'); ?><?= isset($preFilledText) ? atl_get_prefilled_message($preFilledText) : ''; ?></textarea>
+						<!-- // TODO: test if this doesn't conflict with below -->
 						<?= atl_get_contact_field_error('message'); ?>
 					</div>
 					<div class="form__field">

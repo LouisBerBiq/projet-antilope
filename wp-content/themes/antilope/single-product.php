@@ -8,9 +8,7 @@
 		</figure>
 		<!-- // TODO: this is a bit stupid to store all this long sentence here... coockies? -->
 		<!-- // TODO: also get_permalink doesn't keep the possible personality argument -->
-		<a class="singleProduct__cta" href="<?= add_query_arg('pretext', 
-		'Bonjour, Je serais intéressé par un module Madoqua. Pouvons-nous en discuter?', 
-		get_permalink(atl_get_page_of_template('template-contact'))); ?>">Contactez-nous pour trouver un arrangement</a>
+		<a class="singleProduct__cta" href="<?= get_permalink(atl_get_page_of_template('template-contact')); ?>">Contactez-nous pour trouver un arrangement</a>
 		<div class="singleProduct__content">
 			<?php the_content(); ?>
 		</div>

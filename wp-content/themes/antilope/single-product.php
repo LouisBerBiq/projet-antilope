@@ -6,13 +6,11 @@
 		<figure class="singleProduct__fig">
 			<?= get_the_post_thumbnail(null, 'medium_large', ['class' => 'singleProduct__thumb']); ?>
 		</figure>
-		<!-- // TODO: this is a bit stupid to store all this long sentence here... coockies? -->
-		<!-- // TODO: also get_permalink doesn't keep the possible personality argument -->
-		<a class="singleProduct__cta" href="<?= get_permalink(atl_get_page_of_template('template-contact')); ?>">Contactez-nous pour trouver un arrangement</a>
+		<a class="singleProduct__cta" href="<?= get_permalink(atl_get_page_of_template('template-contact')); ?>"><?= __('Contactez-nous pour trouver un arrangement', 'atl'); ?></a>
 		<div class="singleProduct__content">
 			<?php the_content(); ?>
 		</div>
-		<aside class="singleProduct__details">
+		<section class="singleProduct__details">
 			<h3 class="details__subtitle"><?= __('Spécifications','atl'); ?></h3>
 			<dl class="details__definitions">
 				<dt class="details__label"><?= __('prix','atl'); ?></dt>
@@ -29,7 +27,7 @@
 					<h4><?= __('Polluants mesurés', 'atl') ?></h4>
 					<ul class="details__data list">
 						<?php foreach( get_field('measured_pollutants') as $pollutant ): ?>
-							<li class="list item">
+							<li class="list__item">
 								<?= $pollutant ?>
 							</li>
 						<?php endforeach; ?>
@@ -37,7 +35,7 @@
 					<h4><?= __('Capteur environnemental', 'atl') ?></h4>
 					<ul class="details__data list">
 						<?php foreach( get_field('captured') as $captured ): ?>
-							<li class="list item">
+							<li class="list__item">
 								<?= $captured ?>
 							</li>
 						<?php endforeach; ?>
@@ -46,6 +44,15 @@
 					<?= get_field('frequency') ?> secondes
 				</dd>
 			</dl>
+		</section>
+		<aside class="singleProduct__images">
+			<ul class="images__list">
+				<?php foreach( get_field('images') as $image ): ?>
+					<li class="list__item">
+						<?= $image ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
 		</aside>
 	</main>
 	<?php endwhile; endif; ?>

@@ -1,5 +1,6 @@
 
 .singleProduct {
+	
 	$descriptionSize: 55%;
 	
 	display: flex;
@@ -44,12 +45,20 @@
 		@include component-button(1em);
 		
 		text-align: center;
+
+		// fade-in
+		opacity: 0;
+		animation: fade-in-top .125s ease-out .5s forwards;
 	}
 	
 	&__content {
 		margin-bottom: 2em;
 		
 		text-align: justify;
+
+		// fade-in
+		opacity: 0;
+		animation: fade-in-right .125s ease-out .75s forwards;
 	}
 	&__details {
 
@@ -59,10 +68,18 @@
 
 		border-radius: $scale-main;
 
+		// fade-in
+		opacity: 0;
+		animation: fade-in-right .125s ease-out .75s forwards;
+
 		.details {
 			&__subtitle {
 				display: none;
 			}
 		}
+	}
+
+	&__images {
+		float: left;
 	}
 }

@@ -12,16 +12,18 @@
 			</div>
 		</div>
 	</form>
-	<div class="questions">
-		<?php 
-		query_posts($query_string . '&orderby=isMain&order=ASC');
-		if(have_posts()): while(have_posts()): the_post();
-			if(get_field('isMain')) {
-				include(__DIR__ . '/partials/question-card.php');
-			} else {
-				include(__DIR__ . '/partials/question-line.php');
-			}
-		endwhile; else: ?>
+	<div class="faq__questions">
+		// TODO: ask Toon
+		<?php query_posts($query_string . '&isMain=true&order=ASC'); ?>
+		<?php if(have_posts()): while(have_posts()): the_post(); ?>
+			<div class="questions__main">
+			<?php if(get_field('isMain')): include(__DIR__ . '/partials/question-card.php'); ?>
+			</div>
+			<div class="questions__collapsibles">
+			<?php else: include(__DIR__ . '/partials/question-collapsible.php'); ?>	
+			</div>
+			<?php endif; ?>
+		<?php endwhile; else: ?> ?>
 			<p class="questions__empty"><?= __('La FAQ est vide…', 'atl'); ?></p>
 		<?php endif; ?>
 	</div>

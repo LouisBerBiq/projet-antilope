@@ -1,5 +1,3 @@
-// HOW TO USE
-
 @mixin fade-in-left($final-transform-value: translateX(1%), $initial-transform-value: translateX(-50%), $final-opacity-value: 100%, $initial-opacity-value: 0%) {
 	@keyframes fade-in-left {
 		from {
@@ -55,3 +53,25 @@
 	}
 }
 @include fade-in-bottom;
+
+@mixin fadeInAnimation($direction, $delay: 0s, $speed: .125s) {
+	animation: fade-in-#{$direction} $speed ease-out $delay forwards;
+}
+
+.fadeIn {
+	opacity: 0;
+	&.fadeable {
+		&--top {
+			@include fadeInAnimation(top);
+		}
+		&--bottom {
+			@include fadeInAnimation(bottom);
+		}
+		&--left {
+			@include fadeInAnimation(left);
+		}
+		&--right {
+			@include fadeInAnimation(right);
+		}
+	}
+}

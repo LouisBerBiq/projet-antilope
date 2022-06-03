@@ -1,3 +1,21 @@
+
+.question__details[open] .details__summary:before { // for some reason this doesn't work inside the tree below so this goes here
+	content: '';
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+}
+.question__details[open] > *:not(.details__summary) { // this is only works once... oh well
+	animation: sweep .25s ease-in-out forwards;
+}
+
+@keyframes sweep {
+	0%    {opacity: 0; transform: translateY(-100%)}
+	100%  {opacity: 1; transform: translateY(0)}
+}
+
 .question {
 	&-collapsible {
 		max-height: fit-content;
@@ -6,6 +24,7 @@
 		border-top: 2px solid $darker;
 
 		.details {
+
 			&__summary, &__answer {
 				font-family: lato;
 				font-size: 28px;
@@ -14,7 +33,19 @@
 			&__summary {
 
 				cursor: pointer;
+				list-style: none;
 
+				&:before {
+					content: '';
+					border: solid black;
+					border-width: 0 3px 3px 0;
+					float: right;
+					padding: 3px;
+					transform: rotate(45deg);
+
+					transition: transform .25s ease-in-out;
+					}
+				
 				.summary {
 					&__title {
 						display: inline;

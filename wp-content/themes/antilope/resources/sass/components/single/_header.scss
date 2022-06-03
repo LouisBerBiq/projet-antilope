@@ -37,7 +37,6 @@
 	}
 		
 	.nav {
-		position: relative;
 
 		&__hidden, &__title {
 			display: none;
@@ -181,21 +180,29 @@
 // desktop
 @media(min-width: 980px) {
 	.header {
+		
 		right: unset;
 
 		min-width: 100vw;
 		min-height: $header-height;
+		height: $header-height; // I have no idea why but nav 100% won't work without this and this is a problem at higher zoom levels because now the content can potentially go out of the frame
 
 		&__skip-to-content {
 			display: inline-block;
 		}
 
 		.nav {
-			&__container {
-				position: relative;
-				top: $header-height/8; // TODO: fix zoom
-				right: unset;
 
+			min-width: 100%!important;
+			min-height: 100%!important;
+
+			// to vertical align
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+			
+			&__container {
 				flex-flow: row wrap;
 				justify-content: flex-end;
 			}

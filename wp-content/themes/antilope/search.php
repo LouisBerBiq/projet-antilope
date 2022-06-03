@@ -6,7 +6,7 @@
 		<div class="results__container">
 		<?php 
 		if(($trips = atl_get_questions(10, get_search_query()))->have_posts()): while($trips->have_posts()): $trips->the_post();
-			include(__DIR__ . '/partials/question-line.php');
+			include(__DIR__ . '/partials/question-collapsible.php');
 		endwhile; else: ?>
 			<!-- // TODO: make emoji -->
 			<p class="results__empty"><?= __('Votre recherche n\'a abouti à rien &#1F641;.','atl'); ?></p>

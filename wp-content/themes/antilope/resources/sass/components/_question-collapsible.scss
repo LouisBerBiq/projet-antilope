@@ -1,0 +1,26 @@
+.question {
+	&-collapsible {
+		max-height: fit-content;
+		padding: $scale-main $scale-main-mini;
+
+		border-top: 2px solid $darker;
+
+		.details {
+			&__summary, &__answer {
+				font-family: lato;
+				font-size: 28px;
+			}
+
+			&__summary {
+
+				cursor: pointer;
+
+				.summary {
+					&__title {
+						display: inline;
+					}
+				}
+			}
+		}
+	}
+}

@@ -2,7 +2,7 @@
 <main class="layout" id="main">
 	<section class="layout__products products">
 		<h2 class="products__title"><?= __('Tous nos modules', 'atl'); ?></h2>
-		// TODO: filters?
+		<!-- // TODO: filters? -->
 		<div class="products__container">
 			<?php 
 			if(have_posts()): while(have_posts()): the_post();

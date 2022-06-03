@@ -2,13 +2,21 @@
 .lost {
 	margin-top: $scale-main * 7;
 
-	&__paragraph {
+	&__title {
 		margin-bottom: $scale-main * 7;
 
 		font-family: Montserrat;
-		font-size: $text-title-size-smaller;
+		font-size: $text-title-size*2;
 
 		color: $accent;
+
+		text-align: center;
+	}
+	&__paragraph {
+		margin-bottom: $scale-main * 7;
+
+		font-family: Lato;
+		font-size: $text-title-size-smaller;
 
 		text-align: center;
 	}

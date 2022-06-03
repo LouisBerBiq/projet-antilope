@@ -54,12 +54,12 @@
 }
 @include fade-in-bottom;
 
-@mixin fadeInAnimation($direction, $delay: 0s, $speed: .125s) {
+@mixin fadeInAnimation($direction, $delay: null, $speed: .125s) {
+	opacity: 0;
 	animation: fade-in-#{$direction} $speed ease-out $delay forwards;
 }
 
 .fadeIn {
-	opacity: 0;
 	&.fadeable {
 		&--top {
 			@include fadeInAnimation(top);

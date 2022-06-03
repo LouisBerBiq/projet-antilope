@@ -11,9 +11,7 @@
 				display: none;
 				z-index: -10;
 
-				// fade-in
-				opacity: 0;
-				animation: fade-in-right .5s ease-out forwards;
+				@include fadeInAnimation(right, null, .5s);
 
 				.video-wrapper {
 					&__video {
@@ -33,9 +31,7 @@
 				font-size: $text-title-size / 2;
 				line-height: 1.2;
 
-				// fade-in
-				opacity: 0;
-				animation: fade-in-left .125s ease-out forwards;
+				@include fadeInAnimation(left);
 			}
 			
 			&__tagline {
@@ -46,9 +42,7 @@
 				font-family: Lato;
 				font-size: $text-small-size-bigger/1.5;
 
-				// fade-in
-				opacity: 0;
-				animation: fade-in-left .125s ease-out .25s forwards;
+				@include fadeInAnimation(left, .25s);
 			}
 
 			&__button-wrapper {
@@ -57,9 +51,7 @@
 				flex-direction: row;
 				gap: $scale-main/2;
 				
-				// fade-in
-				opacity: 0;
-				animation: fade-in-left .125s ease-out .5s forwards;
+				@include fadeInAnimation(left, .5s);
 			}
 			&__button {
 				@include component-button($text-title-size/5);

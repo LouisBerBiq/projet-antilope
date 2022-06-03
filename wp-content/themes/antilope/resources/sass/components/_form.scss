@@ -9,9 +9,7 @@
 
 	@include small-dark-shadow-inside;
 
-	// fade-in
-	opacity: 0;
-	animation: fade-in-bottom .125s ease-out .5s forwards;
+	@include fadeInAnimation(bottom, .5s);
 
 	// credits go to https://stackoverflow.com/questions/52707749/how-can-i-display-select-options-as-buttons
 	// &__personality {

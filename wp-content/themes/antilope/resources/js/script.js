@@ -9,16 +9,8 @@ class ATL_Controller
 	// after DOM
 	run()
 	{
-		// TODO: "for each add event...?"
-		// TODO: add on load event
 		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => {
-			window.addEventListener("scroll", () => {
-				if (window.innerHeight + window.scrollY >= this.getElementPos(el).y || window.innerHeight + window.scrollY >= this.getElementPos(el).y) {
-
-					// is visible/above
-					el.classList.add('fadeIn');
-				}
-			});
+			window.addEventListener("scroll", this.FadeInOnVisible(el), { once: true }); // not using an arrow func makes this work on load too
 		});
 	}
 
@@ -33,6 +25,14 @@ class ATL_Controller
 		}
 		while (el != rel)
 		return {x:x, y:y};
+	}
+
+	FadeInOnVisible(el)
+	{
+		if (window.innerHeight + window.scrollY >= this.getElementPos(el).y || window.innerHeight + window.scrollY >= this.getElementPos(el).y) {
+			// is visible/above
+			el.classList.add('fadeIn');
+		}
 	}
 }
 

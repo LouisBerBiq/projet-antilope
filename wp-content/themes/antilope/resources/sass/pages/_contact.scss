@@ -7,22 +7,18 @@
 		font-family: Montserrat;
 		font-size: $text-title-size/2;
 
-		// fade-in
-		opacity: 0;
-		animation: fade-in-left .125s ease-out forwards;
+		@include fadeInAnimation(left);
 	}
 	&__tagline {
 		position: relative;
 		left: $scale-main;
-
+		
 		margin-bottom: $top-margin/1.5;
 		
 		font-family: Lato;
 		font-size: $text-small-size-bigger/1.5;
-
-		// fade-in
-		opacity: 0;
-		animation: fade-in-left .125s ease-out .25s forwards;
+		
+		@include fadeInAnimation(left, .25s);
 	}
 }
 

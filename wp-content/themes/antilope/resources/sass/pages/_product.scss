@@ -20,9 +20,7 @@
 
 		color: $accent;
 
-		// fade-in
-		opacity: 0;
-		animation: fade-in-top .125s ease-out .25s forwards;
+		@include fadeInAnimation(top, .25s);
 	}
 	&__title {
 		margin-bottom: .7em;
@@ -33,9 +31,7 @@
 
 		color: $darker;
 		
-		// fade-in
-		opacity: 0;
-		animation: fade-in-top .125s ease-out forwards;
+		@include fadeInAnimation(top);
 	}
 
 	&__cta {
@@ -46,9 +42,7 @@
 		
 		text-align: center;
 
-		// fade-in
-		opacity: 0;
-		animation: fade-in-top .125s ease-out .5s forwards;
+		@include fadeInAnimation(top, .5s);
 	}
 	
 	&__content {
@@ -56,9 +50,7 @@
 		
 		text-align: justify;
 
-		// fade-in
-		opacity: 0;
-		animation: fade-in-right .125s ease-out .75s forwards;
+		@include fadeInAnimation(right, .75s);
 	}
 	&__details {
 
@@ -68,9 +60,7 @@
 
 		border-radius: $scale-main;
 
-		// fade-in
-		opacity: 0;
-		animation: fade-in-right .125s ease-out .75s forwards;
+		@include fadeInAnimation(right, .75s);
 
 		.details {
 			&__subtitle {

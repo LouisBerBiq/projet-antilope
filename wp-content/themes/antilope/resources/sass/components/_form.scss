@@ -1,9 +1,8 @@
 
 .form {
 
-	width: 100vw;
 	margin: 0 $padding-general*-1; // because "-" in front of a variable confuses sass
-	padding: $top-margin/2 $top-margin-small;
+	padding: $top-margin/2 $padding-general;
 
 	background-color: $background2;
 
@@ -50,7 +49,7 @@
 		gap: $scale-main/2;
 		justify-content: space-between;
 
-		width: 100vw - $padding-general*2;
+		width: auto;
 
 		.form {
 			&__field {
@@ -59,7 +58,7 @@
 		}
 		.field {
 			&__input {
-				width: 100%!important; // todo: remove !important
+				width: 100%!important; // TODO: remove !important
 			}
 		}
 	}
@@ -80,12 +79,12 @@
 				min-height: $top-margin-small/2.25;
 				width: 100vw - $padding-general*2;
 				
-				outline: none; // the thingy in :focus
-				border: 2px solid rgba($dark, .25);
-				border-radius: $scale-main/2;
-
 				background-color: $background;
 				color: black;
+
+				outline: none; // for the thingy in :focus
+				border: 2px solid rgba($dark, .25);
+				border-radius: $scale-main/2;
 								
 				@include small-dark-shadow-inside;
 
@@ -95,8 +94,10 @@
 			}
 
 			&__link {
-				color: $accent;
+
 				text-decoration: none;
+				color: $accent;
+
 				&:focus, &:hover {
 					text-decoration: underline;
 				}
@@ -133,9 +134,10 @@
 
 	&__action {
 
-		min-width: 100vw - $padding-general*2;
 		display: flex;
 		flex-direction: row-reverse;
+
+		margin-top: 2em;
 
 		.action {
 			&__button {

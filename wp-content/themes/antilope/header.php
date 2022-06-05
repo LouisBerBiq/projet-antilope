@@ -51,3 +51,4 @@
 				</ul>
 			</nav>
 		</header>
+		<div class="overlay overlay--light"></div>

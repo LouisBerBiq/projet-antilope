@@ -6,8 +6,8 @@
 	z-index: 100;
 	position: fixed;
 	top: 0;
-	right: -100vw;
-	transition: right .2s ease-out;
+	// right: -100vw;
+	// transition: right .2s ease-out;
 
 	max-width: 10vw;
 	min-height: 100vh;
@@ -165,6 +165,26 @@
 				transition: color .1s ease-out;
 			}
 		}
+	}
+}
+
+// TODO: requires the mobile menu to work to continue
+.overlay {
+	
+	display: none;
+
+	z-index: 90;
+	position: fixed;
+	top: 0;
+
+	min-width: 100vw;
+	min-height: 100vh;
+
+	&--light {
+		background-color: rgba(black, .35);
+	}
+	&--dark {
+		background-color: rgba(white, .35);
 	}
 }
 

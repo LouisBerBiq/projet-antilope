@@ -80,4 +80,18 @@ function atl_get_questions($count = 10, $search = null)
 	return $trips;
 }
 
+function atl_get_product_details()
+{
+	// TODO: isset
+	
+	$images = [];
+	
+	// TODO: automatize
+	$images[] = get_field('image-1');
+	$images[] = get_field('image-2');
+	$images[] = get_field('image-3');
+
+	return $images;
+}
+
 add_action('admin_post_submit_contact_form', 'atl_handle_submit_contact_form');

@@ -54,14 +54,12 @@
 				@include fadeInAnimation(left, .5s);
 			}
 			&__button {
+
 				@include component-button($text-title-size/5);
+
 				width: fit-content;
 				padding-left: 1em;
 				padding-right: 1em;
-
-				transition-property: color, background-color;
-				transition-duration: .125s;
-				transition-timing-function: ease-out;
 
 				&:last-child {
 					@include component-button($text-title-size/5, $background, $accent, $scale-main-mini $scale-main-mini*2);

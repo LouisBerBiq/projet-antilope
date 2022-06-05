@@ -23,6 +23,8 @@
 	border-radius: $radius;
 	border: 1px solid rgba($dark, .25);
 
+	@include button-transition;
+
 	&:hover, &:focus {
 		color: $color;
 		background-color: $text-color;

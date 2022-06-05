@@ -23,7 +23,7 @@ function atl_handle_submit_contact_form()
 
 	// check nonces for CSRF
 	if(! atl_verify_contact_form_nonce()) {
-		// TODO : redirect to unauthorized page
+		// TODO : redirect to unauthorized page?
 		return;
 	}
 
@@ -170,7 +170,7 @@ function atl_get_contact_field_error($field)
 
 function atl_get_prefilled_message($preFilledText)
 {
-	// TODO: just put this somewhere else
+	// TODO: should I put this somewhere else?
 	$formPhrases = [
 		__('Bonjour,
 Je serais intéressé par un module :MODULE. Pouvons-nous en discuter&nbsp;?', 'atl'),

@@ -9,6 +9,7 @@ class ATL_Controller
 	// after DOM
 	run()
 	{
+
 		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => {
 			window.addEventListener("scroll", this.FadeInOnVisible(el), { once: true }); // not using an arrow func makes this work on load too
 		});

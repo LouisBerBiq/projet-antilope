@@ -22,7 +22,7 @@
 	@include small-dark-shadow;
 
 	&__skip-to-content {
-		display: none; // might not be necessary, must finish mobile layout first
+		display: none;
 
 		position: absolute;
 		left: -100vw;

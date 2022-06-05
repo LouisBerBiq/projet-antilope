@@ -25,6 +25,7 @@ body {
 	@include scrollbar(.6vw, .6vw, $bright);
 }
 main {
+	
 	padding: 0 $padding-general;
 
 	min-height: calc(100vh - $footer-height); // to push the footer to the end of the page

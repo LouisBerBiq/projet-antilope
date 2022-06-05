@@ -8,6 +8,7 @@
 
 		.intro {
 			&__video-wrapper {
+
 				display: none;
 				z-index: -10;
 
@@ -109,6 +110,7 @@
 		&__intro {
 			.intro {
 				&__video-wrapper {
+					
 					right: -20vw;
 					top: 15vh;
 

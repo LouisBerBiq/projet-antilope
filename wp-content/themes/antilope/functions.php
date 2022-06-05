@@ -51,6 +51,7 @@ function atl_change_title_placeholder_text($title){
 
 add_filter('enter_title_here', 'atl_change_title_placeholder_text');
 
+
 // Get products list
 function atl_get_products($count = 10)
 {

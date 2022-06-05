@@ -35,6 +35,11 @@ class ATL_Controller
 			el.classList.add('fadeIn');
 		}
 	}
+	// showPrivacyPolicy()
+	// {
+	// 	let privacyPolicyFrame = document.querySelector('.privacy__window').contentDocument;
+	// 	privacyPolicyFrame.querySelector('.header').remove();
+	// }
 }
 
 window.atl = new ATL_Controller();

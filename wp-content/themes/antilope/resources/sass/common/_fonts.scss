@@ -16,7 +16,7 @@
 }
 $text-title-font: Montserrat;
 $text-title-weight: semi-bold;
-$text-title-size: 82px;
+$text-title-size: 82px; // replace with 3em
 $text-title-size-smaller: $scale-main;
 $text-title-size-smallest: 20px;
 @mixin text-title($text-title-size) {
@@ -29,7 +29,7 @@ $text-title-size-smallest: 20px;
 $text-small-font: Lato;
 $text-small-weight: light;
 $text-small-size: 16px;
-$text-small-size-bigger: 1.7em;
+$text-small-size-bigger: 1.7em; // 1.25em
 @mixin text-small($text-small-size) {
 	@include font-face($text-small-font, '../fonts/Lato-light/Lato-light-webfont', '', $text-small-size, $text-small-weight);
 }

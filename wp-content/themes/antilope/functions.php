@@ -95,4 +95,16 @@ function atl_get_product_details()
 	return $images;
 }
 
+// function atl_order_question_archive( $query ) {
+//    if (! is_admin() && is_post_type_archive( 'question' )) {
+// 		$query->set( 'meta_query', [
+// 			[
+// 				'isMain' => true
+// 			]
+// 		]);
+// 		// $query->set( 'order', 'ASC' );
+//    }
+// }
+
+// add_filter('pre_get_posts', 'atl_order_question_archive');
 add_action('admin_post_submit_contact_form', 'atl_handle_submit_contact_form');

@@ -13,17 +13,36 @@
 		</div>
 	</form>
 	<div class="faq__questions">
-		// TODO: ask Toon
-		<?php query_posts($query_string . '&isMain=true&order=ASC'); ?>
-		<?php if(have_posts()): while(have_posts()): the_post(); ?>
-			<div class="questions__main">
-			<?php if(get_field('isMain')): include(__DIR__ . '/partials/question-card.php'); ?>
-			</div>
-			<div class="questions__collapsibles">
-			<?php else: include(__DIR__ . '/partials/question-collapsible.php'); ?>	
-			</div>
-			<?php endif; ?>
-		<?php endwhile; else: ?> ?>
+		<!-- // TODO: ask Toon -->
+		<?php 
+			$mains = [];
+			$notMains = [];
+
+			if(have_posts()): while(have_posts()): the_post();
+
+				if(get_field('isMain')) {
+					$mains[] = get_post();
+				} else {
+					$notMains[] = get_post();
+				}
+
+			endwhile; wp_reset_postdata(); endif;
+		?>
+		<div class="questions__main">
+			<?php if(count($mains) > 0) {
+				foreach ($mains as $main) {
+					include(__DIR__ . '/partials/question-card.php');
+				}
+			};?>
+		</div>
+		<div class="questions__collapsibles">
+			<?php if(count($notMains) > 0) {
+				foreach ($notMains as $notMain) {
+					include(__DIR__ . '/partials/question-collapsible.php');
+				} 
+			};?>
+		</div>
+		<?php if(count($mains) == 0 && count($notMains) == 0): ?>
 			<p class="questions__empty"><?= __('La FAQ est vide…', 'atl'); ?></p>
 		<?php endif; ?>
 	</div>

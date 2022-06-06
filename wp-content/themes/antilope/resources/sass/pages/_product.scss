@@ -80,7 +80,8 @@ $description-width: 37.5%; // 75% of 50%
 		margin-bottom: 2em;
 
 		text-align: justify;
-		line-height: 1.3;
+		line-height: 1.5;
+		font-weight: $text-small-weight2;
 
 		@include fadeInAnimation(right, .75s);
 	}
@@ -108,7 +109,7 @@ $description-width: 37.5%; // 75% of 50%
 				font-size: 1.5em;
 				font-weight: bold;
 
-				border-top: 1px solid $darker;
+				border-top: 1px solid rgba($darker, .5);
 				padding-top: .5em;
 			}
 			&__data {
@@ -119,7 +120,7 @@ $description-width: 37.5%; // 75% of 50%
 					margin-left: 1.25em;
 
 					&__item {
-						margin-bottom: .2em;
+						margin-bottom: .5em;
 					}
 				}
 				

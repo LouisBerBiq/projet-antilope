@@ -55,13 +55,25 @@
 					</dd>
 					<dt class="details__label"><?= __('Fréquence de mesure','atl'); ?></dt>
 					<dd class="details__data">
-						<ul class="details__data list">
+						<p class="details__data list">
 						<?php if(get_field('frequency')): ?>
-							<?= get_field('frequency') ?> secondes
+							<?php if((int)get_field('frequency') == 1): ?>
+								<?= str_replace(
+									':FREQUENCY', 
+									get_field('frequency'),
+									__(':FREQUENCY seconde', 'atl')
+								);?>
+							<?php else: ?>
+								<?= str_replace(
+									':FREQUENCY', 
+									get_field('frequency'),
+									__(':FREQUENCY secondes', 'atl')
+								);?>
+							<?php endif; ?>
 						<?php else: ?>
 							<span class="details__empty"><?= __('Ce module ne mesure rien','atl'); ?></span>
 						<?php endif; ?>
-						</ul>
+						</p>
 					</dd>
 				</dl>
 			</section>

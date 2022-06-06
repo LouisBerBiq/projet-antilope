@@ -18,25 +18,27 @@
 	&-collapsible {
 
 		max-height: fit-content;
-		padding: $scale-main $scale-main-mini;
+		padding: 1.6em .8em;
 
-		border-top: 2px solid $darker;
+		border-top: 1px solid rgba($darker, .25);
 
 		.details {
 
 			&__summary, &__answer {
 				font-family: lato;
-				font-size: 28px;
+				font-size: 1.75em;
 			}
 			
 			&__summary {
 				
 				cursor: pointer;
 				list-style: none;
+				
+				margin-bottom: .8em;
 
 				&:before {
 					content: '';
-					border: solid black;
+					border: solid $darker;
 					border-width: 0 3px 3px 0;
 					float: right;
 					padding: 3px;
@@ -50,6 +52,10 @@
 						display: inline;
 					}
 				}
+			}
+			&__answer {
+				// TODO: fix font weight
+				font-weight: lighter;
 			}
 		}
 	}

@@ -59,8 +59,8 @@
 		
 			@include small-dark-shadow;
 
-			&:focus { // because this is the default focused element
-				outline: none;
+			&:focus {
+				outline: none; // because this is the default focused element
 			}
 		}
 
@@ -205,7 +205,7 @@
 
 		min-width: 100vw;
 		min-height: $header-height;
-		height: $header-height; // I have no idea why but nav 100% won't work without this and this is a problem at higher zoom levels because now the content can potentially go out of the frame
+		// height: $header-height; // I have no idea why but nav 100% won't work without this and this is a problem at higher zoom levels because now the content can go out of the frame
 
 		&__skip-to-content {
 			display: inline-block;

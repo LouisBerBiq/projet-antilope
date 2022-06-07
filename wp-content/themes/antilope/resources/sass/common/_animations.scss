@@ -75,3 +75,34 @@
 		}
 	}
 }
+
+@mixin move-up-and-down() {
+	@keyframes move-up-and-down {
+		from {
+			transform: translateY(0%);
+		}
+		to {
+			transform: translateY(200%);
+		}
+	}
+}
+@include move-up-and-down;
+@mixin move-up-and-down-fade() {
+	@keyframes move-up-and-down-fade {
+		0% {
+			transform: translateY(0%);
+			opacity: 0;
+		}
+		25% {
+			opacity: 100;
+		}
+		75% {
+			opacity: 100;
+		}
+		100% {
+			transform: translateY(200%);
+			opacity: 0;
+		}
+	}
+}
+@include move-up-and-down-fade;

@@ -34,7 +34,6 @@ $text-small-font: Lato;
 
 $text-small-weight: lighter;
 $text-small-weight2: normal;
-
 $text-small-style2: italic;
 
 $text-small-size: 16px;
@@ -60,11 +59,16 @@ $text-small-size-bigger: 1.7em; // 1.25em
 
 $text-special-font: "Gentium Basic";
 
-$text-special-weight: regular;
+$text-special-weight: normal;
+$text-small-style2: italic;
 
 $text-special-size: $scale-main-alt;
 
 @mixin text-special($text-special-size) {
-	@include font-face($text-special-font, '../fonts/Gentium Basic-regular/Gentium Basic-regular-webfont', '', $text-special-size, $text-special-weight);
+	@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-size, $text-special-weight);
+}
+@mixin text-special-italic($text-special-size) {
+	@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-size, $text-special-weight, $text-small-style2);
 }
 @include text-special($text-special-size);
+@include text-special-italic($text-special-size);

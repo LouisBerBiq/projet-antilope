@@ -1,82 +1,121 @@
-.layout {
+.intro {
+	
 	margin-top: $scale-main * 7;
 
-	&__intro {
-
-		margin-bottom: $scale-main * 2;
+	&__section:nth-child(even) { // right aligned ones
+		
+	}
+	
+	&__welcome {
 		max-width: 30vw;
+		min-height: calc(100vh - $scale-main * 7); // to push the next section right below the screen (100vh - margin-top of page)
+		margin-bottom: $scale-main * 2;
+	}
+	&__scroll-down {
 
-		.intro {
-			&__video-wrapper {
+		color: $accent;
+		opacity: .5;
 
-				display: none;
-				z-index: -10;
+		font-family: Montserrat;
+		font-size: 2em;
+		text-align: center;
 
-				@include fadeInAnimation(right, null, .5s);
+		position: absolute;
+		bottom: 12vh;
+		left: 12vw;
 
-				.video-wrapper {
-					&__video {
-						min-width: 50vw;
-						min-height: 50vh;
-						max-width: 80vw;
-						max-height: 80vh;
-					}
-				}
-			}
-
-			&__title {
-				position: relative;
-				margin-bottom: $scale-main-mini*2;
-				
-				font-family: Montserrat;
-				font-size: $text-title-size / 2;
-				line-height: 1.2;
-
-				@include fadeInAnimation(left);
-			}
+		// arrow
+		// adapted from https://stackoverflow.com/a/11705764/17701651
+		&:after{
+			content: '';
+			display: inline-block;
 			
-			&__tagline {
-				margin-bottom: $scale-main*1.5;
-				position: relative;
-				left: $scale-main;
-				
-				font-family: Lato;
-				font-size: $text-small-size-bigger/1.5;
+			width: 0;
+			height: 0;
 
-				@include fadeInAnimation(left, .25s);
-			}
+			position: relative;
+			left: calc(-50% - .3em); //50% - size of arrow
+			bottom: -2em;
 
-			&__button-wrapper {
-				overflow: visible;
-				display: flex;
-				flex-direction: row;
-				gap: $scale-main/2;
-				
-				@include fadeInAnimation(left, .5s);
-			}
-			&__button {
+			border-color: $accent transparent transparent;
+			border-style: solid;
+			border-width: .3em;
 
-				@include component-button($text-title-size/5);
+			animation: move-up-and-down-fade 2s ease-in-out infinite;
+		}
+	}
 
-				width: fit-content;
-				padding-left: 1em;
-				padding-right: 1em;
+	&__video-wrapper { // this has to be separated from the rest below because idfk
 
-				&:last-child {
-					@include component-button($text-title-size/5, $background, $accent, $scale-main-mini $scale-main-mini*2);
-					
-					// max-width: .5vw;
-					padding-left: $scale-main/4;
-					padding-right: $scale-main/4;
-				}
+		display: none;
+		z-index: -10;
+
+		@include fadeInAnimation(right, null, .5s);
+
+		.video-wrapper {
+			&__video {
+				min-width: 50vw;
+				min-height: 50vh;
+				max-width: 80vw;
+				max-height: 80vh;
 			}
 		}
 	}
 
-	&__products {
-		.products {
-			&__title {
-				display: none;
+	.intro {
+		&__title {
+			position: relative;
+			margin-bottom: $scale-main-mini*2;
+			
+			font-family: Montserrat;
+			font-size: $text-title-size / 2;
+			line-height: 1.2;
+
+			@include fadeInAnimation(left);
+
+			.title {
+				&__special {
+					font-family: "Gentium Basic";
+				}
+			}
+		}
+		
+		&__tagline {
+			position: relative;
+			left: $scale-main;
+
+			max-width: 30vw;
+
+			margin-bottom: $scale-main*1.5;
+			
+			font-family: Lato;
+			font-size: $text-small-size-bigger/1.5;
+
+			@include fadeInAnimation(left, .25s);
+		}
+
+		&__button-wrapper {
+			overflow: visible;
+			display: flex;
+			flex-direction: row;
+			gap: $scale-main/2;
+			
+			@include fadeInAnimation(left, .5s);
+		}
+		&__button {
+
+			@include component-button($text-title-size/5);
+
+			width: fit-content;
+			padding-left: 1em;
+			padding-right: 1em;
+
+			&:last-child {
+				@include component-button($text-title-size/5, $background, $accent, $scale-main-mini $scale-main-mini*2);
+				
+				// max-width: .5vw;
+				padding-left: $scale-main/4;
+				padding-right: $scale-main/4;
 			}
 		}
 	}
@@ -85,41 +124,43 @@
 
 // desktop
 @media(min-width: 980px) {
-	.layout {
-		&__intro {
-			.intro {
-				&__video-wrapper {
-					display: inline-block;
-					position: absolute;
-					right: -10vw;
-					top: 18vh;
-					
-					// .video-wrapper {
-					// 	&__video {
-					// 	}
-					// }
-				}
-			}
+	.intro {
+		&__video-wrapper {
+			display: inline-block;
+			position: absolute;
+			right: -10vw;
+			top: 18vh;
 		}
 	}
 }
 
 // big desktop
 @media(min-width: 1440px) {
-	.layout {
-		&__intro {
-			.intro {
-				&__video-wrapper {
-					
-					right: -20vw;
-					top: 15vh;
+	.intro {
+		&__video-wrapper {
+			
+			right: -20vw;
+			top: 15vh;
 
-					.video-wrapper {
-						&__video { // TODO: auto-scale further
-							max-width: 100vw;
-							max-height: 100vh;
-						}
-					}
+			.video-wrapper {
+				&__video {
+					max-width: 100vw;
+					max-height: 100vh;
+				}
+			}
+		}
+	}
+}
+@media(min-width: 1800px) { // size of the image 
+	.intro {
+		&__video-wrapper {
+			
+			top: 10vh;
+
+			.video-wrapper {
+				&__video {
+					min-width: 100vw;
+					min-height: 100vh;
 				}
 			}
 		}

@@ -8,7 +8,7 @@
 		if(($trips = atl_get_questions(10, get_search_query()))->have_posts()): while($trips->have_posts()): $trips->the_post();
 			include(__DIR__ . '/partials/question-collapsible.php');
 		endwhile; else: ?>
-			<p class="results__empty"><?= __('Votre recherche n\'a abouti à rien 🙁.','atl'); ?></p>
+			<p class="results__empty"><?= __('Votre recherche n’a abouti à rien 🙁.','atl'); ?></p>
 		<?php endif; ?>
 		</div>
 	</section>

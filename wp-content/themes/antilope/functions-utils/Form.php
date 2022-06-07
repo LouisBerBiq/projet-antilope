@@ -177,7 +177,7 @@ Je serais intéressé par un module :MODULE. Pouvons-nous en discuter&nbsp;?', '
 		__('Bonjour,
 Je serais intéressé par un :MODULE. Pouvons-nous en parler un petit peux&nbsp;?', 'atl'),
 		__('Bonjour,
-vos :MODULEs m\'intéressent. Pouvons-nous avoir un moment&nbsp;?', 'atl'),
+vos :MODULEs m’intéressent. Pouvons-nous avoir un moment&nbsp;?', 'atl'),
 	];
 
 	if(isset($preFilledText)) {

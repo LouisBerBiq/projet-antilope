@@ -49,7 +49,7 @@
 								</li>
 							<?php endforeach; ?>
 						<?php else: ?>
-							<span class="details__empty"><?= __('Ce module n\'a pas de capteur environemental','atl'); ?></span>
+							<span class="details__empty"><?= __('Ce module n’a pas de capteur environemental','atl'); ?></span>
 						<?php endif; ?>
 						</ul>
 					</dd>

@@ -8,7 +8,7 @@
 			if(have_posts()): while(have_posts()): the_post();
 					include(__DIR__ . '/partials/product-card.php');
 			endwhile; else: ?>
-			<p class="products__empty"><?= __('Nous n\'avons pas de modules disponibles pour le moment', 'atl'); ?></p>
+			<p class="products__empty"><?= __('Nous n’avons pas de modules disponibles pour le moment', 'atl'); ?></p>
 			<?php endif; ?>
 		</div>
 	</section>

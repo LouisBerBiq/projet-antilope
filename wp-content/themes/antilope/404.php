@@ -7,8 +7,8 @@
 	<p class="lost__paragraph">
 		<?php
 			$messages = [
-				__('Il s\'emblerait que vous ayez pris un mauvais chemin…','atl'),
-				__('Il s\'emblerait que vous vous êtes perdu…', 'atl'),
+				__('Il s’emblerait que vous ayez pris un mauvais chemin…','atl'),
+				__('Il s’emblerait que vous vous êtes perdu…', 'atl'),
 				__('heu… essayez de revenir en arrière.', 'atl'),
 			];
 		

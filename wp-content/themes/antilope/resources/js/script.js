@@ -37,7 +37,7 @@ class ATL_Controller
 
 	FadeInOnVisible(el)
 	{
-		if (window.innerHeight + window.scrollY >= this.getElementPos(el).y || window.innerHeight + window.scrollY >= this.getElementPos(el).y) {
+		if (window.innerHeight/1.3 + window.scrollY >= this.getElementPos(el).y || window.innerHeight/1.3 + window.scrollY >= this.getElementPos(el).y) {
 			// is visible/above
 			el.classList.add('fadeIn');
 		}

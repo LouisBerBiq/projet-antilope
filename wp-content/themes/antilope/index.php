@@ -36,18 +36,6 @@
 		<?= __('L’air joue un rôle primordial pour la vie telle que nous la connaissons sur terre. Une mauvaise qualité de l’air a une incidence négative sur la santé humaine et sur l’environnement au sens large.<br>Ses conséquences sont non seulement de nature sanitaire, écologique et économique mais aussi du point de vue humain: disposer d’un air de qualité et sain doit être un droit fondamental.', 'atl') ?>
 		</p>
 	</section>
-	</section>
-	<section class="layout__products products">
-		<h2 class="products__title"><?= __('Nos derniers modules', 'atl'); ?></h2>
-		<div class="products__container">
-			<?php 
-			if(($products = atl_get_products(1))->have_posts()): while($products->have_posts()): $products->the_post();
-				include(__DIR__ . '/partials/product-card.php');
-			endwhile; else: ?>
-				<p class="products__empty"><?= __('Nous n\'avons pas de modules à afficher pour le moment', 'atl'); ?></p>
-			<?php endif; ?>
-		</div>
-	</section>
 </main>
 <div class="form__feedback">
 	<?php if(isset($_SESSION['feedback_contact_form']) && $_SESSION['feedback_contact_form']['success']): ?>

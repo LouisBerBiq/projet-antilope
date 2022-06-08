@@ -5,7 +5,7 @@
 	transition-timing-function: ease-out;
 }
 
-@mixin component-button($font-size: $text-title-size, $color: $accent, $text-color: $background, $padding: .5em 2em, $radius: $scale-main) {
+@mixin component-button($font-size: $text-title-size, $color: $accent, $text-color: $background, $padding: .5em 2em, $radius: .7em) {
 	display: flex;
 	align-items: center;
 	justify-content: center;

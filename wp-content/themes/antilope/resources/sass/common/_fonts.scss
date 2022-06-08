@@ -39,6 +39,7 @@ $text-small-style2: italic;
 $text-small-size: 16px;
 $text-small-size-bigger: 1.7em; // 1.25em
 
+// this should workd but it doesn't (https://stackoverflow.com/a/21614532/17701651) idk why
 @mixin text-small($text-small-size) {
 	@include font-face($text-small-font, '../fonts/Lato-light/Lato-light-webfont', '', $text-small-size, $text-small-weight);
 }
@@ -64,6 +65,7 @@ $text-small-style2: italic;
 
 $text-special-size: $scale-main-alt;
 
+// TODO: get bolder variant
 @mixin text-special($text-special-size) {
 	@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-size, $text-special-weight);
 }

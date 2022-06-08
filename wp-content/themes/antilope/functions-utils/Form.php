@@ -23,7 +23,6 @@ function atl_handle_submit_contact_form()
 
 	// check nonces for CSRF
 	if(! atl_verify_contact_form_nonce()) {
-		// TODO : redirect to unauthorized page?
 		return;
 	}
 

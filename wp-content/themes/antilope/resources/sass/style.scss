@@ -31,7 +31,7 @@ main {
 	min-height: calc(100vh - $footer-height); // to push the footer to the end of the page
 }
 .hidden {
-	opacity: 0!important; // TODO: idk, the other selector has more specificity
+	opacity: 0!important; // that's kind of the point if you're specifically adding a class like this to something
 
 	transition: opacity 1s ease-out;
 }

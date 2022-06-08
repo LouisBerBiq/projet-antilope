@@ -35,6 +35,7 @@ class ATL_Controller
 		return {x:x, y:y};
 	}
 
+	// TODO: fix initial visibility
 	FadeInOnVisible(el)
 	{
 		if (window.innerHeight/1.3 + window.scrollY >= this.getElementPos(el).y || window.innerHeight/1.3 + window.scrollY >= this.getElementPos(el).y) {

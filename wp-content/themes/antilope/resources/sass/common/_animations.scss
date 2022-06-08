@@ -1,3 +1,4 @@
+// TODO: all these fade-in into a function
 @mixin fade-in-left($final-transform-value: translateX(0%), $initial-transform-value: translateX(-50%), $final-opacity-value: 100%, $initial-opacity-value: 0%) {
 	@keyframes fade-in-left {
 		from {

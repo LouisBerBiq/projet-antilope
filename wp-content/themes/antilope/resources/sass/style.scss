@@ -19,7 +19,7 @@
 	line-height: normal;
 }
 html {
-	overflow: overlay;
+	overflow: overlay; // scrollbars overlay on webkit
 }
 body {
 	@include scrollbar(.6vw, .6vw, $bright);

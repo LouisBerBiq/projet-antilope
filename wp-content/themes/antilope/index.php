@@ -20,7 +20,7 @@
 			<?= __('Scrollez pour en savoir plus&nbsp;!', 'atl'); ?>
 		</div>
 	</section>
-	<section class="intro__section intro__what">
+	<section class="intro__section intro__what fadeable--left">
 		<h2 class="intro__title">
 			<?= __('Qu’est-ce que c’est?', 'atl'); ?>
 		</h2>
@@ -28,7 +28,7 @@
 		<?= __('Il s’agit d’un module portable de mesure de la qualité de l’air. Ce module a pour vocation d’être porté par un piéton ou un cycliste et mesurera en temps réel les différents polluants (NO, NO2, O3, particule fines…) présents dans l’air environnant. Le but est de créer une carte des concentrations en polluants.', 'atl') ?>
 		</p>
 	</section>
-	<section class="intro__section intro__why">
+	<section class="intro__section intro__why fadeable--left">
 		<h2 class="intro__title">
 			<?= __('Pourquoi est-ce important?', 'atl'); ?>
 		</h2>

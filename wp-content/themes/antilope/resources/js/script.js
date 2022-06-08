@@ -1,3 +1,5 @@
+import * as utilities from './utilities.js';
+
 class ATL_Controller
 {
 	// before DOM
@@ -23,23 +25,11 @@ class ATL_Controller
 		});
 	}
 
-	// snatched from https://stackoverflow.com/a/35417781/17701651
-	getElementPos(el, rel)
-	{
-		var x=0, y=0;
-		do {
-			x += el.offsetLeft;
-			y += el.offsetTop;
-			el = el.offsetParent;
-		}
-		while (el != rel)
-		return {x:x, y:y};
-	}
 
 	// TODO: fix initial visibility
 	FadeInOnVisible(el)
 	{
-		if (window.innerHeight/1.3 + window.scrollY >= this.getElementPos(el).y || window.innerHeight/1.3 + window.scrollY >= this.getElementPos(el).y) {
+		if (window.innerHeight/1.3 + window.scrollY >= utilities.getElementPos(el).y || window.innerHeight/1.3 + window.scrollY >= utilities.getElementPos(el).y) {
 			// is visible/above
 			el.classList.add('fadeIn');
 		}

@@ -34,11 +34,13 @@
 				font-size: $text-small-size;
 			}
 
-			//idk what I want to do, design this
+			// design me this, Batman!
 			&__input {
 
 				display: flex;
 				flex-flow: row nowrap;
+				width: 25vw;
+				gap: 1em;
 
 				.input {
 					&__field {
@@ -56,7 +58,10 @@
 						@include small-dark-shadow-inside;
 
 					}
+					// TODO: turn button into magnifier widget
 					&__button {
+						flex-shrink: 1;
+
 						@include component-button(16px, $bright, $background);
 					}
 				}

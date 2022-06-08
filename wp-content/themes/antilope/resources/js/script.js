@@ -1,3 +1,4 @@
+import './ads.js';
 import * as utilities from './utilities.js';
 
 class ATL_Controller
@@ -5,19 +6,31 @@ class ATL_Controller
 	// before DOM
 	constructor()
 	{
+		this.indexPages = ['/']
 
+		// if(! window.adsWereAMistake){
+		// 	console.log('blocked');
+		// } else {
+		// 	console.log('not blocked');
+		// }
 	}
 	
 	// after DOM
 	run()
 	{
+		this.handleLanguages();
 		this.handleDiscoveryArrow();
 		this.handleFadeables();
 	}
 
+	handleLanguages()
+	{
+		document.querySelectorAll('.nav__locale').forEach(element => {
+			this.indexPages.push(`/${element.innerText}/`)
+		});
+	}
 	handleDiscoveryArrow()
 	{
-		// TODO: only do this on index page
 		if ( this.indexPages.includes(window.location.pathname) ) {
 			let discoveryArrow = document.querySelector('.intro__scroll-down');
 			let discoveryArrowSize = discoveryArrow.offsetHeight;

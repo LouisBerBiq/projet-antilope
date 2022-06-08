@@ -19,6 +19,9 @@
 	font-family: Lato;
 	font-size: $text-small-size-bigger;
 
+	// TODO: fix font weight
+	font-weight: $text-small-weight!important;
+
 	@include small-dark-shadow;
 
 	&__skip-to-content {

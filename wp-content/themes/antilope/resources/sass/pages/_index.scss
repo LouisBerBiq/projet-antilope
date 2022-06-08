@@ -10,6 +10,15 @@
 		max-width: 30vw;
 		min-height: calc(100vh - $scale-main * 7); // to push the next section right below the screen (100vh - margin-top of page)
 		margin-bottom: $scale-main * 2;
+
+		.intro {
+			&__title {
+				@include fadeInAnimation(left);
+			}
+			&__tagline {
+				@include fadeInAnimation(left, .25s);
+			}
+		}
 	}
 	&__scroll-down {
 
@@ -57,14 +66,13 @@
 
 	.intro {
 		&__title {
+
 			position: relative;
 			margin-bottom: $scale-main-mini*2;
 			
 			font-family: Montserrat;
 			font-size: $text-title-size / 2;
 			line-height: 1.2;
-
-			@include fadeInAnimation(left);
 
 			.title {
 				&__special {
@@ -83,8 +91,6 @@
 			
 			font-family: Lato;
 			font-size: $text-small-size-bigger/1.5;
-
-			@include fadeInAnimation(left, .25s);
 		}
 
 		&__button-wrapper {

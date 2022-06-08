@@ -19,7 +19,8 @@ class ATL_Controller
 				let scrolled = document.scrollingElement.scrollTop;
 				this.FadeInOnVisible(el);
 				this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);
-			});});
+			});
+		});
 	}
 
 	// snatched from https://stackoverflow.com/a/35417781/17701651

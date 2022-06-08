@@ -11,16 +11,29 @@ class ATL_Controller
 	// after DOM
 	run()
 	{
+		this.handleDiscoveryArrow();
+		this.handleFadeables();
+	}
 
-		let discoveryArrow = document.querySelector('.intro__scroll-down');
-		let discoveryArrowSize = discoveryArrow.offsetHeight;
-		let discoveryArrowPosition = discoveryArrow.offsetTop;
-
-		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => { // not using an arrow func makes this work on initial load
+	handleDiscoveryArrow()
+	{
+		// TODO: only do this on index page
+		if ( this.indexPages.includes(window.location.pathname) ) {
+			let discoveryArrow = document.querySelector('.intro__scroll-down');
+			let discoveryArrowSize = discoveryArrow.offsetHeight;
+			let discoveryArrowPosition = discoveryArrow.offsetTop;
 			window.addEventListener("scroll", () => {
 				let scrolled = document.scrollingElement.scrollTop;
-				this.FadeInOnVisible(el);
 				this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);
+			});
+		}
+	}
+
+	handleFadeables()
+	{
+		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => { // not using an arrow func makes this work on initial load
+			window.addEventListener("scroll", () => {
+				this.FadeInOnVisible(el);
 			});
 		});
 	}
@@ -34,12 +47,14 @@ class ATL_Controller
 			el.classList.add('fadeIn');
 		}
 	}
+
 	FadeDiscoveryArrow(discoveryArrow, size, position, scrolled)
 	{
 		if(scrolled * 3 > position - size){
 			discoveryArrow.classList.add('hidden');
 		}
 	}
+
 	// showPrivacyPolicy()
 	// {
 	// 	let privacyPolicyFrame = document.querySelector('.privacy__window').contentDocument;

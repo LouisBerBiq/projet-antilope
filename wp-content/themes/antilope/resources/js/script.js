@@ -6,7 +6,6 @@ class ATL_Controller
 	// before DOM
 	constructor()
 	{
-		// yes, I know, the proper way would be to use an AJAX request or simply echo into the page
 		this.indexPages = ['/']
 
 		// if(! window.adsWereAMistake){
@@ -26,6 +25,7 @@ class ATL_Controller
 
 	handleLanguages()
 	{
+		// yes, I know, the proper way would be to use an AJAX request or simply echo into the page
 		document.querySelectorAll('.nav__locale').forEach((element) => {
 			this.indexPages.push(`/${element.getAttribute('lang').split('-')[0]}/`)
 		});
@@ -33,9 +33,12 @@ class ATL_Controller
 	handleDiscoveryArrow()
 	{
 		if ( this.indexPages.includes(window.location.pathname) ) {
+
 			let discoveryArrow = document.querySelector('.intro__scroll-down');
 			let discoveryArrowSize = discoveryArrow.offsetHeight;
 			let discoveryArrowPosition = discoveryArrow.offsetTop;
+
+			// TODO: throttle
 			window.addEventListener("scroll", () => {
 				let scrolled = document.scrollingElement.scrollTop;
 				this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);

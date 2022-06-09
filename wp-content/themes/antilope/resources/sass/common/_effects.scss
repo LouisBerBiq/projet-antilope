@@ -2,6 +2,10 @@
 	box-shadow: 0 3px 5px rgba($dark, .15);
 }
 
+@mixin small-bright-shadow($x-offset:1px, $y-offset:3px, $color:rgba(lighten($color, 10%), .6), $blur:10px) {
+	box-shadow: $x-offset $y-offset $blur $color;
+}
+
 @mixin small-dark-shadow-upside {
 	box-shadow: 0 -3px 5px rgba($dark, .15);
 }

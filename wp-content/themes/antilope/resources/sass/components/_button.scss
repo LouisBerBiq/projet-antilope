@@ -6,6 +6,7 @@
 }
 
 @mixin component-button($font-size: $text-title-size, $color: $accent, $text-color: $background, $padding: .5em 2em, $radius: .7em) {
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -30,7 +31,8 @@
 		background-color: $text-color;
 
 		@include button-transition;
+		@include small-bright-shadow(1px, 3px, rgba(lighten($text-color, 10%), .6));
 	}
 
-	@include small-dark-shadow;
+	@include small-bright-shadow(1px, 3px, rgba(lighten($color, 10%), .6));
 }

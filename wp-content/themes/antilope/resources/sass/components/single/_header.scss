@@ -11,7 +11,7 @@
 
 	max-width: 10vw;
 	min-height: 100vh;
-	padding: $scale-main-mini*1.5 3vw;
+	padding: .5em 1em;
 
 	background-color: $background;
 	color: $darker;
@@ -135,7 +135,7 @@
 		&__container {
 			display: flex;
 			flex-direction: column;
-			gap: $scale-main;
+			gap: 1.5em;
 
 			list-style: none;
 		}
@@ -143,11 +143,16 @@
 		&__item {
 			display: inline-block; // fixme
 
+			
 			color: $darker;
+			
+			&:last-child {
 
-			&:last-child a {
-
-				@include component-button(16px, $brighter, $background);
+				margin-left: 2em;
+				
+				& a {
+	
+				@include component-button(.6em, $brighter, $background);
 				
 				// because this is a visitable a
 				&:visited {
@@ -156,6 +161,7 @@
 						color: $brighter;
 					}
 				}
+			}
 			}
 		}
 		&__link {

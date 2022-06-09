@@ -26,8 +26,8 @@ class ATL_Controller
 
 	handleLanguages()
 	{
-		document.querySelectorAll('.nav__locale').forEach(element => {
-			this.indexPages.push(`/${element.innerText}/`)
+		document.querySelectorAll('.nav__locale').forEach((element) => {
+			this.indexPages.push(`/${element.getAttribute('lang').split('-')[0]}/`)
 		});
 	}
 	handleDiscoveryArrow()

@@ -22,7 +22,7 @@ html {
 	overflow: overlay; // scrollbars overlay on webkit
 }
 body {
-	@include scrollbar(.6vw, .6vw, $bright);
+	@include scrollbar(.6vw, .6vw, $brighter);
 }
 main {
 	

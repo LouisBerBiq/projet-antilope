@@ -62,7 +62,7 @@
 					&__button {
 						flex-shrink: 1;
 
-						@include component-button(16px, $bright, $background);
+						@include component-button(16px, $brighter, $background);
 					}
 				}
 			}

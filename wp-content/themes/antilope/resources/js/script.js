@@ -6,6 +6,7 @@ class ATL_Controller
 	// before DOM
 	constructor()
 	{
+		// yes, I know, the proper way would be to use an AJAX request or simply echo into the page
 		this.indexPages = ['/']
 
 		// if(! window.adsWereAMistake){

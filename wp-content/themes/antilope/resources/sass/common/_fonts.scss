@@ -1,6 +1,6 @@
 
-// parts picked from https://stackoverflow.com/a/18658936/17701651 and https://stackoverflow.com/a/45124084/17701651
-@mixin font-face($family, $path, $svgFontName, $size: 16px, $weight: normal, $style: normal) {
+// parts picked from https://stackoverflow.com/a/18658936/17701651 & https://stackoverflow.com/a/45124084/17701651
+@mixin font-face($family, $path, $svgFontName, $weight: normal, $style: normal) {
 	@font-face {
 		font-family: $family;
 		src: url('#{$path}.eot'); /* IE9 Compat Modes */
@@ -11,10 +11,11 @@
 		  url('#{$path}.svg##{$svgFontName}') format('svg'); /* Legacy iOS */
 		font-weight: $weight;
 		font-style: $style;
-		font-size: $size;
 	}
 }
 
+
+// title text
 
 $text-title-font: Montserrat;
 
@@ -24,39 +25,35 @@ $text-title-size: 82px; // replace with 3em
 $text-title-size-smaller: $scale-main;
 $text-title-size-smallest: 20px;
 
-@mixin text-title($text-title-size) {
-	@include font-face($text-title-font, '../fonts/montserrat-semibold/montserrat-semibold-webfont', '', $text-title-size, $text-title-weight);
-}
-@include text-title($text-title-size);
+@include font-face($text-title-font, '../fonts/montserrat-semibold/montserrat-semibold-webfont', '', $text-title-weight);
 
+
+// regular text
 
 $text-small-font: Lato;
 
-$text-small-weight: lighter;
-$text-small-weight2: normal;
+$text-small-weight-lighter: lighter;
+$text-small-weight-normal: normal;
 $text-small-style2: italic;
 
 $text-small-size: 16px;
 $text-small-size-bigger: 1.7em; // 1.25em
 
 // this should workd but it doesn't (https://stackoverflow.com/a/21614532/17701651) idk why
-@mixin text-small($text-small-size) {
-	@include font-face($text-small-font, '../fonts/Lato-light/Lato-light-webfont', '', $text-small-size, $text-small-weight);
-}
-@mixin text-small-italic($text-small-size) {
-	@include font-face($text-small-font, '../fonts/Lato-light/Lato-lightitalic-webfont', '', $text-small-size, $text-small-weight, $text-small-style2);
-}
-@mixin text-regular($text-small-size) {
-	@include font-face($text-small-font, '../fonts/lato-regular/Lato-regular-webfont', '', $text-small-size, $text-small-weight2);
-}
-@mixin text-regular-italic($text-small-size) {
-	@include font-face($text-small-font, '../fonts/lato-regular/Lato-italic-webfont', '', $text-small-size, $text-small-weight2, $text-small-style2);
-}
-@include text-small($text-small-size);
-@include text-small-italic($text-small-size-bigger);
-@include text-regular($text-small-size-bigger);
-@include text-regular-italic($text-small-size-bigger);
+// light
+@include font-face($text-small-font, '../fonts/Lato-light/Lato-light-webfont', '', $text-small-weight-lighter);
 
+// light italic
+@include font-face($text-small-font, '../fonts/Lato-light/Lato-lightitalic-webfont', '', $text-small-weight-lighter, $text-small-style2);
+
+// regular
+@include font-face($text-small-font, '../fonts/lato-regular/Lato-regular-webfont', '', $text-small-weight-normal);
+
+// regular italic
+@include font-face($text-small-font, '../fonts/lato-regular/Lato-italic-webfont', '', $text-small-weight-normal, $text-small-style2);
+
+
+// special text
 
 $text-special-font: "Gentium Basic";
 
@@ -66,11 +63,8 @@ $text-small-style2: italic;
 $text-special-size: $scale-main-alt;
 
 // TODO: get bolder variant
-@mixin text-special($text-special-size) {
-	@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-size, $text-special-weight);
-}
-@mixin text-special-italic($text-special-size) {
-	@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-size, $text-special-weight, $text-small-style2);
-}
-@include text-special($text-special-size);
-@include text-special-italic($text-special-size);
+// regular
+@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-weight);
+
+// italic
+@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-weight, $text-small-style2);

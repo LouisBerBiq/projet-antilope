@@ -81,7 +81,7 @@ $description-width: 37.5%; // 75% of 50%
 
 		text-align: justify;
 		line-height: 1.5;
-		font-weight: $text-small-weight2;
+		font-weight: $text-small-weight-normal;
 
 		@include fadeInAnimation(right, .75s);
 	}

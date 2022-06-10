@@ -16,6 +16,9 @@ $nyala : #E4803A;
 		max-width: 30%;
 		max-height: auto;
 
+		text-decoration: none;
+		color: black;
+
 		border-radius: .7em; // for the focus outline
 	}
 	
@@ -60,6 +63,10 @@ $nyala : #E4803A;
 		
 					border-top: 1px solid rgba($dark, .5);
 				}
+			}
+			&__excerpt {
+				font-family: Lato;
+				font-size: 1.2em;
 			}
 		}
 	}

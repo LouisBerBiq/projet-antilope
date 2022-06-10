@@ -21,6 +21,9 @@ class ATL_Controller
 		this.handleLanguages();
 		this.handleDiscoveryArrow();
 		this.handleFadeables();
+
+		// this is the best hack ever
+		window.scrollBy(0, 1)
 	}
 
 	handleLanguages()

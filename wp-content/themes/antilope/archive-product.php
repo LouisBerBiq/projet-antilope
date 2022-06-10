@@ -5,7 +5,7 @@
 		<p class="products__tagline"><?=
 			str_replace(
 				':AMOUNT', 
-				wp_count_posts('product')->publish, // enhancement, translate to full word
+				wp_count_posts('product')->publish, // possible enhancement, translate to full word
 				__('Tous nos :AMOUNT modules.', 'atl')
 			);?>
 		</p>

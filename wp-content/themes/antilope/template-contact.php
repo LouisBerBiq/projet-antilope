@@ -53,6 +53,7 @@
 					<div class="form__field">
 						<label for="message" class="field__label"><?= __('Votre message', 'atl'); ?></label>
 						<!-- // TODO: also it's not sanitized -->
+						<!-- // TODO: $_SESSION -->
 						<textarea name="message" id="message" class="field__input"><?= atl_get_contact_field_value('message'); ?><?= isset($preFilledText) ? atl_get_prefilled_message($preFilledText) : ''; ?></textarea>
 						<!-- // TODO: test if this doesn't conflict with below -->
 						<?= atl_get_contact_field_error('message'); ?>

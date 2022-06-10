@@ -13,7 +13,7 @@
 		</div>
 	</form>
 	<div class="faq__questions">
-		<!-- // TODO: ask Toon -->
+		<!-- // TODO: deprecate the main questions idea -->
 		<?php 
 			$mains = [];
 			$notMains = [];

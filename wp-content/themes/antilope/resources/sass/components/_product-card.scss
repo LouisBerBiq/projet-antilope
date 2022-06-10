@@ -24,6 +24,8 @@ $nyala : #E4803A;
 			&__thumb {
 				min-width: 100%;
 				min-height: auto;
+
+				filter: drop-shadow(1.5px 3px 5px rgba($dark, .5));
 			}
 		}
 	}

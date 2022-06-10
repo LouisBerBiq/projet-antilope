@@ -43,6 +43,11 @@ main {
 
 	transition: opacity 1s ease-out;
 }
+.fadeable {
+	&--top, &--bottom, &--left, &--right {
+		visibility: hidden; // we still want it to take up space
+	}
+}
 
 
 @import "pages/index";

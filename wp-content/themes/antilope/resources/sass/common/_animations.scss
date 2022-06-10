@@ -56,7 +56,8 @@
 @include fade-in-bottom;
 
 @mixin fadeInAnimation($direction, $delay: null, $speed: .125s) {
-	opacity: 0;
+	opacity: 0; // I cannot remove this because my fadeable system doesn't allow for a delay & visibility would get overwritten is included at start
+	visibility: visible;
 	animation: fade-in-#{$direction} $speed ease-out $delay forwards;
 }
 

@@ -12,8 +12,7 @@
 			</figure>
 			<div class="product__description">
 				<h3 class="description__title"><?= get_the_title(); ?></h3>
-				<!-- // TODO: possibly a read more -->
-				<p class="description__excerpt"><?= get_the_excerpt(); ?></p>
+				<p class="description__excerpt"><?= get_field('type') ?></p>
 			</div>
 		</div>
 	</article>

@@ -19,8 +19,10 @@
 	}
 
 	&__container {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-around;
+		display: grid;
+		grid: auto-flow / 1fr 1fr;
+		column-gap: 2em;
+		row-gap: 8em; // percents aren't taken into account in the height
+		justify-items: center;
 	}
 }

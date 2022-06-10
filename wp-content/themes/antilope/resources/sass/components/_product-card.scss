@@ -1,0 +1,82 @@
+$antilope : #3769B0;
+$saiga : #46C0EE;
+$oryx : #EB4A45;
+$madoqua : #A5EB51;
+$impala : #B8349D;
+$nyala : #E4803A;
+
+.product {
+
+	border-radius: .7em;
+	
+	box-shadow: 1.5px 3px 5px rgba($dark, .5) inset;
+
+	&__wrapper {
+		display: inline-block;
+	
+		max-width: 30%;
+		max-height: auto;
+
+		border-radius: .7em; // for the focus outline
+	}
+	
+	// TODO: color choice inside of dashboard
+	&[module="antilope"] {
+		background-color: $antilope;
+	}
+	&[module="saiga"] {
+		background-color: $saiga;
+	}
+	&[module="oryx"] {
+		background-color: $oryx;
+	}
+	&[module="madoqua"] {
+		background-color: $madoqua;
+	}
+	&[module="impala"] {
+		background-color: $impala;
+	}
+	&[module="nyala"] {
+		background-color: $nyala;
+	}
+
+	&__fig {
+		.fig {
+			&__thumb {
+				min-width: 100%;
+				min-height: auto;
+			}
+		}
+	}
+
+	&__description {
+
+		padding: 1.5em;
+
+		text-align: center;
+
+		background-color: $background2;
+
+		border-radius: .7em; // TODO: fix radius everywhere
+
+		.description {
+			&__title {
+
+				margin-bottom: .5em;
+
+				font-family: Montserrat;
+				font-size: 1.5em;
+
+				&::after {
+					content: '';
+					display: inline-block;
+					
+					// TODO: make not 100%
+					width: 100%;
+		
+					border-top: 1px solid rgba($dark, .5);
+				}
+			}
+		}
+	}
+}

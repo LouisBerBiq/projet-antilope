@@ -1,9 +1,10 @@
 .question {
 	&-big {
+		display: none;
 		min-width: 10vw;
 		min-height: 10vh;
 	
-		background-color: black;
+		background-color: $accent;
 	}
 
 	&__card {

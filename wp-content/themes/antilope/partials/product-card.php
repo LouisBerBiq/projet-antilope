@@ -1,14 +1,14 @@
-<a href="<?= get_the_permalink(); ?>" class="product__wrapper">
-	<article class="product">
+<a href="<?= get_the_permalink(); ?>" class="product__wrapper fadeable--bottom">
+	<article class="product" module="<?= strtolower(get_the_title()); ?>">
 		<div class="product__card">
 			<figure class="product__fig">
-				<?= get_the_post_thumbnail(null, 'medium', ['class' => 'product__thumb']); ?>
+				<?= get_the_post_thumbnail(null, '', ['class' => 'fig__thumb']); ?>
 			</figure>
-			<h3 class="product__title"><?= get_the_title(); ?></h3>
-			<p class="product__date"><time class="product__time" datetime="<?= date('c', strtotime(get_field('working_date', false, false))); ?>">
-				<?= ucfirst(date_i18n('F Y', strtotime(get_field('working_date', false, false)))); ?>
-			<p class="product__excerpt"><?= get_the_excerpt(); ?></p>
-			</time></p>
+			<div class="product__description">
+				<h3 class="description__title"><?= get_the_title(); ?></h3>
+				<!-- // TODO: possibly a read more -->
+				<p class="description__excerpt"><?= get_the_excerpt(); ?></p>
+			</div>
 		</div>
 	</article>
 </a>

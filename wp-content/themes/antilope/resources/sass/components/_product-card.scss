@@ -48,10 +48,13 @@ $nyala : #E4803A;
 
 				&::after {
 					content: '';
-					display: inline-block;
-					
-					// TODO: make not 100%
-					width: 100%;
+					display: block;
+
+					$product-card-separator-width: 60%;
+					width: $product-card-separator-width;
+
+					margin-left: calc((100% - $product-card-separator-width)/2);
+					margin-top: .5em;
 		
 					border-top: 1px solid rgba($dark, .5);
 				}

@@ -18,8 +18,11 @@ class ATL_Controller
 	// after DOM
 	run()
 	{
+		// get a list of all the available languages to create a list of all the url for index
 		this.handleLanguages();
+		// fade the arrow on 50% page scroll
 		this.handleDiscoveryArrow();
+		// handle effects of the "fadeable--" class
 		this.handleFadeables();
 
 		// this is the best hack ever
@@ -33,6 +36,7 @@ class ATL_Controller
 			this.indexPages.push(`/${element.getAttribute('lang').split('-')[0]}/`)
 		});
 	}
+
 	handleDiscoveryArrow()
 	{
 		if ( this.indexPages.includes(window.location.pathname) ) {
@@ -51,7 +55,7 @@ class ATL_Controller
 
 	handleFadeables()
 	{
-		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => { // not using an arrow func makes this work on initial load
+		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => {
 			window.addEventListener("scroll", () => {
 				this.FadeInOnVisible(el);
 			});
@@ -59,11 +63,9 @@ class ATL_Controller
 	}
 
 
-	// TODO: fix initial visibility
 	FadeInOnVisible(el)
 	{
 		if (window.innerHeight/1.3 + window.scrollY >= utilities.getElementPos(el).y || window.innerHeight/1.3 + window.scrollY >= utilities.getElementPos(el).y) {
-			// is visible/above
 			el.classList.add('fadeIn');
 		}
 	}

@@ -16,8 +16,14 @@
 
 
 * {
+
 	line-height: normal;
+
+	&:focus {
+		outline: .15rem dashed rgba($dark, .6);
+	}
 }
+
 html {
 	overflow: overlay; // scrollbars overlay on webkit
 }
@@ -25,11 +31,12 @@ body {
 	@include scrollbar(.6vw, .6vw, $brighter);
 }
 main {
-	
+	margin: calc($top-margin-smaller + $header-height) 0;
 	padding: 0 $padding-general;
 
-	min-height: calc(100vh - $footer-height); // to push the footer to the end of the page
+	// min-height: calc(100vh - $footer-height); // to push the footer to the end of the page
 }
+
 .hidden {
 	opacity: 0!important; // that's kind of the point if you're specifically adding a class like this to something
 

@@ -1,4 +1,3 @@
-$antilope : #3769B0;
 $saiga : #46C0EE;
 $oryx : #EB4A45;
 $madoqua : #A5EB51;
@@ -20,26 +19,6 @@ $nyala : #E4803A;
 		border-radius: .7em; // for the focus outline
 	}
 	
-	// TODO: color choice inside of dashboard
-	&[module="antilope"] {
-		background-color: $antilope;
-	}
-	&[module="saiga"] {
-		background-color: $saiga;
-	}
-	&[module="oryx"] {
-		background-color: $oryx;
-	}
-	&[module="madoqua"] {
-		background-color: $madoqua;
-	}
-	&[module="impala"] {
-		background-color: $impala;
-	}
-	&[module="nyala"] {
-		background-color: $nyala;
-	}
-
 	&__fig {
 		.fig {
 			&__thumb {

@@ -78,6 +78,7 @@
 	}
 }
 
+
 @mixin move-up-and-down() {
 	@keyframes move-up-and-down {
 		from {
@@ -89,6 +90,7 @@
 	}
 }
 @include move-up-and-down;
+
 @mixin move-up-and-down-fade() {
 	@keyframes move-up-and-down-fade {
 		0% {

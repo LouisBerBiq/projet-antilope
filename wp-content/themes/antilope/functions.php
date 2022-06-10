@@ -83,14 +83,21 @@ function atl_get_questions($count = 10, $search = null)
 
 function atl_get_product_details()
 {
-	// TODO: isset
-	
+	// this function wouldn't even be a thing if I could use the gallery field, 
+	// and I made it automatic to boot while I could leave it as 3 chaining if statements.
+	// TONOTDO: refactor
+
 	$images = [];
 	
-	// TODO: automatize
-	$images[] = get_field('image-1');
-	$images[] = get_field('image-2');
-	$images[] = get_field('image-3');
+	$variableBit = 'image-';
+	$i = 1;
+	$variable = $variableBit . $i;
+
+	while (get_field($variable) !== null && get_field($variable) !== false) {
+		$images[] = get_field($variable);
+		$i++;
+		$variable = $variableBit . $i;
+	}
 
 	return $images;
 }

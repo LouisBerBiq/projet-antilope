@@ -42,8 +42,8 @@
 		&__home {
 			
 			position: absolute;
-			bottom: -5vh;
-			left: -1.5vh;
+			bottom: -75%;
+			left: .5%;
 			
 			display: flex;
 			justify-content: center;
@@ -51,7 +51,7 @@
 
 			background-color: $background;
 
-			padding: 1.5%;
+			padding: .8em;
 			border-radius: $round;
 		
 			@include small-dark-shadow;
@@ -232,17 +232,13 @@
 		right: unset;
 
 		min-width: 100vw;
-		min-height: $header-height;
-		// height: $header-height; // I have no idea why but nav 100% won't work without this and this is a problem at higher zoom levels because now the content can go out of the frame
+		padding: .5em 1.5em;
 
 		&__skip-to-content {
 			display: inline-block;
 		}
 
 		.nav {
-
-			min-width: 100%!important;
-			min-height: 100%!important;
 
 			// to vertical align
 			display: flex;

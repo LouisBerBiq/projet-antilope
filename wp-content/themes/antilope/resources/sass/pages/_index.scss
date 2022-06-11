@@ -30,8 +30,7 @@
 		text-align: center;
 
 		position: absolute;
-		bottom: 15vh;
-		left: 12vw;
+		// position set into media queries
 
 		user-select: none;
 
@@ -135,10 +134,26 @@
 	}
 }
 
+// mobile
+@media(max-width: 980px) {
+	.intro {
+		&__scroll-down {
+			bottom: 15vh;
+			left: unset;
+			right: 12vw;
+		}
+	}
+}
 
 // desktop
 @media(min-width: 980px) {
 	.intro {
+		&__scroll-down {
+			bottom: 15vh;
+			left: 12vw;
+			right: unset;
+		}
+		
 		&__video-wrapper {
 
 			display: inline-block;

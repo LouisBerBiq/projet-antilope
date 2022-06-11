@@ -181,10 +181,20 @@
 	}
 }
 
-// TODO: requires the mobile menu to work to continue
 .overlay {
+
+	pointer-events: none; // instead of display or visibility so I can animate it smoothly
 	
-	display: none;
+	opacity: 0;
+	transition: opacity .125s ease-out;
+	
+	&--on {
+		pointer-events: auto;
+		cursor: pointer;
+
+		opacity: 100;
+		transition: opacity .125s ease-out;
+	}
 
 	z-index: 90;
 	position: fixed;
@@ -265,13 +275,10 @@
 				flex-flow: row wrap;
 				justify-content: flex-end;
 			}
-
-			&__icon {
-				display: none;
-				.navicon {
-					display: inherit;
-				}
-			}
 		}
+	}
+
+	.overlay {
+		display: none;
 	}
 }

@@ -6,12 +6,6 @@
 	z-index: 100;
 	position: fixed;
 	top: 0;
-	// right: -100vw;
-	// transition: right .2s ease-out;
-
-	max-width: 10vw;
-	min-height: 100vh;
-	padding: .5em 1em;
 
 	background-color: $background;
 	color: $darker;
@@ -197,14 +191,39 @@
 	}
 }
 
-// // tablet
-// @media(min-width: 768px) {
-// }
 
-// // small desktop
-// @media(min-width: 800px) {
-	
-// }
+// mobile
+@media(max-width: 980px) {
+	.header {
+		right: 0;
+
+		min-width: 60vw;
+		min-height: 100vh;
+
+		padding: .5em 1em;
+
+		transform: translatex(100%);
+		transition: transform .125s ease-out;
+		
+		&--open {
+			transform: none;
+			transition: transform .125s ease-out;
+		}
+
+		&__nav {
+
+			margin-top: 10vh;
+
+			.nav {
+				&__container {
+					flex-direction: column;
+					align-items: flex-end;
+				}
+			}
+		}
+	}
+}
+
 	
 // desktop
 @media(min-width: 980px) {

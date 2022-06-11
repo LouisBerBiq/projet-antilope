@@ -22,6 +22,7 @@
 		<![endif]-->
 	</head>
 	<body>
+		<span class="hamburger"><span class="navicon"></span></span>
 		<header class="header">
 			<a class="header__skip-to-content" href="#main">
 				<?= __('Sauter au contenu','atl'); ?>
@@ -31,8 +32,6 @@
 				<h2 class="nav__title"><?= __('Navigation principale','atl') ?></h2>
 
 				<a href="<?= get_home_url() ?>" class="nav__home" autofocus><img src="<?= atl_mix('/images/favicon.svg'); ?>" alt=""></a>
-				<input class="nav__hidden hamburger-button" id="hamburger-button" type="checkbox"/>
-				<label class="nav__icon" for="hamburger-button"><span class="navicon"></span></label>
 				<ul class="nav__container">
 					<?php foreach(atl_get_menu_items('header') as $link): ?>
 					<li class="<?= $link->getBemClasses('nav__item'); ?>">

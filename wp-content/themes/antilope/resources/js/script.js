@@ -20,6 +20,8 @@ class ATL_Controller
 	{
 		// get a list of all the available languages to create a list of all the url for index
 		this.handleLanguages();
+		// handle mobile sidebar
+		this.handleSidebar();
 		// fade the arrow on 50% page scroll
 		this.handleDiscoveryArrow();
 		// handle effects of the "fadeable--" class
@@ -35,6 +37,29 @@ class ATL_Controller
 		document.querySelectorAll('.nav__locale').forEach((element) => {
 			this.indexPages.push(`/${element.getAttribute('lang').split('-')[0]}/`)
 		});
+	}
+	
+	handleSidebar() {
+
+		let sidebarButton = document.querySelector('.hamburger');
+		let navicon = document.querySelector('.navicon');
+		let overlay = document.querySelector('.overlay');
+		let header = document.querySelector('.header');
+		let container = document.querySelector('.nav__container');
+
+		sidebarButton.addEventListener('click', () => {
+			this.togglesidebar(navicon, header, overlay);
+		});
+		overlay.addEventListener('click', () => {
+			this.togglesidebar(navicon, header, overlay);
+		});
+	}
+
+	togglesidebar(navicon, header, overlay)
+	{
+		navicon.classList.toggle('navicon--crossed');
+		header.classList.toggle('header--open');
+		overlay.classList.toggle('overlay--on');
 	}
 
 	handleDiscoveryArrow()

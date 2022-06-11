@@ -1,6 +1,81 @@
 
 // hamburger menu taken from https://codeconvey.com/responsive-hamburger-menu-css-only/
 
+// hamburger menu button
+.hamburger {
+
+	display: block;
+
+	z-index: 200;
+	position: fixed;
+	right: $scale-main-mini;
+	top: $scale-main-mini;
+
+	padding: $scale-main $scale-main-mini*2;
+	cursor: pointer;
+
+	&::before { // this will be the solution until I make the icon dispear depending on the scrolling direction
+		content: '';
+		display: block;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		background-color: $background;
+		
+		filter: blur(10px);
+	}
+	
+	// actual icon
+	.navicon {
+		display: inherit;
+		position: relative;
+
+		width: $scale-main-mini*4;
+		height: 3px;
+		border-radius: $scale-main-mini;
+
+		background: #000;
+
+		transition: background .2s ease-out;
+		
+		&::before, &::after {
+			content: '';
+			display: block;
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+			border-radius: $scale-main-mini;
+
+			background: #000;
+
+			transition: all .2s ease-out;
+		}
+		&::before {
+			top: $scale-main-mini*1.5;
+		}
+		&::after {
+			top: -$scale-main-mini*1.5;
+		}
+
+		&--crossed  {
+			& {
+				background: transparent;
+			}
+			&::before {
+				transform: translateY(-$scale-main-mini*1.5) rotate(-45deg);
+			}
+			&::after {
+				transform: translateY($scale-main-mini*1.5) rotate(45deg);
+			}
+		}
+	}
+}
+
 .header {
 
 	z-index: 100;
@@ -58,71 +133,6 @@
 
 			&:focus {
 				outline: none; // because this is the default focused element
-			}
-		}
-
-		// hamburger menu functionality
-		.hamburger-button {
-			display: none;
-		}
-		.hamburger-button:checked  {
-			& ~ .nav__icon .navicon {
-				background: transparent;
-			}
-			& ~ .nav__icon .navicon:before {
-				transform: translateY(-$scale-main-mini*1.5) rotate(-45deg);
-			}
-			& ~ .nav__icon .navicon:after {
-				transform: translateY($scale-main-mini*1.5) rotate(45deg);
-			}
-
-			& ~ .nav__container {
-				right: 150px;
-			}
-		}
-
-		// hamburger menu button
-		&__icon {
-			display: inline-block;
-			position: fixed;
-			right: $scale-main-mini;
-			top: $scale-main-mini;
-
-			padding: $scale-main $scale-main-mini*2;
-			cursor: pointer;
-			
-			// actual icon
-			.navicon {
-				display: block;
-				position: relative;
-
-				width: $scale-main-mini*4;
-				height: 3px;
-				border-radius: $scale-main-mini;
-
-				background: #000;
-
-				transition: background .2s ease-out;
-				
-				&::before, &::after {
-					content: '';
-					display: block;
-					position: absolute;
-
-					width: 100%;
-					height: 100%;
-					border-radius: $scale-main-mini;
-
-					background: #000;
-
-					transition: all .2s ease-out;
-				}
-				&::before {
-					top: $scale-main-mini*1.5;
-				}
-				&::after {
-					top: -$scale-main-mini*1.5;
-				}
 			}
 		}
 
@@ -227,6 +237,11 @@
 	
 // desktop
 @media(min-width: 980px) {
+
+	.hamburger {
+		display: none;
+	}
+
 	.header {
 		
 		right: unset;

@@ -1,4 +1,3 @@
-import './ads.js';
 import * as utilities from './utilities.js';
 
 class ATL_Controller
@@ -7,12 +6,6 @@ class ATL_Controller
 	constructor()
 	{
 		this.indexPages = ['/']
-
-		// if(! window.adsWereAMistake){
-		// 	console.log('blocked');
-		// } else {
-		// 	console.log('not blocked');
-		// }
 	}
 	
 	// after DOM

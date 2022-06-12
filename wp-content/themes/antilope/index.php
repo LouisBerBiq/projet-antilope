@@ -37,12 +37,11 @@
 		</p>
 	</section>
 </main>
-<div class="form__feedback">
-	<?php if(isset($_SESSION['feedback_contact_form']) && $_SESSION['feedback_contact_form']['success']): ?>
-		<p class="form__feedback sucess">
-			<?= __('Merci <br> de votre message&nbsp;!<br>à bientôt&nbsp;!', 'atl'); ?>
-		</p>
-	<?php endif; ?>
-</div>
+<?php if(isset($_SESSION['feedback_contact_form']) && $_SESSION['feedback_contact_form']['success']): ?>
+	<div class="form__feedback form__feedback--success">
+		<?= __('Merci de votre message&nbsp;!<br>à bientôt&nbsp;!', 'atl'); ?>
+	</div>
+	<?php unset($_SESSION['feedback_contact_form']); ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>

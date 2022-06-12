@@ -34,10 +34,15 @@
 
 			&__input {
 
-				margin-bottom: $margin-items/1.5;
 				min-height: $top-margin-small/2.25;
 				width: 100vw - $padding-general*2;
+
+				padding-left: 1em;
+				margin-bottom: $margin-items/1.5;
 				
+				font-family: Lato;
+				font-size: 1.2em;
+
 				background-color: $background;
 				color: black;
 
@@ -105,6 +110,56 @@
 				
 				@include button-transition;
 			}
+		}
+	}
+
+	&__errors {
+		display: block;
+		font-family: Lato;
+		font-size: 1.5em;
+		text-align: right;
+
+		color: red;
+	}
+	
+	&__error {
+		font-family: Lato;
+		font-size: 1.3em;
+
+		color: red;
+	}
+
+	&__feedback {
+
+		display: block;
+		z-index: 100;
+		max-width: 80%;
+		min-height: 5%;
+
+		position: fixed;
+		bottom: 2em;
+		right: 2em;
+
+		padding: 1em;
+
+		font-family: Montserrat;
+		font-size: 1.2em;
+		text-align: center;
+
+		border-radius: .7em;
+
+		user-select: none;
+
+		@include small-dark-shadow;
+		animation: just-disappear .5s ease-in 5s forwards;
+
+		&--success {
+			color: $background;
+			background-color: $accent;
+		}
+		&--failure {
+			color: black;
+			background-color: red;
 		}
 	}
 }

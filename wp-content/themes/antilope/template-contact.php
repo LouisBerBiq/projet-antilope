@@ -30,9 +30,6 @@
 				}
 				?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
-					<?php if(isset($_SESSION['feedback_contact_form']) && ! $_SESSION['feedback_contact_form']['success']) : ?>
-						<p class="form__errors"><?= __('Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'atl'); ?></p>
-					<?php endif; ?>
 					<div class="form--two-column">
 						<div class="form__field">
 							<label for="lastname" class="field__label"><?= __('Votre nom', 'atl'); ?></label>
@@ -69,6 +66,9 @@
 						</label>
 						<?= atl_get_contact_field_error('rules'); ?>
 					</div>
+					<?php if(isset($_SESSION['feedback_contact_form']) && ! $_SESSION['feedback_contact_form']['success']) : ?>
+						<p class="form__errors"><?= __('Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'atl'); ?></p>
+					<?php endif; ?>
 					<div class="form__action">
 						<input type="hidden" name="action" value="submit_contact_form" />
 						<?php wp_nonce_field('nonce_check_contact_form'); ?>

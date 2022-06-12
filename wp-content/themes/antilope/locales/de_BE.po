@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-26 16:53+0200\n"
-"PO-Revision-Date: 2022-05-26 16:55+0200\n"
+"POT-Creation-Date: 2022-06-12 23:25+0200\n"
+"PO-Revision-Date: 2022-06-12 23:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_BE\n"
@@ -15,60 +15,181 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-product.php:4 archive-question.php:4
+#: 404.php:5
+msgid "Oops…"
+msgstr ""
+
+#: 404.php:10
+msgid "Il s’emblerait que vous ayez pris un mauvais chemin…"
+msgstr ""
+
+#: 404.php:11
+msgid "Il s’emblerait que vous vous êtes perdu…"
+msgstr ""
+
+#: 404.php:12
+msgid "heu… essayez de revenir en arrière."
+msgstr ""
+
+#: archive-product.php:4
 msgid "Tous nos modules"
 msgstr ""
 
-#: archive-product.php:11
-msgid "Nous n'avons pas de modules disponibles pour le moment"
+#: archive-product.php:9
+msgid "Tous nos :AMOUNT modules."
 msgstr ""
 
-#: archive-question.php:7
+#: archive-product.php:18
+msgid "Nous n’avons pas de modules disponibles pour le moment"
+msgstr ""
+
+#: archive-question.php:4
+msgid "FAQ"
+msgstr ""
+
+#: archive-question.php:5
+msgid ""
+"Vous avez des questions?<br>En-Voici quelque unes courrament posées&nbsp;!"
+msgstr ""
+
+#: archive-question.php:8
 msgid "rechercher une question?"
 msgstr ""
 
-#: archive-question.php:9
+#: archive-question.php:11
 msgid "Rechercher"
 msgstr ""
 
-#: archive-question.php:21
+#: archive-question.php:46
 msgid "La FAQ est vide…"
 msgstr ""
 
-#: functions-utils/form.php:115
-msgid "Personalité inconnue ou inexistante"
+#: footer.php:6
+msgid "Suivez-nous sur les <br>réseaux sociaux"
 msgstr ""
 
-#: functions-utils/form.php:164
+#: footer.php:15
+msgid "OU"
+msgstr ""
+
+#: footer.php:19
+msgid "Envoyez-nous un message"
+msgstr ""
+
+#: footer.php:22
+msgid "Contact"
+msgstr ""
+
+#: footer.php:27
+msgid "À propos de nous"
+msgstr ""
+
+#: footer.php:30
+msgid ""
+"In quibus doctissimi illi veteres inesse quiddam caeleste et divinum "
+"putaverunt. Qualem igitur hominem natura inchoavit."
+msgstr ""
+
+#: footer.php:33
+msgid "Lire plus"
+msgstr ""
+
+#: functions-utils/form.php:96
+msgid "Ce champ est requis"
+msgstr ""
+
+#: functions-utils/form.php:101
+msgid "Cet e-mail n’est pas valide"
+msgstr ""
+
+#: functions-utils/form.php:106
+msgid "Vous devez accepter les conditions pour envoyer votre message"
+msgstr ""
+
+#: functions-utils/form.php:134
 msgid "Problèmes : "
+msgstr ""
+
+#: functions-utils/form.php:142
+msgid ""
+"Bonjour,\n"
+"Je serais intéressé par un module :MODULE. Pouvons-nous en discuter&nbsp;?"
+msgstr ""
+
+#: functions-utils/form.php:144
+msgid ""
+"Bonjour,\n"
+"Je serais intéressé par un :MODULE. Pouvons-nous en parler un petit "
+"peux&nbsp;?"
+msgstr ""
+
+#: functions-utils/form.php:146
+msgid ""
+"Bonjour,\n"
+"vos :MODULEs m’intéressent. Pouvons-nous avoir un moment&nbsp;?"
 msgstr ""
 
 #: header.php:5
 msgid "mesure, pollution, qualité de l’air, système embarqué, capteurs"
 msgstr ""
 
-#: header.php:24
+#: header.php:28
+msgid "Sauter au contenu"
+msgstr ""
+
+#: header.php:32
 msgid "Navigation principale"
 msgstr ""
 
-#: index.php:6
-msgid "Antilope"
+#: index.php:12
+msgid ""
+"Bienvenue <br>sur le site du<br>projet <span class=\"title__special"
+"\">Antilope</span>&nbsp;!"
 msgstr ""
 
-#: index.php:9
-msgid "My latest works"
-msgstr ""
-
-#: index.php:10
-msgid "Voir tous nos modules"
+#: index.php:14
+msgid ""
+"Nous faisons des appareils pour aider l’environement. <br>Et rendre la vie "
+"meilleure"
 msgstr ""
 
 #: index.php:16
-msgid "We have no modules on display"
+msgid "Voir tous nos modules"
+msgstr ""
+
+#: index.php:20
+msgid "Scrollez pour en savoir plus&nbsp;!"
 msgstr ""
 
 #: index.php:25
-msgid "Merci <br> de votre message ! à bientôt !"
+msgid "Qu’est-ce que c’est?"
+msgstr ""
+
+#: index.php:28
+msgid ""
+"Il s’agit d’un module portable de mesure de la qualité de l’air. Ce module a "
+"pour vocation d’être porté par un piéton ou un cycliste et mesurera en temps "
+"réel les différents polluants (NO, NO2, O3, particule fines…) présents dans "
+"l’air environnant. Le but est de créer une carte des concentrations en "
+"polluants."
+msgstr ""
+
+#: index.php:33
+msgid "Pourquoi est-ce important?"
+msgstr ""
+
+#: index.php:36
+msgid ""
+"L’air joue un rôle primordial pour la vie telle que nous la connaissons sur "
+"terre. Une mauvaise qualité de l’air a une incidence négative sur la santé "
+"humaine et sur l’environnement au sens large.<br>Ses conséquences sont non "
+"seulement de nature sanitaire, écologique et économique mais aussi du point "
+"de vue humain: disposer d’un air de qualité et sain doit être un droit "
+"fondamental."
+msgstr ""
+
+#: index.php:42
+msgid "Merci de votre message&nbsp;!<br>à bientôt&nbsp;!"
 msgstr ""
 
 #: menus/menu.php:47
@@ -80,69 +201,85 @@ msgid "Navigation du bas de page"
 msgstr ""
 
 #: search.php:5
-msgid "Les question correspondant à votre recherche"
+msgid "Les questions correspondantes à votre recherche&nbsp;:"
 msgstr ""
 
-#: search.php:12
-msgid "Votre recherche n'a abouti à rien &#1F641;."
+#: search.php:11
+msgid "Votre recherche n’a abouti à rien 🙁."
 msgstr ""
 
-#: single-product.php:17
+#: single-product.php:21
+msgid "Contactez-nous pour trouver un arrangement"
+msgstr ""
+
+#: single-product.php:26
 msgid "Spécifications"
 msgstr ""
 
-#: single-product.php:19
-msgid "prix"
-msgstr ""
-
-#: single-product.php:24
-msgid "Aucun prix n'a été décidé pour le moment."
-msgstr ""
-
-#: single-product.php:27
-msgid "specs"
-msgstr ""
-
-#: single-product.php:30
+#: single-product.php:28
 msgid "Polluants mesurés"
 msgstr ""
 
 #: single-product.php:38
+msgid "Ce module ne mesure aucun polluant"
+msgstr ""
+
+#: single-product.php:42
 msgid "Capteur environnemental"
 msgstr ""
 
-#: single-product.php:46
+#: single-product.php:52
+msgid "Ce module n’a pas de capteur environemental"
+msgstr ""
+
+#: single-product.php:56
 msgid "Fréquence de mesure"
 msgstr ""
 
-#: template-contact.php:36
-msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
+#: single-product.php:64
+msgid ":FREQUENCY seconde"
 msgstr ""
 
-#: template-contact.php:39
+#: single-product.php:70
+msgid ":FREQUENCY secondes"
+msgstr ""
+
+#: single-product.php:74
+msgid "Ce module ne mesure rien"
+msgstr ""
+
+#: template-contact.php:6
+msgid "Envoyez-nous un mail&nbsp;!"
+msgstr ""
+
+#: template-contact.php:35
 msgid "Votre nom"
 msgstr ""
 
-#: template-contact.php:44
+#: template-contact.php:40
 msgid "Votre prénom"
 msgstr ""
 
-#: template-contact.php:49
+#: template-contact.php:46
 msgid "Votre adresse e-mail"
 msgstr ""
 
-#: template-contact.php:54
+#: template-contact.php:51
 msgid "Votre message"
 msgstr ""
 
-#: template-contact.php:63
+#: template-contact.php:61
 msgid "conditions générales d’utilisation"
 msgstr ""
 
-#: template-contact.php:64
-msgid "J’ai lu et j’accepte les :conditions."
+#: template-contact.php:62
+msgid "J’ai lu et j’accepte les :CONDITIONS."
 msgstr ""
 
-#: template-contact.php:72
-msgid "Envoyer"
+#: template-contact.php:68
+msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
+msgstr ""
+
+#: template-contact.php:73
+msgid "Envoyer&nbsp;!"
 msgstr ""

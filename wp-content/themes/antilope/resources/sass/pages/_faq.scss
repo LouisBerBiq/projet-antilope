@@ -25,7 +25,7 @@
 		.search {
 			&__container {
 				display: flex;
-				flex-flow: column nowrap;
+				flex-direction: column;
 				align-items: center;
 				gap: $scale-main-mini;
 			}
@@ -38,8 +38,6 @@
 			&__input {
 
 				display: flex;
-				flex-flow: row nowrap;
-				width: 25vw;
 				gap: 1em;
 
 				.input {
@@ -71,5 +69,35 @@
 
 	&__questions {
 		margin-top: $top-margin/1.5;
+	}
+}
+
+// smaller mobile
+@media(max-width: 540px) {
+	.search {
+		&__input {
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+}
+
+// mobile
+@media(min-width: 540px) and (max-width: 980px) {
+	.search {
+		&__input {
+			width: 50%;
+			flex-direction: column;
+		}
+	}
+}
+
+// desktop
+@media(min-width: 980px) {
+	.search {
+		&__input {
+			width: 50%;
+			flex-direction: row;
+		}
 	}
 }

@@ -110,3 +110,13 @@
 	}
 }
 @include move-up-and-down-fade;
+
+
+@keyframes just-disappear {
+	from {
+		transform: translate(0);
+	}
+	to {
+		transform: translate(0, 999px);
+	}
+}

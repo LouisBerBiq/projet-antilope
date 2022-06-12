@@ -73,7 +73,6 @@ function atl_verify_contact_form_nonce()
 function atl_sanitize_contact_form_data()
 {
 	return [
-		'personality' => sanitize_text_field($_POST['personality'] ?? null),
 		'firstname' => sanitize_text_field($_POST['firstname'] ?? null),
 		'lastname' => sanitize_text_field($_POST['lastname'] ?? null),
 		'email' => sanitize_email($_POST['email'] ?? null),
@@ -85,36 +84,7 @@ function atl_sanitize_contact_form_data()
 
 function atl_validate_contact_form_data($data)
 {
-	// TODO: refactoring
-
 	$errors = [];
-
-	// switch ($data['personality']) {
-	// 	case 'municipality':
-	// 		$required = ['firstname', 'lastname', 'email', 'message'];
-	// 		$email = ['email'];
-	// 		break;
-
-	// 	case 'researcher':
-	// 		$required = ['firstname', 'lastname', 'email', 'message'];
-	// 		$email = ['email'];
-	// 		break;
-
-	// 	case 'student':
-	// 		$required = ['firstname', 'lastname', 'email', 'message'];
-	// 		$email = ['email'];
-	// 		break;
-
-	// 	case 'other':
-	// 		$required = ['firstname', 'lastname', 'email', 'message'];
-	// 		$email = ['email'];
-	// 		break;
-
-	// 	default:
-	// 		$errors['personality'] = __('Personalité inconnue ou inexistante', 'atl');
-	// 		return $errors;
-	// 		break;
-	// }
 
 	$required = ['firstname', 'lastname', 'email', 'message'];
 	$email = ['email'];
@@ -123,19 +93,17 @@ function atl_validate_contact_form_data($data)
 
 	foreach($data as $key => $value) {
 		if(in_array($key, $required) && ! $value) {
-			$errors[$key] = 'required';
+			$errors[$key] = __('Ce champ est requis', 'atl');
 			continue;
 		}
 
-		// if(isset($email)) {
-			if(in_array($key, $email) && ! filter_var($value, FILTER_VALIDATE_EMAIL)) {
-				$errors[$key] = 'email';
-				continue;
-			}
-		// }
+		if(in_array($key, $email) && ! filter_var($value, FILTER_VALIDATE_EMAIL)) {
+			$errors[$key] = __('Cet e-mail n’est pas valide', 'atl');
+			continue;
+		}
 
 		if(in_array($key, $accepted) && $value !== '1') {
-			$errors[$key] = 'accepted';
+			$errors[$key] = __('Vous devez accepter les conditions pour envoyer votre message', 'atl');
 			continue;
 		}
 	}

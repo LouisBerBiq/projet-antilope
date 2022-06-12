@@ -18,7 +18,6 @@ $footer-height: 10vh;
 	
 	&__nav {
 		display: flex;
-		flex-direction: row;
 		justify-content: space-between;
 		align-items: flex-start;
 
@@ -46,7 +45,6 @@ $footer-height: 10vh;
 
 			&__container {
 				padding: $margin-items/2;
-				max-width: 30vw;
 
 				// TODO: finish this
 				// &::before {
@@ -64,11 +62,8 @@ $footer-height: 10vh;
 
 				&:last-child {
 					display: flex;
-					flex-direction: column;
 					align-items: flex-end;
 					
-					min-width: 100px; // for longer names	
-	
 					.nav__item {
 						text-align: right;
 	
@@ -131,5 +126,48 @@ $footer-height: 10vh;
 		position: absolute;
 		bottom: 5px;
 		right: $scale-main-mini;
+	}
+}
+
+
+// mobile
+@media(max-width: 980px) {
+	.footer {
+		&__nav {
+			flex-direction: column;
+
+			.nav {
+				&__container {
+
+					max-width: 100%;
+
+					&:last-child {
+						display: block;
+						min-width: 100%
+					}
+				}
+			}
+		}
+	}
+}
+
+// desktop
+@media(min-width: 980px) {
+	.footer {
+		&__nav {
+			flex-direction: row;
+
+			.nav {
+				&__container {
+
+					max-width: 30vw;
+
+					&:last-child {
+						flex-direction: column;
+						min-width: 100px; // for longer names
+					}
+				}
+			}
+		}
 	}
 }

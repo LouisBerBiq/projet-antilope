@@ -11,6 +11,7 @@
 		  url('#{$path}.svg##{$svgFontName}') format('svg'); /* Legacy iOS */
 		font-weight: $weight;
 		font-style: $style;
+		font-display: swap;
 	}
 }
 
@@ -19,7 +20,7 @@
 
 $text-title-font: Montserrat;
 
-$text-title-weight: semi-bold;
+$text-title-weight: 600;
 
 $text-title-size: 82px; // replace with 3em
 $text-title-size-smaller: $scale-main;
@@ -32,39 +33,37 @@ $text-title-size-smallest: 20px;
 
 $text-small-font: Lato;
 
-$text-small-weight-lighter: lighter;
-$text-small-weight-normal: normal;
+$text-small-weight-lighter: 300;
+$text-small-weight-normal: 400;
 $text-small-style2: italic;
 
 $text-small-size: 16px;
 $text-small-size-bigger: 1.7em; // 1.25em
 
-// this should workd but it doesn't (https://stackoverflow.com/a/21614532/17701651) idk why
 // light
-@include font-face($text-small-font, '../fonts/Lato-light/Lato-light-webfont', '', $text-small-weight-lighter);
+@include font-face($text-small-font, '../fonts/lato-light/lato-light-webfont', '', $text-small-weight-lighter);
 
 // light italic
-@include font-face($text-small-font, '../fonts/Lato-light/Lato-lightitalic-webfont', '', $text-small-weight-lighter, $text-small-style2);
+@include font-face($text-small-font, '../fonts/lato-light/lato-lightitalic-webfont', '', $text-small-weight-lighter, $text-small-style2);
 
 // regular
-@include font-face($text-small-font, '../fonts/lato-regular/Lato-regular-webfont', '', $text-small-weight-normal);
+@include font-face($text-small-font, '../fonts/lato-regular/lato-regular-webfont', '', $text-small-weight-normal);
 
 // regular italic
-@include font-face($text-small-font, '../fonts/lato-regular/Lato-italic-webfont', '', $text-small-weight-normal, $text-small-style2);
+@include font-face($text-small-font, '../fonts/lato-regular/lato-italic-webfont', '', $text-small-weight-normal, $text-small-style2);
 
 
 // special text
 
 $text-special-font: "Gentium Basic";
 
-$text-special-weight: normal;
+$text-special-weight: 400;
 $text-small-style2: italic;
 
 $text-special-size: $scale-main-alt;
 
-// TODO: get bolder variant
 // regular
-@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-weight);
+@include font-face($text-special-font, '../fonts/gentium_basic-bold/genbasb-webfont', '', $text-special-weight);
 
 // italic
-@include font-face($text-special-font, '../fonts/Gentium_Basic-regular/genbasi-webfont', '', $text-special-weight, $text-small-style2);
+@include font-face($text-special-font, '../fonts/gentium_basic-bold/genbasbi-webfont', '', $text-special-weight, $text-small-style2);

@@ -1,15 +1,15 @@
 .intro {
 	
-	margin-top: $scale-main * 7;
-
 	&__section:nth-child(even) { // right aligned ones
 		
 	}
 	
 	&__welcome {
-		max-width: 30vw;
-		min-height: calc(100vh - $scale-main * 7); // to push the next section right below the screen (100vh - margin-top of page)
+
+		margin-top: $scale-main * 7;
 		margin-bottom: $scale-main * 2;
+
+		min-height: calc(100vh - $scale-main * 7); // to push the next section right below the screen (100vh - margin-top of page)
 
 		.intro {
 			&__title {
@@ -99,8 +99,6 @@
 			position: relative;
 			left: $scale-main;
 
-			max-width: 30vw;
-
 			margin-bottom: $scale-main*1.5;
 			
 			font-family: Lato;
@@ -137,10 +135,19 @@
 // mobile
 @media(max-width: 980px) {
 	.intro {
+		&__welcome {
+			margin-top: 0;
+			max-width: unset;
+		}
+
 		&__scroll-down {
 			bottom: 15vh;
 			left: unset;
 			right: 12vw;
+		}
+
+		&__tagline {
+			max-width: unset;
 		}
 	}
 }
@@ -148,6 +155,10 @@
 // desktop
 @media(min-width: 980px) {
 	.intro {
+		&__welcome {
+			max-width: 30vw;
+		}
+
 		&__scroll-down {
 			bottom: 15vh;
 			left: 12vw;
@@ -173,6 +184,10 @@
 					max-width: 80%;
 				}
 			}
+		}
+
+		&__tagline {
+			max-width: 30vw;
 		}
 	}
 }

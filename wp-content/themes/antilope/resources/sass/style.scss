@@ -49,6 +49,12 @@ main {
 	}
 }
 
+// mobile
+@media(max-width: 980px) {
+	main {
+		margin: $top-margin-smaller 0;
+	}
+}
 
 @import "pages/index";
 @import "pages/contact";

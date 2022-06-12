@@ -15,13 +15,13 @@ function atl_admin_boot()
 	// TODO: custom widget for messages (https://wordpress.stackexchange.com/questions/5318/adding-custom-post-type-counts-to-the-dashboard)
 
 	// Remove some dashboard widgets
-		remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );	// no idea
-		remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );				// no idea
-		remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );				// no idea
-		remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );			// no idea
-		remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );			// quick post
-		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );	// recent comments
-		remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );			// at a glance
+		remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );	// No idea
+		remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );				// No idea
+		remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );				// No idea
+		remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );			// No idea
+		remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );			// Quick post
+		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );	// Recent comments
+		remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );			// At a glance
 
 	// remove sidebar menus
 		// remove_menu_page('themes.php');														// Appearance

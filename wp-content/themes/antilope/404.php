@@ -14,7 +14,7 @@
 		
 			echo $messages[array_rand($messages, 1)];
 		?>
-		<!-- // TODO: propose to send a message about it and maybe some animation idk -->
+		<!-- // TODO: propose to send a message about it and maybe some animation -->
 	</p>
 </main>
 

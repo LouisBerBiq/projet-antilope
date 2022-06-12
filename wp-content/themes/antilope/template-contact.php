@@ -6,10 +6,10 @@
 		<p class="contact__tagline"><?= __('Envoyez-nous un mail&nbsp;!', 'atl') ?></p>
 		<div class="contact__form">
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
-				<!-- // apparently it is discouraged by wordpress to use $_GET and instead use get_query_var() and add the variable to the global $wp object with add_query_var() but this variable is only use on this specific page so... (https://stackoverflow.com/questions/13652605/extracting-a-parameter-from-a-url-in-wordpress) -->
 				<?php
+				// apparently it is discouraged by wordpress to use $_GET and instead use get_query_var() and add the variable to the global $wp object with add_query_var() but this variable is only use on this specific page so... (https://stackoverflow.com/questions/13652605/extracting-a-parameter-from-a-url-in-wordpress)
 				if (isset($_SERVER['HTTP_REFERER'])) {
-					// TODO: check if referer comes from this site // no, set $_SESSION
+					// Ideally one would use $_SESSION paired with AJAX to handle clicking on the button back there
 					// TODO: use post title instead
 					$referer = $_SERVER['HTTP_REFERER'];
 					$siteUrl = get_site_url();
@@ -18,7 +18,7 @@
 					$referer = trim(str_replace($siteUrl, '', $referer), '/');
 					$arguments = explode('/', $referer);
 
-					// just the handling
+					// what happens next
 					switch ($arguments[0]) {
 						case 'product':
 							$preFilledText = $arguments[1];

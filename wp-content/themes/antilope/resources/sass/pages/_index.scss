@@ -182,6 +182,9 @@
 					top: 18vh;
 
 					max-width: 80%;
+
+					// put the shadow on the image instead
+					// filter: drop-shadow(-15px 30px 60px rgba($dark, .5));
 				}
 			}
 		}

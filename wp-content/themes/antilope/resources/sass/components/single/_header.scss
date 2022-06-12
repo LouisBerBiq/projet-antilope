@@ -117,19 +117,10 @@
 		&__home {
 			
 			position: absolute;
-			bottom: -75%;
-			left: .5%;
 			
 			display: flex;
 			justify-content: center;
 			align-items: center;
-
-			background-color: $background;
-
-			padding: .8em;
-			border-radius: $round;
-		
-			@include small-dark-shadow;
 
 			&:focus {
 				outline: none; // because this is the default focused element
@@ -239,6 +230,20 @@
 					flex-direction: column;
 					align-items: flex-end;
 				}
+
+				&__home {
+					position: absolute;
+					top: 1%;
+					left: 3%;
+					
+					display: flex;
+					justify-content: center;
+					align-items: center;
+		
+					padding: .8em;
+
+					filter: drop-shadow(0 3px 5px rgba($dark, .15));
+				}
 			}
 		}
 	}
@@ -274,6 +279,18 @@
 			&__container {
 				flex-flow: row wrap;
 				justify-content: flex-end;
+			}
+
+			&__home {
+				bottom: -75%;
+				left: .5%;
+
+				background-color: $background;
+
+				padding: .8em;
+				border-radius: $round;
+
+				@include small-dark-shadow;
 			}
 		}
 	}

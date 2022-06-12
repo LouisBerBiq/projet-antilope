@@ -11,13 +11,6 @@
 	@include fadeInAnimation(bottom, .5s);
 
 	&--two-column {
-		display: flex;
-		flex-flow: row nowrap;
-		gap: $scale-main/2;
-		justify-content: space-between;
-
-		width: auto;
-
 		.form {
 			&__field {
 				flex: 1;
@@ -113,6 +106,27 @@
 				
 				@include button-transition;
 			}
+		}
+	}
+}
+
+// mobile
+@media(max-width: 980px) {
+	.form {
+		&--two-column {
+			display: block;
+		}
+	}
+}
+
+// desktop
+@media(min-width: 980px) {
+	.form {
+		&--two-column {
+			display: flex;
+			justify-content: space-between;
+			flex-flow: row nowrap;
+			gap: $scale-main/2;
 		}
 	}
 }

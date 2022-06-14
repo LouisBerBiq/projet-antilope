@@ -135,7 +135,22 @@ function atl_get_contact_field_error($field)
 }
 
 
-function atl_get_prefilled_message($preFilledText)
+function atl_message_content($message, $module)
+{
+	// if there's a feedback message
+	if ($message !== null && $message !== '') {
+		return $message;
+	}
+	
+	// if there's a module argument in the url
+	if ($module) {
+		return atl_get_prefilled_message($module);
+	}
+
+	return '';
+}
+
+function atl_get_prefilled_message($module)
 {
 	// TODO: should I put this somewhere else?
 	$formPhrases = [
@@ -147,10 +162,10 @@ Je serais intéressé par un :MODULE. Pouvons-nous en parler un petit peux&nbsp;
 vos :MODULEs m’intéressent. Pouvons-nous avoir un moment&nbsp;?', 'atl'),
 	];
 
-	if(isset($preFilledText)) {
+	if(isset($module)) {
 		return str_replace(
 			':MODULE',
-			ucwords($preFilledText),
+			ucwords($module),
 			$formPhrases[array_rand($formPhrases, 1)]
 		);
 	}

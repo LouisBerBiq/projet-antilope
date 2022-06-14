@@ -6,29 +6,6 @@
 		<p class="contact__tagline"><?= __('Envoyez-nous un mail&nbsp;!', 'atl') ?></p>
 		<div class="contact__form">
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
-				<?php
-				// apparently it is discouraged by wordpress to use $_GET and instead use get_query_var() and add the variable to the global $wp object with add_query_var() but this variable is only use on this specific page so... (https://stackoverflow.com/questions/13652605/extracting-a-parameter-from-a-url-in-wordpress)
-				if (isset($_SERVER['HTTP_REFERER'])) {
-					// Ideally one would use $_SESSION paired with AJAX to handle clicking on the button back there
-					// TODO: use post title instead
-					$referer = $_SERVER['HTTP_REFERER'];
-					$siteUrl = get_site_url();
-					
-					// get the important part of the url
-					$referer = trim(str_replace($siteUrl, '', $referer), '/');
-					$arguments = explode('/', $referer);
-
-					// what happens next
-					switch ($arguments[0]) {
-						case 'product':
-							$preFilledText = $arguments[1];
-							break;
-							
-							default:
-							break;
-					}
-				}
-				?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 					<div class="form--two-column">
 						<div class="form__field">
@@ -49,8 +26,7 @@
 					</div>
 					<div class="form__field">
 						<label for="message" class="field__label"><?= __('Votre message', 'atl'); ?></label>
-						<!-- // TODO: also it's not sanitized -->
-						<textarea name="message" id="message" class="field__input"><?= atl_get_contact_field_value('message'); ?><?= isset($preFilledText) ? atl_get_prefilled_message($preFilledText) : ''; ?></textarea>
+						<textarea name="message" id="message" class="field__input"><?= atl_message_content(atl_get_contact_field_value('message'), isset($_GET['module']) ? $_GET['module'] : false) ?></textarea>
 						<?= atl_get_contact_field_error('message'); ?>
 					</div>
 					<div class="form__field">

@@ -59,7 +59,7 @@ class ATL_Controller
 
 	handleDiscoveryArrow()
 	{
-		if ( this.indexPages.includes(window.location.pathname) ) {
+		if (this.indexPages.includes(window.location.pathname)) {
 
 			let discoveryArrow = document.querySelector('.intro__scroll-down');
 			let discoveryArrowSize = discoveryArrow.offsetHeight;
@@ -87,6 +87,8 @@ class ATL_Controller
 
 	handleFadeables()
 	{
+		// TODO: again, fix the inistial scroll with nothing visible
+
 		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => {
 			window.addEventListener("scroll", () => {
 				this.FadeInOnVisible(el);

@@ -13,8 +13,8 @@
 		</div>
 	</form>
 	<div class="faq__questions">
-		<!-- // TODO: deprecate the main questions idea -->
 		<?php 
+			// TODO: fixup
 			$mains = [];
 			$notMains = [];
 

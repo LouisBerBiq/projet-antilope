@@ -1,7 +1,5 @@
 <?php
 
-// Form system entirely taken from class
-
 register_post_type('message', [
 	'labels' => [
 		'name' => 'Messages',

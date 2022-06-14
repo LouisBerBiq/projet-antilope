@@ -114,4 +114,3 @@ function atl_get_product_details()
 // }
 
 // add_filter('pre_get_posts', 'atl_order_question_archive');
-add_action('admin_post_submit_contact_form', 'atl_handle_submit_contact_form');

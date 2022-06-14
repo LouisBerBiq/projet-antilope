@@ -77,7 +77,7 @@ function atl_sanitize_contact_form_data()
 		'lastname' => sanitize_text_field($_POST['lastname'] ?? null),
 		'email' => sanitize_email($_POST['email'] ?? null),
 		'phone' => sanitize_text_field($_POST['phone'] ?? null),
-		'message' => sanitize_text_field($_POST['message'] ?? null),
+		'message' => sanitize_textarea_field($_POST['message'] ?? null),
 		'rules' => $_POST['rules'] ?? null
 	];
 }

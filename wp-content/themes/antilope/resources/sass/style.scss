@@ -32,6 +32,7 @@ html {
 }
 body {
 	@include scrollbar(.6vw, .6vw, $brighter);
+	background-color: $background; // this is just a obvious default until I find an extreme browser stylesheet
 }
 main {
 	margin: calc($top-margin-smaller + $header-height) 0;

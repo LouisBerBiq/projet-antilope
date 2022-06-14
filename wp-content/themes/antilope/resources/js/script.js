@@ -19,6 +19,8 @@ class ATL_Controller
 		this.handleDiscoveryArrow();
 		// handle effects of the "fadeable--" class
 		this.handleFadeables();
+		// handle the read more tag in the module page
+		this.handleReadMore();
 
 		// this is the best hack ever
 		window.scrollBy(0, 1)
@@ -67,6 +69,18 @@ class ATL_Controller
 			window.addEventListener("scroll", () => {
 				let scrolled = document.scrollingElement.scrollTop;
 				this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);
+			});
+		}
+	}
+
+
+	handleReadMore()
+	{
+		if (window.location.pathname.includes('/product/')) { // TODO: make it more foolproof maybe
+			let readMore = document.querySelector('.singleProduct__content');
+	
+			readMore.addEventListener('click', () => {
+				readMore.classList.toggle('unrolled');
 			});
 		}
 	}

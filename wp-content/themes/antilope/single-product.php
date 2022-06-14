@@ -6,7 +6,7 @@
 				<?php foreach( atl_get_product_details() as $image ): ?>
 					<li class="list__item">
 						<figure class="images__fig">
-							<img class="images__img" src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
+							<img class="fig__img" src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
 						</figure>
 					</li>
 				<?php endforeach; ?>
@@ -15,13 +15,13 @@
 		<section class="singleProduct__description">
 			<p class="singleProduct__tagline"><?= get_field('type') ?></p>
 			<h2 class="singleProduct__title"><?= get_the_title(); ?></h2>
-			<figure class="singleProduct__fig">
-				<?= get_the_post_thumbnail(null, 'medium_large', ['class' => 'singleProduct__thumb']); ?>
-			</figure>
-			<a class="singleProduct__cta" href="<?= get_permalink(atl_get_page_of_template('template-contact')); ?>"><?= __('Contactez-nous pour trouver un arrangement', 'atl'); ?></a>
+			<!-- <figure class="singleProduct__fig">
+				<?= get_the_post_thumbnail(null, '', ['class' => 'fig__thumb']); ?> 
+			</figure> -->
 			<div class="singleProduct__content">
 				<?php the_content(); ?>
 			</div>
+			<a class="singleProduct__cta" href="<?= add_query_arg('module', get_the_title(), get_permalink(atl_get_page_of_template('template-contact'))) ?>"><?= __('Réserver ce module', 'atl'); ?></a>
 			<section class="singleProduct__details">
 				<h3 class="details__subtitle"><?= __('Spécifications','atl'); ?></h3>
 				<dl class="details__definitions">
@@ -75,6 +75,14 @@
 						<?php endif; ?>
 						</p>
 					</dd>
+					<?php if(get_field('specifications')): ?>
+						<dt class="details__label--extra"><?= __('Autres détails','atl'); ?></dt>
+						<dd class="details__data">
+							<p class="details__data paragraph">
+								<?= get_field('specifications') ?>
+							</p>
+						</dd>
+					<?php endif; ?>
 				</dl>
 			</section>
 		</section>

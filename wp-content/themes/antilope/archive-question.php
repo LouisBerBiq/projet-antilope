@@ -2,7 +2,7 @@
 
 <main class="faq" id="main">
 	<h2 class="faq__title"><?= __('FAQ', 'atl'); ?></h2>
-	<p class="faq__tagline"><?= __('Vous avez des questions?<br>En-Voici quelque unes courrament posées&nbsp;!', 'atl') ?></p>
+	<p class="faq__tagline"><?= __('Vous avez des questions&nbsp;?<br>En voici quelques unes couramment posées&nbsp;!', 'atl') ?></p>
 	<form method="get" action="<?= get_home_url(); ?>" class="faq__search search" role="search">
 		<div class="search__container">
 			<label for="header_search" class="search__label"><?= __('rechercher une question?', 'atl'); ?></label>

@@ -9,6 +9,39 @@
 
 	@include fadeInAnimation(bottom, .5s);
 
+	// credits go to https://stackoverflow.com/questions/52707749/how-can-i-display-select-options-as-buttons
+	// &__personality {
+
+	// 	margin: 0 -$padding-general;
+		
+	// 	.personality {
+	// 		&__select{
+	// 			min-width: 100vw;
+	// 			display: block;
+	// 			height: fit-content;
+	// 			// border: none;
+			
+	// 			&::-moz-focus-inner {
+	// 				border: 0;
+	// 			}
+	// 			&:focus {
+	// 				outline: none;
+	// 			}
+			
+	// 			& option{
+	// 				@include component-button($text-title-size/5);
+	// 				display: inline-block;
+				
+	// 				width: fit-content;
+	// 				padding-left: $scale-main/2;
+	// 				padding-right: $scale-main/2;
+				
+	// 				cursor: pointer;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
 	&--two-column {
 		.form {
 			&__field {

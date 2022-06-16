@@ -7,6 +7,15 @@
 		<div class="contact__form">
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
 				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
+					<div class="form__personality">
+						<select name="personality" id="personality" class="personality__select" multiple required>
+							<option value="municipality">Commune</option>
+							<option value="researcher">Chercheur</option>
+							<option value="student">Étudiant</option>
+							<option value="other">Autre</option>
+						</select>
+						<?= atl_get_contact_field_error('personality'); ?>
+					</div>
 					<div class="form--two-column">
 						<div class="form__field">
 							<label for="lastname" class="field__label"><?= __('Votre nom', 'atl'); ?></label>

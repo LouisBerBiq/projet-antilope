@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="<?= pll_current_language('slug'); ?>">
+<html lang="<?= pll_current_language('slug'); ?>" prefix="og: https://ogp.me/ns#">
 	<head>
-		<meta name="description" content="<?= get_bloginfo('description') ?>">
-		<meta name="keywords" content="<?= __( 'mesure, pollution, qualité de l’air, système embarqué, capteurs', 'alt' ) ?>">
-		<meta name="author" content="">
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>
 			<?= wp_title('-', true, 'right') . get_bloginfo('name') ?>
 		</title>
+		<meta name="description" content="<?= get_bloginfo('description') ?>">
+		<meta name="keywords" content="<?= __( 'mesure, pollution, qualité de l’air, système embarqué, capteurs', 'alt' ) ?>">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta property="og:site_name" content="<?= get_bloginfo('name') ?>"/>
+		<meta property="og:title" content="<?= wp_title('-', true, 'right') . get_bloginfo('name') ?>"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="<?= get_permalink() ?>"/>
+		<meta property="og:image" content="<?= atl_mix('/images/og.jpg') ?>"/>
+		<meta property="og:description" content="<?= get_bloginfo('description') ?>"/>
+		<meta property="og:locale" content="<?= pll_current_language('locale'); ?>"/>
+		<?php foreach(atl_remove_value_from_array(pll_current_language('locale'), pll_languages_list(['fields'=>'locale'])) as $language): ?>
+			<meta property="og:locale:alternate" content="<?= $language ?>"/>
+		<?php endforeach; ?>
 		<link rel="icon" type="image/svg+xml" href="<?= atl_mix('/images/favicon.svg'); ?>"/>
 		<link rel="icon" type="image/png" href="<?= atl_mix('/images/favicon.ico'); ?>" media="(prefers-color-scheme:light)">
 		<link rel="icon" type="image/png" href="<?= atl_mix('/images/favicon_dark.ico'); ?>" media="(prefers-color-scheme:dark)">

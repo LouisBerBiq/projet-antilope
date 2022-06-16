@@ -51,6 +51,14 @@ function atl_change_title_placeholder_text($title){
 
 add_filter('enter_title_here', 'atl_change_title_placeholder_text');
 
+function atl_remove_value_from_array($value, $array)
+{
+	$key = array_search($value, $array);
+	unset($array[$key]);
+
+	return $array;
+}
+
 
 // Get products list
 function atl_get_products($count = 10)

@@ -40,9 +40,9 @@
 			<h1 class="header__title"><?= get_bloginfo('name') ?></h1>
 			<nav class="header__nav nav">
 				<h2 class="nav__title"><?= __('Navigation principale','atl') ?></h2>
-
 				<a href="<?= get_home_url() ?>" class="nav__home" autofocus><img src="<?= atl_mix('/images/home.svg'); ?>" alt=""></a>
 				<ul class="nav__container">
+					<!-- // TODO: translate menu items -->
 					<?php foreach(atl_get_menu_items('header') as $link): ?>
 					<li class="<?= $link->getBemClasses('nav__item'); ?>">
 						<a href="<?= $link->url; ?>" class="nav__link"><?= $link->label; ?></a>
@@ -57,6 +57,12 @@
 						<?php endif; ?>
 					</li>
 					<?php endforeach; ?>
+					<li class="nav__item">
+						<a href="<?= get_permalink(atl_get_page_of_template('template-about')) ?>" class="nav__link"><?= __('À propos', 'atl'); ?></a>
+					</li>
+					<li class="nav__item">
+						<a href="<?= get_permalink(atl_get_page_of_template('template-contact')) ?>" class="nav__link"><?= __('Contact', 'atl'); ?></a>
+					</li>
 				</ul>
 			</nav>
 		</header>

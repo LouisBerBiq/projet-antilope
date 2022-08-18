@@ -168,6 +168,33 @@
 				transition: color .1s ease-out;
 			}
 		}
+
+		&__subitems {
+			transform-origin: 50% 0;
+			transform: scaleY(0);
+
+			position: absolute;
+			overflow: hidden;
+			
+			border-radius: .5em;
+			
+			background-color: $background2;
+			@include small-dark-shadow;
+			
+			.subitems {
+				&__subitem:not(:last-child) {
+					margin-bottom: .7em;
+				}
+			}
+		}
+		&__item:hover .nav__subitems {
+			transform: scaleY(1);
+			transform: translateX(-12.5%);
+
+			padding: .7em;
+
+			transition: transform .5s ease-in-out;
+		}
 	}
 }
 
@@ -228,6 +255,10 @@
 				&__container {
 					flex-direction: column;
 					align-items: flex-end;
+				}
+
+				&__subitems {
+					display: none;
 				}
 
 				&__home {

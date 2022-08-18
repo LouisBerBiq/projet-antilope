@@ -162,7 +162,7 @@
 			display: block;
 			text-decoration: none;
 			transition: color .2s ease-out;
-			
+
 			&:hover {
 				color: $accent;
 				transition: color .1s ease-out;
@@ -287,8 +287,6 @@
 
 	.header {
 		
-		right: unset;
-
 		min-width: 100vw;
 		padding: .5em 1.5em;
 

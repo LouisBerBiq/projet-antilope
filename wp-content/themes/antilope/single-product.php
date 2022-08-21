@@ -29,7 +29,7 @@
 		<div class="singleProduct__content">
 			<?php the_content(); ?>
 		</div>
-		<a class="singleProduct__cta" href="<?= add_query_arg('module', get_the_title(), get_permalink(atl_get_page_of_template('template-contact'))) ?>"><?= __('Réserver ce module', 'atl'); ?></a>
+		<?php include 'product-cta.php'; ?>
 		<section class="singleProduct__details">
 			<h3 class="details__subtitle"><?= __('Spécifications','atl'); ?></h3>
 			<dl class="details__definitions">

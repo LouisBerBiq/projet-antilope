@@ -24,12 +24,14 @@ class ATL_Controller
 
 		// this is the best hack ever
 		window.scrollBy(0, 1)
+
+		utilities.submitSelectOnChange('.nav__languages')
 	}
 
 	handleLanguages()
 	{
 		// yes, I know, the proper way would be to use an AJAX request or simply echo into the page
-		document.querySelectorAll('.nav__locale').forEach((element) => {
+		document.querySelectorAll('.languages__locale').forEach((element) => {
 			this.indexPages.push(`/${element.getAttribute('lang').split('-')[0]}/`)
 		});
 	}

@@ -93,6 +93,7 @@
 				<?php endif; ?>
 			</dl>
 		</section>
+		<?php include 'product-cta.php'; ?>
 	</section>
 	<!-- // TODO: band of other modules -->
 </main>

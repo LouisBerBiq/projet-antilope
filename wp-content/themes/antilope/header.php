@@ -49,7 +49,7 @@
 						<?php if($link->hasSubItems()): ?>
 						<ul class="nav__subitems">
 								<?php foreach($link->subitems as $sub): ?>
-								<li class="<?= $link->getBemClasses('nav__subitem'); ?>">
+								<li class="<?= $link->getBemClasses('subitems__subitem'); ?>">
 									<a href="<?= $sub->url; ?>" class="nav__link"><?= $sub->label; ?></a>
 								</li>
 								<?php endforeach; ?>

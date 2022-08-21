@@ -80,3 +80,12 @@
 		transform: translate(0, 999px);
 	}
 }
+
+
+// pulsating focus outline
+@keyframes pulsating-outline {
+	50% {
+		outline-offset: .15rem;
+		border-radius: .5em;
+	}
+}

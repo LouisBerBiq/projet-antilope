@@ -22,9 +22,11 @@
 
 	line-height: normal;
 
-	&:focus {
-		outline: .115rem dashed rgba($dark, .5);
-		border-radius: .1em;
+	&:focus { // focus outline
+		outline: .115rem invert;
+		outline-offset: .35rem;
+		border-radius: .05em;
+		// animation: pulsating-outline 2s infinite; // looks bad
 	}
 }
 

@@ -22,26 +22,6 @@ $footer-height: 10vh;
 		align-items: flex-start;
 
 		.nav {
-			&__social-media {
-
-				display: flex;
-				flex-direction: row;
-				gap: $scale-main-mini*2;
-
-				.social-media {
-					&__item {
-						max-width: $scale-main;
-						max-height: $scale-main;
-						
-						& img {
-							width: 100%;
-							height: 100%;
-
-							// TODO: make icon change on hover, modify svg
-						}
-					}
-				}
-			}
 
 			&__container {
 				padding: $margin-items/2;
@@ -75,15 +55,6 @@ $footer-height: 10vh;
 							}
 						}
 					}
-	
-					.nav__languages {
-						list-style: none;
-	
-						li {
-							display: inline-block;
-						}
-					}
-	
 				}
 			}
 			

@@ -63,6 +63,16 @@
 					<li class="nav__item">
 						<a href="<?= get_permalink(atl_get_page_of_template('template-contact')) ?>" class="nav__link"><?= __('Contact', 'atl'); ?></a>
 					</li>
+					<li class="nav__item">
+						<select name="lang_choice" class="nav__languages">
+							<?php foreach(pll_the_languages(['show_flags' => true,'raw' => true]) as $code => $locale): ?>
+								<option value="<?= $locale['url']; ?>" 
+								lang="<?= $locale['locale']; ?>" 
+								class="languages__locale" <?php if(str_replace('-', '_', $locale['locale']) === pll_current_language('locale')): echo 'selected'; endif;?>>
+								<?= strtoupper($locale['slug']); ?></option>
+							<?php endforeach; ?>
+						</select>
+					</li>
 				</ul>
 			</nav>
 		</header>

@@ -50,19 +50,6 @@
 					</li>
 					<?php endforeach; ?>
 				</ul>
-				<ul class="nav__languages">
-				<?php foreach(pll_the_languages(['raw' => true]) as $code => $locale) : ?>
-					<li class="<?= $link->getBemClasses('nav__item'); ?>">
-						<a href="<?= $locale['url']; ?>" 
-							class="nav__locale" 
-							title="<?= $locale['name']; ?>" 
-							lang="<?= $locale['locale']; ?>" 
-							hreflang="<?= $locale['locale']; ?>">
-							<?= $code; ?>
-						</a>
-					</li>
-				<?php endforeach; ?>
-			</ul>
 			</section>
 		</nav>
 		<div class="footer__copyright">

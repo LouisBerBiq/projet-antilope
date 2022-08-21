@@ -1,4 +1,6 @@
 <?php /* Template Name: Contact page template */ ?>
+<?php $og_type = _('website', 'atl'); ?>
+<?php $description = _('', 'atl'); ?>
 <?php get_header(); ?>
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>

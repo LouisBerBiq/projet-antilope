@@ -1,3 +1,5 @@
+<?php $og_type = _('website', 'atl'); ?>
+<?php $description = _('', 'atl'); ?>
 <?php get_header(); ?>
 
 <main class="products" id="main">

@@ -164,7 +164,7 @@
 			transition: color .2s ease-out;
 
 			&:hover {
-				color: $accent;
+				color: var(--accent);
 				transition: color .1s ease-out;
 			}
 		}

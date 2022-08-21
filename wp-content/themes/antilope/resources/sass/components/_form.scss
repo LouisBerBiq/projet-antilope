@@ -93,7 +93,7 @@
 			&__link {
 
 				text-decoration: none;
-				color: $accent;
+				color: var(--accent);
 
 				&:focus, &:hover {
 					text-decoration: underline;
@@ -188,7 +188,7 @@
 
 		&--success {
 			color: $background;
-			background-color: $accent;
+			background-color: var(--accent);
 		}
 		&--failure {
 			color: black;

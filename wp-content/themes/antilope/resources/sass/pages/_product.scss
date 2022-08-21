@@ -63,7 +63,7 @@
 	&__tagline {
 		margin-bottom: .6em;
 
-		color: $accent;
+		color: var(--accent);
 
 		@include fadeInAnimation(top, .25s);
 	}

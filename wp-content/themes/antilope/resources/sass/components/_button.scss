@@ -5,7 +5,7 @@
 	transition-timing-function: ease-out;
 }
 
-@mixin component-button($font-size: 1em, $color: $accent, $text-color: $background, $padding: .5em 2em, $radius: .7em) {
+@mixin component-button($font-size: 1em, $color: var(--accent), $text-color: $background, $padding: .5em 2em, $radius: .7em) {
 
 	display: flex;
 	align-items: center;
@@ -31,8 +31,8 @@
 		background-color: $text-color;
 
 		@include button-transition;
-		@include small-bright-shadow(1px, 3px, rgba(lighten($text-color, 10%), .6));
+		@include small-bright-shadow(1px, 3px, rgba($text-color, .6));
 	}
 
-	@include small-bright-shadow(1px, 3px, rgba(lighten($color, 10%), .6));
+	@include small-bright-shadow(1px, 3px, rgba($color, .6));
 }

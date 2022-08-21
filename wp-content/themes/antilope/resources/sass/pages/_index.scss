@@ -22,7 +22,7 @@
 	}
 	&__scroll-down {
 
-		color: $accent;
+		color: var(--accent);
 		opacity: .5;
 
 		font-family: Montserrat;
@@ -47,7 +47,7 @@
 			left: calc(-50% - .3em); //50% - size of arrow
 			bottom: -1.5em;
 
-			border-color: $accent transparent transparent;
+			border-color: var(--accent) transparent transparent;
 			border-style: solid;
 			border-width: .35em;
 
@@ -64,7 +64,7 @@
 		// 	width: 100%;
 		// 	height: 100%;
 
-		// 	background-color: rgba( lighten($accent, 10%) , .5);
+		// 	background-color: rgba(var(--accent-lighter) , .5);
 			
 		// 	filter: blur(50px);
 		// }
@@ -122,7 +122,7 @@
 			padding-right: 1em;
 
 			&:last-child {
-				@include component-button($text-title-size/5, $background, $accent, $scale-main-mini $scale-main-mini*2);
+				@include component-button($text-title-size/5, $background, var(--accent), $scale-main-mini $scale-main-mini*2);
 				
 				// max-width: .5vw;
 				padding-left: $scale-main/4;

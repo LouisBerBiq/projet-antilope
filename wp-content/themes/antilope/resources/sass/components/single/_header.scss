@@ -114,13 +114,6 @@
 		}
 
 		&__home {
-			
-			position: absolute;
-			
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
 			&:focus {
 				outline: none; // because this is the default focused element
 			}
@@ -137,12 +130,14 @@
 		&__item {
 
 			display: inline-block; // fixme
+
+			position: relative; // to absolute position the subitems list
 			
 			color: $darker;
-			
-			&:last-child {
 
-				margin-left: 2em;
+			&:nth-last-child(2) {
+
+				// margin-left: 2em;
 				
 				& a {
 	
@@ -299,24 +294,36 @@
 			// to vertical align
 			display: flex;
 			flex-direction: row;
-			justify-content: flex-end;
+			justify-content: space-between;
 			align-items: center;
+
+			margin: auto;
+			max-width: 80%;
 			
 			&__container {
 				flex-flow: row wrap;
 				justify-content: flex-end;
+				align-items: center;
 			}
 
 			&__home {
-				bottom: -75%;
-				left: .5%;
+				
+				display: flex;
+				align-items: center;
+				gap: .2em;
+				
+				margin-top: -5px;
+				margin-bottom: -5px;
 
-				background-color: $background;
+				text-decoration: none;
+				color: $darkest;
+				font-weight: 600;
+				font-size: 1.15em;
 
-				padding: .15em;
-				border-radius: $round;
-
-				@include small-dark-shadow;
+				& img {
+					width: 2.8rem;
+					height: auto;
+				}
 			}
 		}
 	}

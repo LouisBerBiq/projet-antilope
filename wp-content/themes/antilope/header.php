@@ -40,7 +40,7 @@
 			<h1 class="header__title"><?= get_bloginfo('name') ?></h1>
 			<nav class="header__nav nav">
 				<h2 class="nav__title"><?= __('Navigation principale','atl') ?></h2>
-				<a href="<?= get_home_url() ?>" class="nav__home" autofocus><img src="<?= atl_mix('/images/home.svg'); ?>" alt=""></a>
+				<a href="<?= get_home_url() ?>" class="nav__home" autofocus><img src="<?= atl_mix('/images/home.svg'); ?>" alt=""><?= __('Projet Antilope', 'atl'); ?></a>
 				<ul class="nav__container">
 					<!-- // TODO: translate menu items -->
 					<?php foreach(atl_get_menu_items('header') as $link): ?>

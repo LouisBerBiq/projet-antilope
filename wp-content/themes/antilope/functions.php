@@ -1,13 +1,13 @@
 <?php
 
-require_once(__DIR__ . '/functions-utils/SVGsupport.php');
-require_once(__DIR__ . '/functions-utils/customAvatarSupport.php');
-require_once(__DIR__ . '/functions-utils/boot.php');
-require_once(__DIR__ . '/functions-utils/utilities.php');
-require_once(__DIR__ . '/functions-utils/form.php');
-require_once(__DIR__ . '/menus/menu.php');
-
 define("THEME_PATH", __DIR__);
+
+require_once(THEME_PATH . '/functions-utils/SVGsupport.php');
+require_once(THEME_PATH . '/functions-utils/customAvatarSupport.php');
+require_once(THEME_PATH . '/functions-utils/boot.php');
+require_once(THEME_PATH . '/functions-utils/utilities.php');
+require_once(THEME_PATH . '/functions-utils/form.php');
+require_once(THEME_PATH . '/menus/menu.php');
 
 // register a custom post type for products
 register_post_type( 'product', [

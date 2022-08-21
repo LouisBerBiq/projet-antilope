@@ -176,6 +176,11 @@
 
 				border-top: 1px solid rgba($darker, .5);
 				padding-top: .5em;
+				
+				&--extra {
+					font-size: 1em;
+					// margin-bottom: .1em;
+				}
 			}
 			&__data {
 

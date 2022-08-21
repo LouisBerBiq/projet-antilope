@@ -84,7 +84,7 @@
 					</p>
 				</dd>
 				<?php if(get_field('specifications')): ?>
-					<dt class="details__label--extra"><?= __('Autres détails','atl'); ?></dt>
+					<dt class="details__label details__label--extra"><?= __('Autres détails','atl'); ?></dt>
 					<dd class="details__data">
 						<p class="details__data paragraph">
 							<?= get_field('specifications') ?>

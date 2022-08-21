@@ -2,6 +2,8 @@
 
 define("THEME_PATH", __DIR__);
 
+set_include_path(THEME_PATH . '/partials');
+
 require_once(THEME_PATH . '/functions-utils/SVGsupport.php');
 require_once(THEME_PATH . '/functions-utils/customAvatarSupport.php');
 require_once(THEME_PATH . '/functions-utils/boot.php');

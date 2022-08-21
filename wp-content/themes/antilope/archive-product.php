@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <main class="products" id="main">
 	<section class="products__section">
 		<h2 class="products__title"><?= __('Tous nos modules', 'atl'); ?></h2>

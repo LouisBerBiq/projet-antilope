@@ -17,6 +17,8 @@ class ATL_Controller
 		this.handleDiscoveryArrow();
 		// handle effects of the "fadeable--" class
 		this.handleFadeables();
+		// handle clicking images in module page
+		this.handleProductImageClick();
 		// handle the read more tag in the module page
 		this.handleReadMore();
 
@@ -66,6 +68,17 @@ class ATL_Controller
 			this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);
 		});
 	}
+
+	handleProductImageClick()
+	{
+		// TODO: desktop overlay
+		// TODO: center image
+
+		document.querySelectorAll('.images__fig').forEach((el) => {
+			el.addEventListener('click', () => {
+				el.classList.toggle('images__fig--maximized');
+			});
+		});
 	}
 
 	handleReadMore()

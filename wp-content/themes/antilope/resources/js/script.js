@@ -96,7 +96,7 @@ class ATL_Controller
 
 	handleFadeables()
 	{
-		// TODO: again, fix the inistial scroll with nothing visible
+		// TODO: again, fix the initial scroll with nothing visible
 
 		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => {
 			window.addEventListener("scroll", () => {

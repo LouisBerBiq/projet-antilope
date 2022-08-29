@@ -5,7 +5,7 @@
 		<title>
 			<?= wp_title('-', true, 'right') . get_bloginfo('name') ?>
 		</title>
-		<meta name="description" content="<?= $description ?>">
+		<meta name="description" content="<?= $args['description']; ?>">
 		<meta name="keywords" content="<?= __( 'mesure, pollution, qualité de l’air, système embarqué, capteurs', 'alt' ) ?>">
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 		<meta property="og:type" content="<?= $og_type; ?>"/>
 		<meta property="og:url" content="<?= get_permalink() ?>"/>
 		<meta property="og:image" content="<?= atl_mix('/images/og.jpg') ?>"/>
-		<meta property="og:description" content="<?= $description ?>"/>
+		<meta property="og:description" content="<?= $args['description']; ?>"/>
 		<meta property="og:locale" content="<?= pll_current_language('locale'); ?>"/>
 		<?php foreach(atl_remove_value_from_array(pll_current_language('locale'), pll_languages_list(['fields'=>'locale'])) as $language): ?>
 			<meta property="og:locale:alternate" content="<?= $language ?>"/>

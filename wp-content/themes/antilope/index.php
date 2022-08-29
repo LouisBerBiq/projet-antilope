@@ -1,6 +1,6 @@
 <?php $og_type = _('website', 'atl'); ?>
-<?php $description = _('', 'atl'); ?>
-<?php get_header(); ?>
+<?php $description = _('Nous faisons des modules portables économes capables de mesurer la qualité de l’air environnant.', 'atl'); ?>
+<?php get_header(null, ['description' => $description]); ?>
 
 <main class="layout intro" id="main">
 	<section class="intro__section intro__welcome">

@@ -114,6 +114,23 @@
 		}
 
 		&__home {
+				
+			display: flex;
+			align-items: center;
+			gap: .2em;
+			
+			margin-top: -5px;
+			margin-bottom: -5px;
+
+			text-decoration: none;
+			color: $darkest;
+			font-weight: 600;
+			font-size: 1.15em;
+
+			& img {
+				width: 2.8rem;
+				height: auto;
+			}
 			&:focus {
 				outline: none; // because this is the default focused element
 			}
@@ -121,7 +138,6 @@
 
 		&__container {
 			display: flex;
-			flex-direction: column;
 			gap: 1.5em;
 
 			list-style: none;
@@ -248,8 +264,18 @@
 
 			.nav {
 				&__container {
+					min-height: 85vh;
+
 					flex-direction: column;
 					align-items: flex-end;
+				}
+
+				&__item {
+					&:last-child {
+						flex: 1;
+						display: flex;
+						flex-flow: column-reverse;
+					}
 				}
 
 				&__subitems {
@@ -258,14 +284,8 @@
 
 				&__home {
 					position: absolute;
-					top: 1%;
-					left: 3%;
-					
-					display: flex;
-					justify-content: center;
-					align-items: center;
-
-					filter: drop-shadow(0 3px 5px rgba($dark, .15));
+					top: 2.5%;
+					left: 5%;
 				}
 			}
 		}
@@ -304,26 +324,6 @@
 				flex-flow: row wrap;
 				justify-content: flex-end;
 				align-items: center;
-			}
-
-			&__home {
-				
-				display: flex;
-				align-items: center;
-				gap: .2em;
-				
-				margin-top: -5px;
-				margin-bottom: -5px;
-
-				text-decoration: none;
-				color: $darkest;
-				font-weight: 600;
-				font-size: 1.15em;
-
-				& img {
-					width: 2.8rem;
-					height: auto;
-				}
 			}
 		}
 	}

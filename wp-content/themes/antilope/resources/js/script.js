@@ -5,14 +5,12 @@ class ATL_Controller
 	// before DOM
 	constructor()
 	{
-		this.indexPages = ['/']
+
 	}
 	
 	// after DOM
 	run()
 	{
-		// get a list of all the available languages to create a list of all the url for index
-		this.handleLanguages();
 		// handle mobile sidebar
 		this.handleSidebar();
 		// fade the arrow on 50% page scroll
@@ -28,14 +26,6 @@ class ATL_Controller
 		utilities.submitSelectOnChange('.nav__languages')
 	}
 
-	handleLanguages()
-	{
-		// yes, I know, the proper way would be to use an AJAX request or simply echo into the page
-		document.querySelectorAll('.languages__locale').forEach((element) => {
-			this.indexPages.push(`/${element.getAttribute('lang').split('-')[0]}/`)
-		});
-	}
-	
 	handleSidebar() {
 
 		let sidebarButton = document.querySelector('.hamburger');
@@ -61,30 +51,34 @@ class ATL_Controller
 
 	handleDiscoveryArrow()
 	{
-		if (this.indexPages.includes(window.location.pathname)) {
+		let discoveryArrow = document.querySelector('.intro__scroll-down');
 
-			let discoveryArrow = document.querySelector('.intro__scroll-down');
-			let discoveryArrowSize = discoveryArrow.offsetHeight;
-			let discoveryArrowPosition = discoveryArrow.offsetTop;
-
-			// TODO: throttle
-			window.addEventListener("scroll", () => {
-				let scrolled = document.scrollingElement.scrollTop;
-				this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);
-			});
+		if (!discoveryArrow) {
+			return	
 		}
-	}
 
+		let discoveryArrowSize = discoveryArrow.offsetHeight;
+		let discoveryArrowPosition = discoveryArrow.offsetTop;
+
+		// TODO: throttle
+		window.addEventListener("scroll", () => {
+			let scrolled = document.scrollingElement.scrollTop;
+			this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);
+		});
+	}
+	}
 
 	handleReadMore()
 	{
-		if (window.location.pathname.includes('/product/')) { // TODO: make it more foolproof maybe
-			let readMore = document.querySelector('.singleProduct__content');
-	
-			readMore.addEventListener('click', () => {
-				readMore.classList.toggle('unrolled');
-			});
+		let readMore = document.querySelector('.singleProduct__content');
+
+		if (!readMore) {
+			return
 		}
+
+		readMore.addEventListener('click', () => {
+			readMore.classList.toggle('unrolled');
+		});
 	}
 
 	handleFadeables()

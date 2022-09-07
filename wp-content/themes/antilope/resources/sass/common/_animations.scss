@@ -1,43 +1,25 @@
+// KEPT FOR LEGACY REASON
+
 @mixin fade-in($animation-name, $final-transform-value: translateX(0%), $initial-transform-value: translateX(-50%)) {
 	@keyframes #{$animation-name} {
 		from {
 			transform: $initial-transform-value;
-			opacity: 0%;
+			// opacity: 0%;
 		}
 		to {
 			transform: $final-transform-value;
-			opacity: 100%;
+			// opacity: 100%;
 		}
 	}
 }
-@include fade-in(fade-in-left, translateX(0%), translateX(-50%));
-@include fade-in(fade-in-right, translateX(0%), translateX(50%));
-@include fade-in(fade-in-top, translateX(0%), translateY(-50%));
-@include fade-in(fade-in-bottom, translateX(0%), translateY(-50%));
+@include fade-in(fade-in-right, none, translateX(30%));
 
 @mixin fadeInAnimation($direction, $delay: null, $speed: .125s) {
-	opacity: 0; // I cannot remove this because my fadeable system doesn't allow for a delay & visibility would get overwritten is included at start
-	visibility: visible;
+	// opacity: 1;
 	animation: fade-in-#{$direction} $speed ease-out $delay forwards;
 }
 
-.fadeIn {
-	&.fadeable {
-		&--top {
-			@include fadeInAnimation(top);
-		}
-		&--bottom {
-			@include fadeInAnimation(bottom);
-		}
-		&--left {
-			@include fadeInAnimation(left);
-		}
-		&--right {
-			@include fadeInAnimation(right);
-		}
-	}
-}
-
+// KEPT FOR LEGACY REASON //
 
 @mixin move-up-and-down() {
 	@keyframes move-up-and-down {

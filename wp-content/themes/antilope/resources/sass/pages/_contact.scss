@@ -4,21 +4,14 @@
 	margin-top: calc($top-margin-smaller + $header-height);
 
 	&__title {
-		font-family: Montserrat;
-		font-size: 3em;
-
-		@include fadeInAnimation(left);
+		transition-delay: .25s !important;
 	}
 	&__tagline {
-		position: relative;
-		left: $scale-main;
-		
-		margin-bottom: $top-margin/1.5;
-		
-		font-family: Lato;
-		font-size: 1.25em;
-		
-		@include fadeInAnimation(left, .25s);
+		transition-delay: .5s !important;
+	}
+
+	&__form {
+		transform: translateY(30%);
 	}
 }
 

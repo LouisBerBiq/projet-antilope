@@ -1,24 +1,15 @@
 <?php /* Template Name: Contact page template */ ?>
 <?php $og_type = _('website', 'atl'); ?>
-<?php $description = _('', 'atl'); ?>
-<?php get_header(); ?>
+<?php $description = _('lorem ipsum', 'atl'); ?>
+<?php get_header(null, ['description' => $description]); ?>
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 	<main class="contact" id="main">
-		<h2 class="contact__title"><?= get_the_title(); ?></h2>
-		<p class="contact__tagline"><?= __('Envoyez-nous un mail&nbsp;!', 'atl') ?></p>
-		<div class="contact__form">
+		<h2 class="contact__title top__title fadeable"><?= get_the_title(); ?></h2>
+		<p class="contact__tagline top__tagline fadeable"><?= __('Envoyez-nous un mail&nbsp;!', 'atl') ?></p>
+		<div class="contact__form fadeable">
 			<?php if(! isset($_SESSION['feedback_contact_form']) || ! $_SESSION['feedback_contact_form']['success']) : ?>
-				<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
-					<div class="form__personality">
-						<select name="personality" id="personality" class="personality__select" multiple required>
-							<option value="municipality">Commune</option>
-							<option value="researcher">Chercheur</option>
-							<option value="student">Étudiant</option>
-							<option value="other">Autre</option>
-						</select>
-						<?= atl_get_contact_field_error('personality'); ?>
-					</div>
+				<form action="<?= get_home_url(null, '..'); ?>/wp-admin/admin-post.php" method="POST" class="form">
 					<div class="form--two-column">
 						<div class="form__field">
 							<label for="lastname" class="field__label"><?= __('Votre nom', 'atl'); ?></label>

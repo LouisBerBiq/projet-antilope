@@ -1,8 +1,10 @@
-<a href="<?= get_the_permalink(); ?>" class="product__wrapper fadeable--bottom">
+<a href="<?= get_the_permalink(); ?>" class="product__wrapper fadeable">
 	<style>
-		/* attr() doesn't work with colors yet */
-		#<?= strtolower(get_the_title()) ?> {
-			background-color: <?= get_field('color') ?>;
+		#<?= strtolower(get_the_title())?> {
+			background-color: <?= get_field('color')?>;
+		}
+		#<?= strtolower(get_the_title())?>:hover {
+			box-shadow: 1.5px 15px 30px <?= get_field('color') . '33'?>;
 		}
 	</style>
 	<article class="product" id="<?= strtolower(get_the_title()) ?>">

@@ -1,1 +1,1 @@
-<a class="singleProduct__cta" href="<?= add_query_arg('module', get_the_title(), get_permalink(atl_get_page_of_template('template-contact'))) ?>"><?= __('Réserver ce module', 'atl'); ?></a>
+<a class="singleProduct__cta fadeable" href="<?= add_query_arg('module', get_the_title(), get_permalink(atl_get_page_of_template('template-contact'))) ?>"><?= __('Réserver ce module', 'atl'); ?></a>

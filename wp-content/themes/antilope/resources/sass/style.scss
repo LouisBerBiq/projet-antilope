@@ -43,15 +43,50 @@ main {
 	padding: 0 $padding-general;
 }
 
-.hidden {
-	opacity: 0!important; // that's kind of the point if you're specifically adding a class like this to something
+.top {
+	&__title {
+		font-family: Montserrat;
+		font-size: 3em;
 
-	transition: opacity 1s ease-out;
+		transform: translateX(-30%);
+	}
+	&__tagline {
+		// position: relative;
+		// left: $scale-main;
+		
+		margin-bottom: $top-margin/1.5;
+		
+		font-family: Lato;
+		font-size: 1.25em;
+		
+		transform: translateX(-30%);
+		transition-delay: .25s !important;
+	}
+}
+
+
+@import "pages/index";
+@import "pages/contact";
+@import "pages/products";
+@import "pages/product";
+@import "pages/faq";
+@import "pages/404";
+
+
+.fadeable, .fadeable-inverted {
+	transition-property: transform, opacity;
+	transition-duration: .25s;
+	transition-timing-function: ease-out;
 }
 .fadeable {
-	&--top, &--bottom, &--left, &--right {
-		visibility: hidden; // we still want it to take up space
-	}
+	opacity: 0;
+}
+.fadeIn {
+	transform: none !important;
+	opacity: 1 !important;
+}
+.fadeOut {
+	opacity: 0 !important;
 }
 
 // mobile
@@ -60,10 +95,3 @@ main {
 		margin: $top-margin-smaller 0;
 	}
 }
-
-@import "pages/index";
-@import "pages/contact";
-@import "pages/products";
-@import "pages/product";
-@import "pages/faq";
-@import "pages/404";

@@ -1,6 +1,6 @@
 <?php $og_type = _('website', 'atl'); ?>
-<?php $description = _('', 'atl'); ?>
-<?php get_header(); ?>
+<?php $description = _('lorem ipsum', 'atl'); ?>
+<?php get_header(null, ['description' => $description]); ?>
 
 <?php include(THEME_PATH . '/partials/accent-color-getter.php'); ?>
 
@@ -18,16 +18,19 @@
 		</ul>
 	</aside>
 	<section class="singleProduct__description">
-		<p class="singleProduct__tagline"><?= get_field('type') ?></p>
-		<h2 class="singleProduct__title"><?= get_the_title(); ?></h2>
+		<p class="singleProduct__tagline fadeable"><?= get_field('type') ?></p>
+		<h2 class="singleProduct__title fadeable"><?= get_the_title(); ?></h2>
+		<p class="singleProduct__sub-tagline__prepend fadeable">Parfait pour&nbsp;:
+			<div class="singleProduct__sub-tagline"><?= get_field('perfect_for') ?></div>
+		</p>
 		<!-- <figure class="singleProduct__fig">
 			<?= get_the_post_thumbnail(null, '', ['class' => 'fig__thumb']); ?> 
 		</figure> -->
-		<div class="singleProduct__content">
+		<div class="singleProduct__content fadeable">
 			<?php the_content(); ?>
 		</div>
 		<?php include 'product-cta.php'; ?>
-		<section class="singleProduct__details">
+		<section class="singleProduct__details fadeable">
 			<h3 class="details__subtitle"><?= __('Spécifications','atl'); ?></h3>
 			<dl class="details__definitions">
 				<dt class="details__label"><?= __('Polluants mesurés','atl'); ?></dt>

@@ -25,6 +25,8 @@
 		<link rel="icon" type="image/png" href="<?= atl_mix('/images/favicon_dark.ico'); ?>" media="(prefers-color-scheme:dark)">
 		<link rel="icon" type="image/png" href="<?= atl_mix('/images/favicon.ico'); ?>" media="(prefers-color-scheme:no-preference)">
 		<link rel="stylesheet" type="text/css" href="<?= atl_mix('/css/style.css'); ?>"/>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
 		<script type="text/javascript" src="<?= atl_mix('js/script.js'); ?>"></script>
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -57,9 +59,6 @@
 						<?php endif; ?>
 					</li>
 					<?php endforeach; ?>
-					<li class="nav__item">
-						<a href="<?= get_permalink(atl_get_page_of_template('template-about')) ?>" class="nav__link"><?= __('À propos', 'atl'); ?></a>
-					</li>
 					<li class="nav__item">
 						<a href="<?= get_permalink(atl_get_page_of_template('template-contact')) ?>" class="nav__link"><?= __('Contact', 'atl'); ?></a>
 					</li>

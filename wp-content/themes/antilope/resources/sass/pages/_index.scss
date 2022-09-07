@@ -1,8 +1,34 @@
 .intro {
-	
-	&__section:nth-child(even) { // right aligned ones
+
+	// shared
+	&__title, .bullet-point__title {
+
+		position: relative;
+		margin-bottom: $scale-main-mini*2;
 		
+		font-family: Montserrat;
+		font-size: $text-title-size / 2;
+		line-height: 1.2;
+
+		.title {
+			&__special {
+				font-family: "Gentium Basic";
+			}
+		}
 	}
+	
+	&__tagline, .bullet-point__tagline {
+		margin-bottom: $scale-main*1.5;
+		
+		font-family: Lato;
+		font-size: $text-small-size-bigger/1.5;
+	}
+	.bullet-point__tagline {
+		position: relative;
+		left: $scale-main;
+	}
+	
+	// specific
 	
 	&__welcome {
 
@@ -11,18 +37,43 @@
 
 		min-height: calc(100vh - $scale-main * 7); // to push the next section right below the screen (100vh - margin-top of page)
 
-		.intro {
-			&__title {
-				@include fadeInAnimation(left);
-			}
-			&__tagline {
-				@include fadeInAnimation(left, .25s);
-			}
-		}
 	}
+	&__title {
+		transform: translateX(-30%);
+	}
+	&__tagline {
+		transform: translateX(-30%);
+		transition-delay: .25s !important;
+	}
+	&__video-wrapper { // this has to be separated from the rest below because idfk
+		display: none;
+		z-index: -10;
+		overflow: hidden;
+
+		transform: translateX(30%);
+		transition-duration: .5s !important;
+	}
+	&__buttons-wrapper {
+		overflow: visible;
+		display: flex;
+		flex-direction: row;
+		gap: $scale-main/2;
+		
+		transform: translateX(-30%);
+		transition-delay: .5s !important;
+	}
+	&__button {
+
+		@include component-button($text-title-size/5, $bright);
+
+		width: fit-content;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
 	&__scroll-down {
 
-		color: var(--accent);
+		color: $bright;
 		opacity: .5;
 
 		font-family: Montserrat;
@@ -47,13 +98,12 @@
 			left: calc(-50% - .3em); //50% - size of arrow
 			bottom: -1.5em;
 
-			border-color: var(--accent) transparent transparent;
+			border-color: $bright transparent transparent;
 			border-style: solid;
 			border-width: .35em;
 
 			animation: move-up-and-down-fade 2s ease-in-out infinite;
 		}
-
 		// I wanted to make a big soft glow around the text, it works but it looks meh
 		// &:before {
 		// 	content: '';
@@ -69,68 +119,48 @@
 		// 	filter: blur(50px);
 		// }
 	}
+}
 
-	&__video-wrapper { // this has to be separated from the rest below because idfk
-		display: none;
-		z-index: -10;
-		overflow: hidden;
+.intro__bullet-point {
 
-		@include fadeInAnimation(right, null, .5s);
+	transform: translateX(-30%);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-bottom: 5em;
+
+	&:nth-child(odd) { // right aligned sections
+		flex-flow: row-reverse;
+		transform: translateX(30%);
 	}
 
-	.intro {
-		&__title {
-
-			position: relative;
-			margin-bottom: $scale-main-mini*2;
-			
-			font-family: Montserrat;
-			font-size: $text-title-size / 2;
-			line-height: 1.2;
-
-			.title {
-				&__special {
-					font-family: "Gentium Basic";
-				}
-			}
-		}
-		
-		&__tagline {
-			position: relative;
-			left: $scale-main;
-
-			margin-bottom: $scale-main*1.5;
-			
-			font-family: Lato;
-			font-size: $text-small-size-bigger/1.5;
-		}
-
-		&__button-wrapper {
-			overflow: visible;
+	.bullet-point {
+		&__text-wrapper {
 			display: flex;
-			flex-direction: row;
-			gap: $scale-main/2;
-			
-			@include fadeInAnimation(left, .5s);
+			flex-flow: column;
+			max-width: 30vw;
 		}
 		&__button {
+			@include component-button(1em, $bright, $background);
 
-			@include component-button($text-title-size/5);
+			position: relative;
+			left: $scale-main;
 
 			width: fit-content;
 			padding-left: 1em;
 			padding-right: 1em;
-
-			&:last-child {
-				@include component-button($text-title-size/5, $background, var(--accent), $scale-main-mini $scale-main-mini*2);
-				
-				// max-width: .5vw;
-				padding-left: $scale-main/4;
-				padding-right: $scale-main/4;
-			}
+		}
+		&__img {
+			max-width: 50%;
+			
+			object-position: -99999px 99999px; // to hide the images & leave a blue square until I find good ones
+			background-color: $bright;
 		}
 	}
 }
+
 
 // mobile
 @media(max-width: 980px) {
@@ -182,9 +212,6 @@
 					top: 18vh;
 
 					max-width: 80%;
-
-					// put the shadow on the image instead
-					// filter: drop-shadow(-15px 30px 60px rgba($dark, .5));
 				}
 			}
 		}

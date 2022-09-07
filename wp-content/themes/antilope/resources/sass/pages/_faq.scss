@@ -5,28 +5,24 @@
 	margin-top: calc($top-margin-smaller + $header-height);
 
 	&__title {
-		font-family: Montserrat;
-		font-size: $text-title-size/2;
-		text-align: center;
-		
-		@include fadeInAnimation(top);
+		// text-align: center;
+		transition-delay: .25s !important;
 	}
 	&__tagline {
-		margin-bottom: $top-margin/1.5;
-		
-		font-family: Lato;
-		font-size: $text-small-size-bigger/1.5;
-		text-align: center;
-
-		@include fadeInAnimation(top, .25s);
+		// text-align: center;
+		// position: static;
+		transition-delay: .5s !important;
 	}
-
+	
 	&__search {
+		
+		transform: translateY(-30%);
+		
 		.search {
 			&__container {
 				display: flex;
 				flex-direction: column;
-				align-items: center;
+				align-items: flex-start;
 				gap: $scale-main-mini;
 			}
 			&__label {
@@ -69,6 +65,8 @@
 
 	&__questions {
 		margin-top: $top-margin/1.5;
+		
+		transform: translateY(-30%);
 	}
 }
 

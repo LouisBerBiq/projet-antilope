@@ -109,7 +109,7 @@
 		
 	.nav {
 
-		&__hidden, &__title {
+		&__title {
 			display: none;
 		}
 
@@ -156,16 +156,7 @@
 				// margin-left: 2em;
 				
 				& a {
-					
-					@include component-button(.6em, $brighter, $background);
-					
-					// because this is a visitable a
-					&:visited {
-						color: $background;
-						&:hover {
-							color: $brighter;
-						}
-					}
+					@include component-button(.6em, $bright, $background);
 				}
 			}
 		}

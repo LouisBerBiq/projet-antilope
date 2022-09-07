@@ -10,6 +10,18 @@
 	
 	box-shadow: 1.5px 3px 5px rgba($dark, .5) inset;
 
+	transition-property: transform, box-shadow;
+	transition-duration: .125s;
+	transition-timing-function: ease-out;
+	
+	&:hover {
+		transform: translateY(-3%);
+
+		transition-property: transform, box-shadow;
+		transition-duration: .125s;
+		transition-timing-function: ease-out;
+	}
+
 	&__wrapper {
 		display: inline-block;
 	
@@ -20,6 +32,8 @@
 		color: black;
 
 		border-radius: .7em; // for the focus outline
+
+		transform: translateY(-30%);
 	}
 
 	&__fig {

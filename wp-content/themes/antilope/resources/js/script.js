@@ -13,23 +13,43 @@ class ATL_Controller
 	{
 		// handle mobile sidebar
 		this.handleSidebar();
-		// fade the arrow on 50% page scroll
-		this.handleDiscoveryArrow();
-		// handle effects of the "fadeable--" class
-		this.handleFadeables();
 		// handle clicking images in module page
 		this.handleProductImageClick();
 		// handle the read more tag in the module page
 		this.handleReadMore();
-
-		// this is the best hack ever
-		window.scrollBy(0, 1)
+		
+		this.scrollController();
 
 		utilities.submitSelectOnChange('.nav__languages')
 	}
 
-	handleSidebar() {
+	scrollController() 
+	{
+	let controller = new ScrollMagic.Controller();
+	
+	let elementSelector = '.fadeable';
+	let elementSelector2 = '.fadeable-inverted';
 
+	document.querySelectorAll(elementSelector).forEach(element => {
+		let scene = new ScrollMagic.Scene({
+			triggerElement: element,
+			triggerHook: .7
+		})
+		.setClassToggle(element, 'fadeIn')
+		.addTo(controller)
+	});
+	document.querySelectorAll(elementSelector2).forEach(element => {
+		let scene = new ScrollMagic.Scene({
+			triggerElement: element,
+			triggerHook: .5
+		})
+		.setClassToggle(element, 'fadeOut')
+		.addTo(controller)
+	});
+	}
+
+	handleSidebar()
+	{
 		let sidebarButton = document.querySelector('.hamburger');
 		let navicon = document.querySelector('.navicon');
 		let overlay = document.querySelector('.overlay');
@@ -51,29 +71,8 @@ class ATL_Controller
 		overlay.classList.toggle('overlay--on');
 	}
 
-	handleDiscoveryArrow()
-	{
-		let discoveryArrow = document.querySelector('.intro__scroll-down');
-
-		if (!discoveryArrow) {
-			return	
-		}
-
-		let discoveryArrowSize = discoveryArrow.offsetHeight;
-		let discoveryArrowPosition = discoveryArrow.offsetTop;
-
-		// TODO: throttle
-		window.addEventListener("scroll", () => {
-			let scrolled = document.scrollingElement.scrollTop;
-			this.FadeDiscoveryArrow(discoveryArrow, discoveryArrowSize, discoveryArrowPosition, scrolled);
-		});
-	}
-
 	handleProductImageClick()
 	{
-		// TODO: desktop overlay
-		// TODO: center image
-
 		document.querySelectorAll('.images__fig').forEach((el) => {
 			el.addEventListener('click', () => {
 				el.classList.toggle('images__fig--maximized');
@@ -94,29 +93,10 @@ class ATL_Controller
 		});
 	}
 
-	handleFadeables()
-	{
-		// TODO: again, fix the initial scroll with nothing visible
-
-		document.querySelectorAll('[class*="fadeable--"]').forEach((el) => {
-			window.addEventListener("scroll", () => {
-				this.FadeInOnVisible(el);
-			});
-		});
-	}
-
-
 	FadeInOnVisible(el)
 	{
 		if (window.innerHeight/1.3 + window.scrollY >= utilities.getElementPos(el).y || window.innerHeight/1.3 + window.scrollY >= utilities.getElementPos(el).y) {
 			el.classList.add('fadeIn');
-		}
-	}
-
-	FadeDiscoveryArrow(discoveryArrow, size, position, scrolled)
-	{
-		if(scrolled * 3 > position - size){
-			discoveryArrow.classList.add('hidden');
 		}
 	}
 

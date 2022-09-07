@@ -26,6 +26,7 @@ function atl_handle_submit_contact_form()
 
 	// sanitize data passed
 	$data = atl_sanitize_contact_form_data();
+	var_dump($data); exit();
 
 	// validate form fields and return its errors to the client
 	if($errors = atl_validate_contact_form_data($data)) {

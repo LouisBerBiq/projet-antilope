@@ -1,6 +1,6 @@
 <?php $og_type = _('website', 'atl'); ?>
-<?php $description = _('', 'atl'); ?>
-<?php get_header(); ?>
+<?php $description = _('lorem ipsum', 'atl'); ?>
+<?php get_header(null, ['description' => $description]); ?>
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 <main class="layout singleProduct" id="main">

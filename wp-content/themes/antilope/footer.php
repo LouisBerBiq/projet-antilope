@@ -29,9 +29,9 @@
 				<p class="nav__paragraph">
 					<?= __('In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Qualem igitur hominem natura inchoavit.','atl') ?>
 				</p>
-				<a href="<?= get_permalink(atl_get_page_of_template('template-about')) ?>" class="nav__button">
+				<!-- <a href="<?= get_permalink(atl_get_page_of_template('template-about')) ?>" class="nav__button">
 				<?= __('Lire plus', 'atl'); ?>
-				</a>
+				</a> -->
 			</section>
 			<section class="nav__container nav__container--pages">
 				<ul class="nav__pages">

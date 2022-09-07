@@ -8,8 +8,8 @@ endwhile; endif;?>
 
 <main class="products" id="main">
 	<section class="products__section">
-		<h2 class="products__title"><?= __('Tous nos modules', 'atl'); ?></h2>
-		<p class="products__tagline"><?=
+		<h2 class="products__title top__title fadeable"><?= __('Tous nos modules', 'atl'); ?></h2>
+		<p class="products__tagline top__tagline fadeable"><?=
 			str_replace(
 				':AMOUNT', 
 				wp_count_posts('product')->publish, // possible enhancement, translate to full word

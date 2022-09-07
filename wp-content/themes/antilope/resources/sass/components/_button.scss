@@ -31,7 +31,6 @@
 		background-color: $text-color;
 
 		@include button-transition;
-		@include small-bright-shadow(1px, 3px, rgba($text-color, .6));
 	}
 
 	@include small-bright-shadow(1px, 3px, rgba($color, .6));

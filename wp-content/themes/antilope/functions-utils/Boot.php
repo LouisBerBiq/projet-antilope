@@ -41,14 +41,13 @@ function atl_dashboard_setup() {
 	);
 }
 
+// inspired from here https://www.trickspanda.com/add-custom-post-types-glance-dashboard-widget-wordpress/
 function atl_messages_widget() {
-	echo "Hello there, I'm a great Dashboard Widget. Edit me!";
-
-function custom_glance_items( $items = array() ) {
-	$post_types = array('message');
+	$items = [];
 	if ($posts = atl_get_questions(5)->have_posts()) {
 		while (have_posts()) {
-			// TODO: put post in items array
+			$items[] = the_title();
+			var_dump($posts);
 		}
 	}
 	// foreach( $post_types as $type ) {
